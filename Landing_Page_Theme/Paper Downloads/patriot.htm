@@ -1,0 +1,73 @@
+<html><head>
+  <!-- Created with AOLpress/2.0 -->
+  <title>Roundoff Error and the Patriot Missile</title></head>
+<body bgcolor="#ffffff">
+<h1>
+  Roundoff Error and the Patriot Missile
+</h1>
+<h2>
+  Robert Skeel
+</h2>
+<p align="justify">
+The March 13 issue of Science carried an article claiming, on the basis of
+a report from the General Accounting Office (GAO), that a "minute mathematical
+error ... allowed an Iraqi Scud missile to slip through Patriot missile defenses
+a year ago and hit U.S. Army barracks in Dhahran, Saudi Arabia, killing 28
+servicemen." The article continues with a readable account of what happened.
+</p><p align="justify">
+The article says that the computer doing the tracking calculations had an
+internal clock whose values were slightly truncated when converted to
+floating-point arithmetic. The errors were proportional to the time on the
+clock: 0.0275 seconds after eight hours and 0.3433 seconds after 100 hours.
+A calculation shows each of these relative errors to be both very nearly
+2<sup>-20</sup>, which is approximately 0.0001%. 
+</p><p align="justify">
+The GAO report contains some additional information. The internal clock kept
+time as an integer value in units of tenths of a second, and the computer's
+registers were only 24 bits long. This and the consistency in the time lags
+suggested that the error was caused by a fixed-point 24-bit representation
+of 0.1 in base 2. The base 2 representation of 0.1 is nonterminating; for
+the first 23 binary digits after the binary point, the value is 0.1 ×
+(1 - 2<sup>-20</sup>). The use of 0.1 × (1 - 2<sup>-20</sup>) in obtaining
+a floating-point value of time in seconds would cause all times to be reduced
+by 0.0001%. 
+</p><p align="justify">
+This does not really explain the tracking errors, however, because the tracking
+of a missile should depend not on the absolute clock-time but rather on the
+time that elapsed between two different radar pulses. And because of the
+consistency of the errors, this time difference should be in error by only
+0.0001%, a truly insignificant amount. 
+</p><p align="justify">
+Further inquiries cleared up the mystery. It turns out that the hypothesis
+concerning the truncated binary representation of 0.1 was essentially correct.
+A 24-bit representation of 0.1 was used to multiply the clock-time, yielding
+a result in a pair of 24-bit registers. This was transformed into a 48-bit
+floating-point number. The software used had been written in assembly language
+20 years ago. When Patriot systems were brought into the Gulf conflict, the
+software was modified (several times) to cope with the high speed of ballistic
+missiles, for which the system was not originally designed. 
+</p><p align="justify">
+At least one of these software modifications was the introduction of a subroutine
+for converting clock-time more accurately into floating-point. This calculation
+was needed in about half a dozen places in the program, but the call to the
+subroutine was not inserted at every point where it was needed. Hence, with
+a less accurate truncated time of one radar pulse being subtracted from a
+more accurate time of another radar pulse, the error no longer cancelled.
+</p><p align="justify">
+In the case of the Dhahran Scud, the clock had run up a time of 100 hours,
+so the calculated elapsed time was too long by 2<sup>-20 </sup>× 100
+hours = 0.3433 seconds, during which time a Scud would be expected to travel
+more than half a kilometer. 
+</p><p align="justify">
+The roundoff error, of course, is not the only problem that has been identified:
+serious doubts have been expressed about the ability of Patriot missiles
+to hit Scuds. 
+</p><p>
+  </p><hr>
+<p>
+Robert Skeel is a professor of computer science at the University of Illinois
+at Urbana-Champaign. 
+</p><p>
+From SIAM News, July 1992, Volume 25, Number 4, page 11
+</p><p>
+</p></body></html>

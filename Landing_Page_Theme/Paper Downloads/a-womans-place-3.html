@@ -1,0 +1,1049 @@
+<!doctype html>
+<!--[if IE 7]> <html class="no-js oldie ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/NewsArticle"> <!--<![endif]-->
+<head>
+	
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQUFVlRbGwcDV1ZRBwQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script>
+<title>A Woman’s Place - The New Yorker</title>
+
+<meta name="copyright" content="Copyright (c) Conde Nast 2014">
+<meta name="author" content="">
+<meta name="description" itemprop="description" content="">
+
+<meta itemprop="name" content="A Woman’s Place">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><!-- minimal-ui=1 -->
+<meta name="HandheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="The New Yorker">
+
+<meta name="environment" content="prod">
+<meta name="tny:id" content="1487111">
+<link rel="shortcut icon" href="/wp-content/assets/dist/img/icon/favicon.ico">
+<link rel="apple-touch-icon" href="/wp-content/assets/dist/img/icon/apple-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" href="/wp-content/assets/dist/img/icon/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/wp-content/assets/dist/img/icon/apple-touch-icon-57x57-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/wp-content/assets/dist/img/icon/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/wp-content/assets/dist/img/icon/apple-touch-icon-144x144-precomposed.png">
+
+<meta property="fb:app_id" content="179662042076731">
+<meta property="fb:admins" content="648235154,789168297,688620285">
+
+	<script src="/wp-content/assets/dist/js/tny-reajs.min.js"></script>
+
+<script>
+	var TNY = TNY || {};
+	TNY.initIsMobile = TNY.reajs.checkViewport('mobile');
+</script>
+
+<link rel="dns-prefetch" href="http://www.google-analytics.com" /><link rel="dns-prefetch" href="//stats2.newyorker.com" /><link rel="dns-prefetch" href="//sstats.newyorker.com" />
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.5.4.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://www.newyorker.com/magazine/2011/07/11/a-womans-place-3" />
+<link rel="publisher" href="https://plus.google.com/+newyorker"/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="A Woman’s Place - The New Yorker" />
+<meta property="og:description" content="In 2007, the founder of Facebook, Mark Zuckerberg, knew that he needed help. His social-network site was growing fast, but, at the age of twenty-three, he felt ill-equipped to run it. That December, he went to a Christmas party at the home of Dan Rosensweig, a Silicon Valley executive, and as he approached the house he saw someone who had been mentioned as a possible partner, Sheryl Sandberg, Google’s thirty-eight-year-old vice-president for global online sales and operations. Zuckerberg hadn’t called her before (why would someone who managed four thousand employees want to leave for a company that had barely any revenue?), but he went up and introduced himself. “We talked for probably an hour by the door,” Zuckerberg recalls." />
+<meta property="og:url" content="http://www.newyorker.com/magazine/2011/07/11/a-womans-place-3" />
+<meta property="og:site_name" content="The New Yorker" />
+<meta property="article:tag" content="Adele and Joel Sandberg" />
+<meta property="article:tag" content="Bret Taylor" />
+<meta property="article:tag" content="Chris Cox" />
+<meta property="article:tag" content="Dan Rosensweig" />
+<meta property="article:tag" content="Dave Goldberg" />
+<meta property="article:tag" content="David Fischer" />
+<meta property="article:tag" content="Donald Graham" />
+<meta property="article:tag" content="Eric Schmidt" />
+<meta property="article:tag" content="Facebook" />
+<meta property="article:tag" content="Female Executives" />
+<meta property="article:tag" content="Fleat Street Café" />
+<meta property="article:tag" content="Google" />
+<meta property="article:tag" content="Harvard University" />
+<meta property="article:tag" content="Lawrence Summers" />
+<meta property="article:tag" content="Marissa Mayer" />
+<meta property="article:tag" content="Mark Zuckerberg" />
+<meta property="article:tag" content="Marne Levine" />
+<meta property="article:tag" content="Mike Schroepfer" />
+<meta property="article:tag" content="Patricia Sellers" />
+<meta property="article:tag" content="Richard Pipes" />
+<meta property="article:tag" content="Sheryl Sandberg" />
+<meta property="article:tag" content="Silicon Valley" />
+<meta property="article:tag" content="Social Networking Sites" />
+<meta property="article:tag" content="South Florida Conference on Soviet Jewry" />
+<meta property="article:tag" content="SurveyMonkey" />
+<meta property="article:tag" content="Treasury Department" />
+<meta property="article:tag" content="Women in Economics and Government" />
+<meta property="article:tag" content="World Bank" />
+<meta property="og:image" content="http://www.newyorker.com/wp-content/uploads/2011/07/110711_r21057_p886.jpg" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@newyorker"/>
+<meta name="twitter:domain" content="The New Yorker"/>
+<meta name="twitter:creator" content="@newyorker"/>
+<meta name="twitter:image:src" content="http://www.newyorker.com/wp-content/uploads/2011/07/110711_r21057_p886.jpg"/>
+<!-- / Yoast WordPress SEO plugin. -->
+
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js?ver=1.9.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WP_VARS = {"THEME_URI":"http:\/\/www.newyorker.com\/wp-content\/themes\/tny","ajaxurl":"https:\/\/www.newyorker.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.newyorker.com/js/cn-fe-common/cn.js?ver=20130717'></script>
+<script type='text/javascript' src='http://www.newyorker.com/js/cn-fe-common/popups/1.1.0/cn.popups-1.1.0.js?ver=20130717'></script>
+<script type='text/javascript' src='http://www.newyorker.com/js/cn-fe-common/cn.mobile.js?ver=20130717'></script>
+<script type='text/javascript' src='http://www.newyorker.com/wp-content/mu-plugins/cn-wordpress/lib/js/jquery.devices.js?ver=20130717'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var s_account = "conde-newyorker";
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.newyorker.com/wp-content/config/cn-fe-stats/s_code.js?ver=20130717'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var platformEnvironment = "production";
+var sitehost = "http:\/\/www.newyorker.com";
+var omniture_init = [];
+CN.omniture = CN.omniture || {};CN.omniture.conf = {"s_account":"conde-newyorker","server":"stats2.newyorker.com","secureServer":"sstats.newyorker.com","internalFilters":"javascript:,newyorker.com,advancemags.com"};;
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.newyorker.com/wp-content/assets/js/vendors/cn-fe-stats/omniture.js?ver=20130717'></script>
+<script type='text/javascript' src='http://www.newyorker.com/wp-content/assets/js/vendors/cn-fe-ads/cn.dart.js?ver=20130717'></script>
+<script type='text/javascript' src='http://www.newyorker.com/wp-content/assets/js/vendors/cn-fe-ads/cn.ad.arsaccelerator.js?ver=20130717'></script>
+<script type='text/javascript' src='http://www.newyorker.com/wp-content/assets/js/vendors/cn-fe-ads/cn.ad.refresh.js?ver=20130717'></script>
+<script type='text/javascript' src='http://www.newyorker.com/js/cn-fe-ecom/cn.ecom.js?ver=20130717'></script>
+<script type='text/javascript' src='http://www.newyorker.com/js/cn-fe-ecom/ecomfw.js?ver=20130717'></script>
+<script type='text/javascript' src='http://www.newyorker.com/js/cn-fe-ecom/promotheus/promotheus.js?ver=20130717'></script>
+<script type='text/javascript' src='http://www.newyorker.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<link rel='shortlink' href='http://www.newyorker.com/?p=1487111' />
+<!-- wp-parsely Plugin Version 1.6 -->
+<meta name='wp-parsely_version' id='wp-parsely_version' content='1.6' />
+<meta name='parsely-page' id='parsely-page' content='{"title":"A Woman\u2019s Place","link":"http:\/\/www.newyorker.com\/magazine\/2011\/07\/11\/a-womans-place-3","image_url":"http:\/\/www.newyorker.com\/wp-content\/uploads\/2011\/07\/110711_r21057_p886-320-240.jpg","type":"post","post_id":"1487111","pub_date":"2011-07-04T04:00:00Z","section":"Uncategorized","author":"Ken Auletta","tags":["adele and joel sandberg","bret taylor","chris cox","dan rosensweig","dave goldberg","david fischer","donald graham","eric schmidt","facebook","female executives","fleat street caf\u00e9","google","harvard university","lawrence summers","marissa mayer","mark zuckerberg","marne levine","mike schroepfer","patricia sellers","richard pipes","sheryl sandberg","silicon valley","social networking sites","south florida conference on soviet jewry","surveymonkey","treasury department","women in economics and government","world bank"]}' />
+
+		<style type="text/css">
+			body.customize-support #hd.collapsed #nav-container {
+				margin-top: 28px;
+			}
+		</style>        <!-- Google Site Speed -->
+        <script type="text/javascript">var _ga_start = (new Date()).getTime();</script>
+                    <script type="text/javascript" class="site_init">
+            //<!--
+                CN.site.init({
+                    code:             'NYR',
+                    title:            'The New Yorker',
+                    name:             'newyorker',
+                    alias:            'newyorker.com',
+                    domain:           'newyorker.com',
+                    tld:              'newyorker.com',
+                    baseUrl:          'http://www.newyorker.com',
+                    mobilecompatible: 'true',
+                    httpStatusCode:    200,
+            userServiceUrl: 'http://user-service.condenast.com',
+userServiceKey: 'TE7pnBDUEVco2vXPPNQVZNFlipc=',
+litereg: 'false',
+ecomUrl: 'https://subscribe.newyorker.com/api/circ/xml/Transaction',
+socialRes: 'http://www.newyorker.com/services/livefyre/userToken',
+                    env: 'PROD'  // Put something consistent last so we don't have a trailing comma (appease IE)
+                });
+
+                CN.isMobile = TNY.initIsMobile;
+                CN.isTablet = jQuery.devices.tablet();
+                CN.checkDeviceView = jQuery.devices.checkDeviceView;
+            //-->
+            </script>
+                            <!-- AD INIT: CN.dart.init version 2 -->
+                <script type="text/javascript">
+                //<!--
+                    CN.dart.init({
+                        adUnits: {
+                            unit1: CN.isMobile ? 'newyorker.mobile.dart' : 'newyorker.dart',
+                            unit2: 'magazine',
+                            unit3: 'channel_none',
+                            unit4: ''
+                        },
+                        kws:[ "dphiffer","adele_and_joel_sandberg_tag","bret_taylor_tag","chris_cox_tag","dan_rosensweig_tag","dave_goldberg_tag","david_fischer_tag","donald_graham_tag","eric_schmidt_tag","facebook_tag","female_executives_tag","fleat_street_cafe_tag","google_tag","harvard_university_tag","lawrence_summers_tag","marissa_mayer_tag","mark_zuckerberg_tag","marne_levine_tag","mike_schroepfer_tag","patricia_sellers_tag","richard_pipes_tag","sheryl_sandberg_tag","silicon_valley_tag","social_networking_sites_tag_2","south_florida_conference_on_soviet_jewry_tag","surveymonkey_tag","treasury_department_tag","women_in_economics_and_government_tag","world_bank_tag","magazine","2011","07","11","a_womans_place_3","article","annals_of_communications" ],
+                        charmap : {' ' : '+', '-' : '_'}
+                    });
+                                //-->
+                </script>
+                            <script type="text/javascript">
+                CN.popups = CN.popups || {};
+                CN.popups.setCookieLife(48);
+                CN.popups.setExiting(false, {
+                    path: '/exit-pop/',
+                    width: 460,
+                    height: 295,
+                }).excludeExitPath( '/wp-admin', '/wp-login.php' ).excludeExitDomain("newyorker.com","www.newyorker.com","origin.www.newyorker.com");
+                CN.popups.setATGArriving(false).setATGLayer(false).setATGExiting(false);
+
+                        CN.popups.setLayer(false).setArriving(false);
+                CN.popups.init();
+                    </script>
+                        <!-- CM: page-ads.js -->
+            <script type="text/javascript">
+            //<!--
+                var _ghearst_vars = (function() {
+                    var commonParams = 'ad_category_prefix=magazine'
+                                        + '&amp;browser_path=%2Fmagazine%2F2011%2F07%2F11%2Fa-womans-place-3'
+                                        + '&amp;cat_prefixes=%2Cmagazine%2C2011%2C07%2C11%2Ca-womans-place-3'
+                                        + '&amp;site_prefix=newyorker'
+                                        + '&amp;subdomain=mprod'
+                                        + '&amp;url_name=a-womans-place-3';
+
+                                var metaKeyWords = (function() {
+                        var
+                            i                  = 0,
+                            metaKeywordContent = '',
+                            nameAttribute      = null,
+                            metaCollection     = document.getElementsByTagName('meta');
+
+                        for (i=0;i<metaCollection.length;i++) {
+                            nameAttribute = metaCollection[i].name.search(/keywords/);
+                            if (nameAttribute!= -1) {
+                                metaKeywordContent = metaCollection[i].content;
+                                metaKeywordContent = metaKeywordContent.replace(/,/g,'%2C'); // to replace ,
+                                metaKeywordContent = metaKeywordContent.replace(/ /g,''); // to replace space
+                            }
+                        }
+                        return encodeURIComponent(metaKeywordContent);
+                    })();
+            
+                    var deviceParams = (function() {
+                                                    if ( CN.checkDeviceView('desktop') ) {
+                                    return 'AMS_NYR_MAGAZINE_TEXTLINK%2CAMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A%2CAMS_NYR_GLOBAL_FOOTER%2CAMS_NYR_GLOBAL_HEADER%2CAMS_NYR_GLOBAL_HEADERCALLOUT%2CAMS_NYR_GLOBAL_NAVBAR%2CAMS_NYR_GLOBAL_NAVBAR_ROLLOVER%2CAMS_NYR_GLOBAL_NAVBAR_STICKY%2CAMS_NYR_GLOBAL_NAVBAR_ROLLOVER_STICKY%2CAMS_NYR_POPUP_FLOATINGAD';
+                                }
+                                                                if ( CN.checkDeviceView('tablet') ) {
+                                    return 'AMS_NYR_MAGAZINE_TEXTLINK%2CAMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A%2CAMS_NYR_GLOBAL_FOOTER%2CAMS_NYR_TABLET_GLOBAL_SUBNAV';
+                                }
+                                                                if ( CN.checkDeviceView('mobile') ) {
+                                    return 'AMS_NYR_MAGAZINE_TEXTLINK%2CAMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A%2CAMS_NYR_GLOBAL_FOOTER%2CAMS_NYR_MOBILE_GLOBAL_SUBNAV';
+                                }
+                                                    })();
+
+            
+                    return {
+                        'ams_ads_script_src' : 'https://subscribe.newyorker.com/ams/page-ads.js?'
+                                                + commonParams + ''
+                                                + '&amp;keywords=' + metaKeyWords + ''
+                                                + '&amp;position_list=' + deviceParams + ''
+                    };
+                })();
+
+                if (!window.$h) {window.$h = {}}
+                (function(){
+                    if (!$h.util) {
+                        $h.util = {
+                            buildScriptTag: function(src){
+                                if (!!src){ document.write('<scr' + 'ipt src="'+src+'" type="text/javascript"></scr' + 'ipt>');}
+                            }
+                        }
+                    }
+                    $h.util.buildScriptTag(_ghearst_vars.ams_ads_script_src)
+                })();
+            //-->
+            </script>
+            	<link rel="stylesheet" href="/wp-content/assets/dist/css/core-510.min.css">
+
+<script src="//assets.adobedtm.com/6372cf21ef88ee60bc2977a4898dcb5c7945a212/satelliteLib-9cb2a39d627a819b6ca42ab76f651dbfa7b1a535.js"></script>
+<script src="//use.typekit.net/wth6gwt.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+
+	<meta itemprop="printPage" content="054">
+	</head>
+<body>
+	<nav role="navigation" class="mobile-nav">
+  <ul class="nav-links" >
+    <li class="tny-nav-news menu-item"><a href="http://www.newyorker.com/news">News</a></li>
+<li class="tny-nav-culture menu-item"><a href="http://www.newyorker.com/culture">Culture</a></li>
+<li class="tny-nav-books menu-item"><a href="http://www.newyorker.com/books">Books &#038; Fiction</a></li>
+<li class="tny-nav-tech menu-item"><a href="http://www.newyorker.com/tech">Science &#038; Tech</a></li>
+<li class="tny-nav-business menu-item"><a href="http://www.newyorker.com/business">Business</a></li>
+<li class="tny-nav-humor menu-item"><a href="http://www.newyorker.com/humor">Humor</a></li>
+<li class="tny-nav-magazine menu-item"><a href="http://www.newyorker.com/magazine">Magazine</a></li>
+<li class="tny-nav-archive menu-item"><a href="http://www.newyorker.com/archive">Archive</a></li>
+	<li id="subscribe">
+		<div id="AMS_NYR_MOBILE_GLOBAL_SUBNAV" class="ecom-placement"><a class="failsafe" title="Subscribe to The New Yorker" target="_blank" href="http://www.newyorker.com/go/mobilefailsafe">Subscribe</a>            <script type="text/javascript">
+            //<!--
+                if ( ( typeof pageAds != 'undefined') && ( CN.url.params( 'nojoy' ) != 1 ) ) {
+                                    (function(){
+                    if ( CN.checkDeviceView('mobile') ) {
+if ( typeof pageAds.AMS_NYR_MOBILE_GLOBAL_SUBNAV != 'undefined' ) {
+  jQuery( "#AMS_NYR_MOBILE_GLOBAL_SUBNAV" ).html( pageAds.AMS_NYR_MOBILE_GLOBAL_SUBNAV.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+} else { CN.debug.info( "AMS_NYR_MOBILE_GLOBAL_SUBNAV not in pageAds."); }
+}
+                    })();
+                                }
+            //-->
+            </script>
+            </div>		<div id="AMS_NYR_TABLET_GLOBAL_SUBNAV" class="ecom-placement"><a class="failsafe" title="Subscribe to The New Yorker" target="_blank" href="http://www.newyorker.com/go/mobilefailsafe">Subscribe</a>            <script type="text/javascript">
+            //<!--
+                if ( ( typeof pageAds != 'undefined') && ( CN.url.params( 'nojoy' ) != 1 ) ) {
+                                    (function(){
+                    if ( CN.checkDeviceView('tablet') ) {
+if ( typeof pageAds.AMS_NYR_TABLET_GLOBAL_SUBNAV != 'undefined' ) {
+  jQuery( "#AMS_NYR_TABLET_GLOBAL_SUBNAV" ).html( pageAds.AMS_NYR_TABLET_GLOBAL_SUBNAV.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+} else { CN.debug.info( "AMS_NYR_TABLET_GLOBAL_SUBNAV not in pageAds."); }
+}
+                    })();
+                                }
+            //-->
+            </script>
+            </div>    </li>
+    <li class="menu-item sub-nav mob-sign-in block-list user-ln-status-mobi"><a id="user-sign-in" class="mobi-sign-in-button" title="Sign in to your account">Sign In</a>  
+<span id="mobi-nav-link" class="link-sub-hamnav"> Link your subscription</span></li>
+	<li id="mobi-account-link-1" class="menu-item sub-nav hiddenMobiMenu"></li>
+	<li id="mobi-account-link-2" class="menu-item sub-nav hiddenMobiMenu"></li>
+  </ul>
+</nav>
+  <div class="page-container">
+    <div class="header-ad">
+
+  <div class="advertisement"><div id="header728x90_frame" class="displayAd displayAd728x90Js" data-cb-ad-id="header728x90_frame"></div><script type="text/javascript">if ( typeof CN !== "undefined" ) {
+if ( ! CN.isMobile && CN.dart ) {
+ CN.dart.call( "header", { sz: "728x90", kws: [ "top" ], collapse: true } );
+} 
+}</script></div><div class="advertisement"><div id="header_mobile320x50_frame" class="displayAd displayAd320x50Js" data-cb-ad-id="header_mobile320x50_frame"></div><script type="text/javascript">if ( typeof CN !== "undefined" ) {
+if ( CN.isMobile && CN.dart ) {
+ CN.dart.call( "header_mobile", { sz: ( "320x50" ), kws: [ "top" ], collapse: true } );
+} 
+}</script></div></div>
+
+<header id="hd" role="banner">
+	<div id="nav-container">
+		<div id="mobile-nav-container">
+			<div id="mobile-logo">
+				<a href="http://www.newyorker.com" title="The New Yorker"><h1>The New Yorker</h1></a>
+			</div>
+			<nav role="navigation" id="primary-nav">
+				<ul>
+					<li class="tny-nav-news menu-item"><a href="http://www.newyorker.com/news">News</a></li>
+<li class="tny-nav-culture menu-item"><a href="http://www.newyorker.com/culture">Culture</a></li>
+<li class="tny-nav-books menu-item"><a href="http://www.newyorker.com/books">Books &#038; Fiction</a></li>
+<li class="tny-nav-tech menu-item"><a href="http://www.newyorker.com/tech">Science &#038; Tech</a></li>
+<li class="tny-nav-business menu-item"><a href="http://www.newyorker.com/business">Business</a></li>
+<li class="tny-nav-humor menu-item"><a href="http://www.newyorker.com/humor">Humor</a></li>
+<li class="tny-nav-magazine menu-item"><a href="http://www.newyorker.com/magazine">Magazine</a></li>
+<li class="tny-nav-archive menu-item"><a href="http://www.newyorker.com/archive">Archive</a></li>
+					<li id="subscribe">
+					<div id="AMS_NYR_GLOBAL_NAVBAR_STICKY" class="ecom-placement"><a title="Subscribe to The New Yorker" target="_blank" href="http://www.newyorker.com/go/failsafe">Subscribe</a>            <script type="text/javascript">
+            //<!--
+                if ( ( typeof pageAds != 'undefined') && ( CN.url.params( 'nojoy' ) != 1 ) ) {
+                                    (function(){
+                    if ( CN.checkDeviceView('desktop') ) {
+if ( typeof pageAds.AMS_NYR_GLOBAL_NAVBAR_STICKY != 'undefined' ) {
+  jQuery( "#AMS_NYR_GLOBAL_NAVBAR_STICKY" ).html( pageAds.AMS_NYR_GLOBAL_NAVBAR_STICKY.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+  jQuery( "#AMS_NYR_GLOBAL_NAVBAR_STICKY" ).css( { visibility: 'visible' } );
+} else { CN.debug.info( "AMS_NYR_GLOBAL_NAVBAR_STICKY not in pageAds."); }
+}
+/* GLOBAL_NAVBAR_STICKY not in pageAds for tablet */
+/* GLOBAL_NAVBAR_STICKY not in pageAds for mobile */
+                    })();
+                                }
+            //-->
+            </script>
+            </div>						<div id="subscribe-rollover">
+							<div class="subscribe-links-wrapper">
+								<div id="AMS_NYR_GLOBAL_NAVBAR_ROLLOVER_STICKY" class="ecom-placement"><img rel="nofollow" class="ecom-responsive" data-src-desktop="/wp-content/assets/dist/img/cn-ecom/failsafe/NYR_NavBarRollover_Redesign_300x200.jpg" usemap="#GLOBAL_NAVBAR_ROLLOVER_MAP" width="300" height="200" alt="Subscribe to The New Yorker" /><map id="GLOBAL_NAVBAR_ROLLOVER_MAP" name="GLOBAL_NAVBAR_ROLLOVER_MAP"><area shape="rect" coords="0,249,75,286" href="https://w1.buysub.com/loc/NYR/ATGFailsafeGift" alt="Give a Gift" target="_blank" /><area shape="rect" coords="76,249,203,286" href="https://w1.buysub.com/loc/NYR/ATGFailsafeInt" alt="International Orders" target="_blank" /><area shape="rect" coords="0,0,399,249" href="http://www.newyorker.com/go/failsafe" alt="Subscribe to The New Yorker" target="_blank" /><area shape="rect" coords="203,249,399,290" href="http://www.newyorker.com/go/failsafe" alt="Order Now" target="_blank" /></map>            <script type="text/javascript">
+            //<!--
+                if ( ( typeof pageAds != 'undefined') && ( CN.url.params( 'nojoy' ) != 1 ) ) {
+                                    (function(){
+                    if ( CN.checkDeviceView('desktop') ) {
+if ( typeof pageAds.AMS_NYR_GLOBAL_NAVBAR_ROLLOVER_STICKY != 'undefined' ) {
+  jQuery( "#AMS_NYR_GLOBAL_NAVBAR_ROLLOVER_STICKY" ).html( pageAds.AMS_NYR_GLOBAL_NAVBAR_ROLLOVER_STICKY.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+} else { CN.debug.info( "AMS_NYR_GLOBAL_NAVBAR_ROLLOVER_STICKY not in pageAds."); }
+}
+/* GLOBAL_NAVBAR_ROLLOVER_STICKY not in pageAds for tablet */
+/* GLOBAL_NAVBAR_ROLLOVER_STICKY not in pageAds for mobile */
+                    })();
+                                }
+            //-->
+            </script>
+            </div>							</div>
+						</div>
+										</li>
+						<div id="navSearch" class="navSearch nav-search-container">
+	<form method="get" action="http://www.newyorker.com/search">
+		<input type="text" name="q" placeholder="Search The New Yorker" />
+		<input type="submit" value="Submit Search" />
+	</form>
+</div> 					<li class="tny-nav-search"><a href="http://www.newyorker.com/search" title="Search" id="search-toggle" class="search-toggle smallnav-search">Search</a></li>
+
+				</ul>
+			</nav>
+		</div>
+		<section class="logo-container">
+			<span title="" id="mobile-nav" class="icon-menu"></span>
+
+					<div class="subscribe-links">
+				<div id="AMS_NYR_GLOBAL_HEADER" class="ecom-placement"><a href="http://www.newyorker.com/go/failsafe" target="_blank"><img src="//subscribe.condenet.com/images_covers/cover_newyorker_80.jpg">            <script type="text/javascript">
+            //<!--
+                if ( ( typeof pageAds != 'undefined') && ( CN.url.params( 'nojoy' ) != 1 ) ) {
+                                    (function(){
+                    if ( CN.checkDeviceView('desktop') ) {
+if ( typeof pageAds.AMS_NYR_GLOBAL_HEADER != 'undefined' ) {
+  jQuery( "#AMS_NYR_GLOBAL_HEADER" ).html( pageAds.AMS_NYR_GLOBAL_HEADER.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+  jQuery( "#AMS_NYR_GLOBAL_HEADER" ).css( { visibility: 'visible' } );
+} else { CN.debug.info( "AMS_NYR_GLOBAL_HEADER not in pageAds."); }
+}
+/* GLOBAL_HEADER not in pageAds for tablet */
+/* GLOBAL_HEADER not in pageAds for mobile */
+                    })();
+                                }
+            //-->
+            </script>
+            </div><div id="AMS_NYR_GLOBAL_HEADERCALLOUT" class="ecom-placement"><img src="/wp-content/assets/dist/img/cn-ecom/failsafe/NYT_global_headercallout_150x110.png" usemap="#GLOBAL_HEADERCALLOUT_MAP" width="150" height="110" border="0"><map id="GLOBAL_HEADERCALLOUT_MAP" name="GLOBAL_HEADERCALLOUT_MAP"><area shape="rect" title="Subscribe Now" alt="Subscribe Now" coords="1,12,76,107" href="http://www.newyorker.com/go/failsafe" target="_blank" /><area shape="rect" title="Subscribe Now" alt="Subscribe Now" coords="78,12,147,40" href="http://www.newyorker.com/go/failsafe" target="_blank" /><area shape="rect" title="Renew your Subscription" alt="Renew your Subscription to the New Yorker magazine" coords="78,42,147,56" href="https://w1.buysub.com/pubs/N3/NYR/login.jsp?cds_page_id=135517&cds_mag_code=NYR" target="_blank" /><area shape="rect" title="Give a Gift Subscription" alt="Give a Subscription to The New Yorker as a Gift" coords="78,58,147,75" href="http://www.newyorker.com/go/giftfailsafe" target="_blank" /><area shape="rect" title="Subscribe Now" alt="Subscribe to The New Yorker outside the USA" coords="78,77,147,107" href="http://www.newyorker.com/go/internationalfailsafe" target="_blank" /></map>            <script type="text/javascript">
+            //<!--
+                if ( ( typeof pageAds != 'undefined') && ( CN.url.params( 'nojoy' ) != 1 ) ) {
+                                    (function(){
+                    if ( CN.checkDeviceView('desktop') ) {
+if ( typeof pageAds.AMS_NYR_GLOBAL_HEADERCALLOUT != 'undefined' ) {
+  jQuery( "#AMS_NYR_GLOBAL_HEADERCALLOUT" ).html( pageAds.AMS_NYR_GLOBAL_HEADERCALLOUT.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+  jQuery( "#AMS_NYR_GLOBAL_HEADERCALLOUT" ).css( { visibility: 'visible' } );
+} else { CN.debug.info( "AMS_NYR_GLOBAL_HEADERCALLOUT not in pageAds."); }
+}
+/* GLOBAL_HEADERCALLOUT not in pageAds for tablet */
+/* GLOBAL_HEADERCALLOUT not in pageAds for mobile */
+                    })();
+                                }
+            //-->
+            </script>
+            </div>			</div>
+		
+			<div id="logo">
+				<a href="http://www.newyorker.com" title="The New Yorker"><h1>The New Yorker</h1></a>
+			</div>
+			<div class="social-and-user-links">
+				<ul class="user-info">
+
+					<span id="sign_in" class="user-ln-status">
+					<li id="sign-in-list" class="demo-link big plain"><span data-type="sign-in" class="header-nav-link" id="sign-in" title="Sign in to your account"><span id="fallback-signin-link">Sign in</span></span></li>
+					<li class="demo-link big plain"></li>&nbsp;|&nbsp;
+					<li id="link-sub-nav" class="nav-menu">Link your subscription</li>
+					</span>
+
+					<li class="demo-link big plain"><span id="sign-out-wrapper" class="big plain"></span></li>
+				</ul>
+				<ul class="n-store">
+					<li><a href="http://www.condenaststore.com/~/new-yorker-store?utm_medium=referral&amp;utm_source=NewYorker&amp;utm_content=SHOP&amp;AID=1247905545" target="_blank" title="The New Yorker Store">The New Yorker Store</a></li>
+				</ul>
+				<ul class="social-menu">
+					<li class="facebook"><a href="https://facebook.com/newyorker" title="Facebook">F</a></li>
+					<li class="twitter"><a href="https://twitter.com/newyorker" title="Twitter">T</a></li>
+					<li class="google-plus"><a href="https://plus.google.com/+newyorker/posts" title="Google+">G+</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<nav role="navigation" id="primary-nav">
+			<ul>
+				<li class="tny-nav-news menu-item"><a href="http://www.newyorker.com/news">News</a></li>
+<li class="tny-nav-culture menu-item"><a href="http://www.newyorker.com/culture">Culture</a></li>
+<li class="tny-nav-books menu-item"><a href="http://www.newyorker.com/books">Books &#038; Fiction</a></li>
+<li class="tny-nav-tech menu-item"><a href="http://www.newyorker.com/tech">Science &#038; Tech</a></li>
+<li class="tny-nav-business menu-item"><a href="http://www.newyorker.com/business">Business</a></li>
+<li class="tny-nav-humor menu-item"><a href="http://www.newyorker.com/humor">Humor</a></li>
+<li class="tny-nav-magazine menu-item"><a href="http://www.newyorker.com/magazine">Magazine</a></li>
+<li class="tny-nav-archive menu-item"><a href="http://www.newyorker.com/archive">Archive</a></li>
+				<li id="subscribe">
+				<div id="AMS_NYR_GLOBAL_NAVBAR" class="ecom-placement"><a title="Subscribe to The New Yorker" target="_blank" href="http://www.newyorker.com/go/failsafe">Subscribe</a>            <script type="text/javascript">
+            //<!--
+                if ( ( typeof pageAds != 'undefined') && ( CN.url.params( 'nojoy' ) != 1 ) ) {
+                                    (function(){
+                    if ( CN.checkDeviceView('desktop') ) {
+if ( typeof pageAds.AMS_NYR_GLOBAL_NAVBAR != 'undefined' ) {
+  jQuery( "#AMS_NYR_GLOBAL_NAVBAR" ).html( pageAds.AMS_NYR_GLOBAL_NAVBAR.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+  jQuery( "#AMS_NYR_GLOBAL_NAVBAR" ).css( { visibility: 'visible' } );
+} else { CN.debug.info( "AMS_NYR_GLOBAL_NAVBAR not in pageAds."); }
+}
+/* GLOBAL_NAVBAR not in pageAds for tablet */
+/* GLOBAL_NAVBAR not in pageAds for mobile */
+                    })();
+                                }
+            //-->
+            </script>
+            </div>					<div id="subscribe-rollover">
+						<div class="subscribe-links-wrapper">
+							<div id="AMS_NYR_GLOBAL_NAVBAR_ROLLOVER" class="ecom-placement"><img rel="nofollow" class="ecom-responsive" data-src-desktop="/wp-content/assets/dist/img/cn-ecom/failsafe/NYR_NavBarRollover_Redesign_300x200.jpg" usemap="#GLOBAL_NAVBAR_ROLLOVER_MAP" width="300" height="200" alt="Subscribe to The New Yorker" /><map id="GLOBAL_NAVBAR_ROLLOVER_MAP" name="GLOBAL_NAVBAR_ROLLOVER_MAP"><area shape="rect" coords="0,249,75,286" href="https://w1.buysub.com/loc/NYR/ATGFailsafeGift" alt="Give a Gift" target="_blank" /><area shape="rect" coords="76,249,203,286" href="https://w1.buysub.com/loc/NYR/ATGFailsafeInt" alt="International Orders" target="_blank" /><area shape="rect" coords="0,0,399,249" href="http://www.newyorker.com/go/failsafe" alt="Subscribe to The New Yorker" target="_blank" /><area shape="rect" coords="203,249,399,290" href="http://www.newyorker.com/go/failsafe" alt="Order Now" target="_blank" /></map>            <script type="text/javascript">
+            //<!--
+                if ( ( typeof pageAds != 'undefined') && ( CN.url.params( 'nojoy' ) != 1 ) ) {
+                                    (function(){
+                    if ( CN.checkDeviceView('desktop') ) {
+if ( typeof pageAds.AMS_NYR_GLOBAL_NAVBAR_ROLLOVER != 'undefined' ) {
+  jQuery( "#AMS_NYR_GLOBAL_NAVBAR_ROLLOVER" ).html( pageAds.AMS_NYR_GLOBAL_NAVBAR_ROLLOVER.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+} else { CN.debug.info( "AMS_NYR_GLOBAL_NAVBAR_ROLLOVER not in pageAds."); }
+}
+/* GLOBAL_NAVBAR_ROLLOVER not in pageAds for tablet */
+/* GLOBAL_NAVBAR_ROLLOVER not in pageAds for mobile */
+                    })();
+                                }
+            //-->
+            </script>
+            </div>						</div>
+					</div>
+								</li>
+					<div id="navSearch" class="navSearch nav-search-container">
+	<form method="get" action="http://www.newyorker.com/search">
+		<input type="text" name="q" placeholder="Search The New Yorker" />
+		<input type="submit" value="Submit Search" />
+	</form>
+</div> 				<li class="tny-nav-search"><a href="http://www.newyorker.com/search" title="Search" id="search-toggle" class="search-toggle bignav-search">Search</a></li>
+
+			</ul>
+							<!-- hide hp cm floating unit -->
+			
+		</nav>
+	</div>
+
+
+</header>    <div class="content-wrapper">
+	<div id="main" role="main" class="single-post single-article">
+			<article itemscope itemtype="http://schema.org/Article" data-details='{"title":"A Woman\u2019s Place","author":[985111,"Ken Auletta","http:\/\/www.newyorker.com\/contributors\/ken-auletta"],"wordCount":8368,"paragraphCount":83}'>
+			<meta itemprop="url" content="http://www.newyorker.com/magazine/2011/07/11/a-womans-place-3" />
+			<meta itemprop="wordCount" content="8347" />
+			<header id="page-header">
+				<hgroup id="masthead">
+					<h4 class="rubric">
+						<a href="http://www.newyorker.com/magazine/annals-of-communications" title="Annals of Communications" itemprop="articleSection printSection">Annals of Communications</a>
+													<a href="http://www.newyorker.com/magazine/2011/07/11" title="Published in 2011-07-11" itemprop="printEdition">
+								<span class="magazine-date" itemprop="datePublished" content="2011-07-11">July 11, 2011 Issue</span>
+							</a>
+
+											</h4>
+					<h1 itemprop="name headline">A Woman’s Place</h1>
+					<h2>Can Sheryl Sandberg upend Silicon Valley&#8217;s male-dominated culture?</h2>
+					<h3>By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="http://www.newyorker.com/contributors/ken-auletta" title="Ken Auletta" rel="author" itemprop="name author">Ken Auletta</a></span></h3>
+					<!-- TODO: Add LinkedIn and Pinterest Support [#98] -->
+
+
+
+<nav class="social-buttons">
+	<ul>
+    <li class="fb-btn"><div class="fb-share-button" data-href="http://www.newyorker.com/magazine/2011/07/11/a-womans-place-3" data-type="button"></div></li>    <li class="twitter-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-url="http://www.newyorker.com/magazine/2011/07/11/a-womans-place-3" data-text="A Woman’s Place" data-via="newyorker" data-dnt="true"></a></li>    <li class="gplus-btn"><div class="g-plusone" data-annotation="none" data-size="medium" data-href="http://www.newyorker.com/magazine/2011/07/11/a-womans-place-3"></div></li>    	<li class="share-email"><a href="mailto:?subject=From%20newyorker.com: A%20Woman%E2%80%99s%20Place&body=In 2007, the founder of Facebook, Mark Zuckerberg, knew that he needed help. His social-network site was growing fast, but, at the age of twenty-three, he felt ill-equipped to run it. That December, he went to a Christmas party at the home of Dan Rosensweig, a Silicon Valley...%0A%0AContinue reading at http://www.newyorker.com/magazine/2011/07/11/a-womans-place-3" title="Email"><img src="/wp-content/assets/dist/img/icon/email.png"/></a></li>	<li class="share-print"><a href="javascript:window.print(); return false;"><img src="/wp-content/assets/dist/img/icon/printer.png"/></a></li>	</ul>
+</nav>
+				</hgroup>
+								<div class="issue-info">
+					<figure id="original-issue">
+						<a href="http://www.newyorker.com/magazine/2011/07/11" title="Published in 2011-07-11" itemprop="printEdition">
+							<img width="175" height="240" src="http://www.newyorker.com/wp-content/uploads/2011/07/2011_07_11-200.jpg" class="attachment-thumbnail wp-post-image" alt="2011_07_11" />						</a>
+					</figure>
+
+											<a href="http://www.newyorker.com/magazine/2011/07/11" title="View Table of Contents" class="more-link">Table of Contents <span>&raquo;</span></a>
+									</div>
+							</header>
+
+			<div class="module-container-rail non-solid-rail">
+				<div class="module-container-stacked post-content">
+					<div itemprop="articleBody" id="articleBody">
+
+						
+													<figure itemprop="" class="vertical attachment-medium portrait featured">
+								<a href="http://www.newyorker.com/wp-content/uploads/2011/07/110711_r21057_p886-320.jpg" title="A Woman’s Place" itemprop="thumbnail">
+									<img itemprop="image" src="http://www.newyorker.com/wp-content/uploads/2011/07/110711_r21057_p886-320.jpg" class="vertical attachment-medium" alt="Three years after Sandberg joined Facebook, the company is profitable. Photograph by Michele Asselin.">								</a>
+																<figcaption class="caption" itemprop="description">
+									<span class="caption">Three years after Sandberg joined Facebook, the company is profitable. Photograph by Michele Asselin.</span>																	</figcaption>
+															</figure>
+												
+					
+
+								
+
+						<p class="descender">In 2007, the founder of Facebook, Mark Zuckerberg, knew that he needed help. His social-network site was growing fast, but, at the age of twenty-three, he felt ill-equipped to run it. That December, he went to a Christmas party at the home of Dan Rosensweig, a Silicon Valley executive, and as he approached the house he saw someone who had been mentioned as a possible partner, Sheryl Sandberg, Google’s thirty-eight-year-old vice-president for global online sales and operations. Zuckerberg hadn’t called her before (why would someone who managed four thousand employees want to leave for a company that had barely any revenue?), but he went up and introduced himself. “We talked for probably an hour by the door,” Zuckerberg recalls.</p> <p>It turned out that Sandberg was ready for a new challenge. She had even talked with Donald Graham, the C.E.O. of the troubled Washington Post Company, about becoming a senior executive there. After the holidays, Zuckerberg e-mailed her, and they had the first of many dinners. They met at the Flea Street Café, around the corner from her home in Atherton, but then decided that they needed more privacy. His tiny Palo Alto apartment—which had almost no furniture—wouldn’t work. So for six weeks they met for dinner once or twice a week at Sandberg’s six-bedroom home. Sandberg, who goes to bed early and starts e-mailing at 5 <small>A</small>.<small>M</small>., often had to usher the nocturnal Zuckerberg out at midnight. “It was like dating,” says Dave Goldberg, Sandberg’s husband and the C.E.O. of the online company SurveyMonkey. Sandberg says they asked each other, “What do you believe? What do you care about? What’s the mission? It was very philosophical.” Social networking seemed to have better prospects than newspapers and she didn’t want to move to D.C., so she gently turned down Donald Graham.</p><div class="content-ad-wrapper first"><div class="advertisement"><div id="yrailTop300x250_frame" class="displayAd displayAd300x250Js" data-cb-ad-id="yrailTop300x250_frame"></div><div id="yrailTop320x50_frame" class="displayAd displayAd320x50Js" data-cb-ad-id="yrailTop300x250_frame"></div><script type="text/javascript">if ( typeof CN !== "undefined" ) { if ( CN.dart ) {  CN.dart.call( "yrailTop", { sz: ( CN.isMobile ? "320x50" : "300x250" ), kws: [ "top" ], collapse: true } ); } }</script></div></div> <p>That winter, Sandberg met with Eric Schmidt, who was then the C.E.O. of Google, about her desire to do something else at the company. He proposed promoting her to chief financial officer, a job she rejected because she didn’t think it gave her enough management responsibility. She asked about becoming the chief operating officer, but Google already had a troika making decisions—Schmidt and the two founders, Larry Page and Sergey Brin—and they didn’t want to further complicate things.</p> <p>By February of 2008, Zuckerberg had concluded that Sandberg would be a perfect fit. “There are people who are really good managers, people who can manage a big organization,” he says. “And then there are people who are very analytic or focussed on strategy. Those two types don’t usually tend to be in the same person. I would put myself much more in the latter camp.” Zuckerberg offered her the job of chief operating officer.</p> <p>People at Google tried to persuade her to stay, pointing out that Facebook’s chief financial officer would not report to her and that she would not be invited to join its board of directors. But eventually she took the job. Later, Sandberg would tell people that Facebook was a company driven by instinct and human relationships. The point, implicitly, was that Google was not. Sandberg seemed to have insulted some of her former colleagues. “She could have handled her departure more crisply,” a senior Google official says.</p> <p>Sandberg began work at Facebook in March, asking questions and listening. “She walked up to hundreds of people’s desks and interrupted them and said, ‘Hi, I’m Sheryl Sandberg,’ ” recalls Chris Cox, the vice-president of product, who sits next to Zuckerberg. “It was this overt gesture, like, ‘O.K., let your guard down. I’m not going to hole up with Mark. I’m going to try and have a relationship with you guys.’ ”</p> <p>Sandberg set up twice-a-week meetings with Zuckerberg, on Monday mornings and Friday afternoons. Today, her workstation, in a cavernous room, is a few feet away from his and the three other senior executives who share connected desks: Cox; Mike Schroepfer, the chief engineer; and Bret Taylor, the C.T.O. “She builds trust because she’s honest,” Cox says. “People can be intimidated by Mark. Sheryl just cuts right through that.”</p> <p>Zuckerberg says he’s grateful that Sandberg “handles things I don’t want to,” such as advertising strategy, hiring and firing, management, and dealing with political issues. “All that stuff that in other companies I might have to do. And she’s much better at that.”</p> <p>When Sandberg arrived at Facebook, she admits, some insiders had a “sense of trepidation” about her. They wondered whether she was too corporate, and she was stepping into a company—and a Silicon Valley culture—dominated by men. But her biggest worry, she says, was financial. “There was this open question: Could we make money, ever?” The engineers, as at Google a decade earlier or Twitter now, were primarily interested in building a really cool site; profits, they assumed, would follow. The company’s most obvious business—selling ads—seemed problematic. Users considered their Facebook pages to be private; they didn’t want an ad interrupting them as they chatted with friends. Some people wondered whether Facebook was just a meteor that, like Myspace, would crash. Others thought that Zuckerberg, who was painfully shy, lacked the management skills necessary for success.</p> <p>Sandberg quickly began trying to figure out how to make Facebook a business. Should the company rely on advertising? On e-commerce? Should it charge a subscription fee? She convened regular meetings with senior executives from 6 to 9 <small>P</small>.<small>M</small>. “I go around the room and ask people, ‘What do you think?’ ” Sandberg said. She welcomed debate, particularly on the issues of revenue and advertising. By late spring, everyone had agreed to rely on advertising, with the ads discreetly presented. By 2010, a company that was bleeding cash when Sandberg arrived had become profitable. Within three years, Facebook grew from a hundred and thirty employees to twenty-five hundred, and from seventy million worldwide users to nearly seven hundred million.</p><div class="content-ad-wrapper"><div class="advertisement"><div id="yrailBottom300x250_frame" class="displayAd displayAd300x250Js" data-cb-ad-id="yrailBottom300x250_frame"></div><div id="yrailBottom320x50_frame" class="displayAd displayAd320x50Js" data-cb-ad-id="yrailBottom300x250_frame"></div><script type="text/javascript">if ( typeof CN !== "undefined" ) { if ( CN.dart ) {  CN.dart.call( "yrailBottom", { sz: ( CN.isMobile ? "320x50" : "300x250" ), kws: [ "bottom" ], collapse: true } ); } }</script></div></div><a name="/2" class="tny-page"></a> <p class="descender">Sandberg was born in 1969, in Washington, D.C. Her family moved to North Miami Beach when she was two. Her mother, Adele, gave up studying for a Ph.D. and teaching college French in order to raise Sheryl and her two younger siblings, David and Michelle. Her father, Joel, is an ophthalmologist. After a rabbi at their synagogue asked for volunteers, Adele and Joel helped found the South Florida Conference on Soviet Jewry. “Adele did most of the work,” Joel says, but he was the president. Their home became an unofficial headquarters for Soviet Jews wanting to escape anti-Semitism, and a temporary hotel for many who had finally won the right to emigrate. On weekends, Adele says, “we schlepped the kids to rallies.”</p> <p>The Sandberg children attended public school, and Sheryl was always at the top of her class. “In public schools, for a girl to be smart was not good for your social life,” Adele says. She describes her daughter as “a mother’s helper,” aiding David in tying his shoes and Michelle in taking a bath. The only time she ever rebelled, Adele recalls, was when she was in junior high school. “One day she came home from school and said, ‘Mom, we have a problem. You’re not ready to let me grow up.’ ”</p> <p>“I said, ‘You’re right.’ The minute she said it, I knew she was right.”</p> <p>Sandberg went to Harvard, where she majored in economics and took Lawrence Summers’s class in Public Sector Economics. She did not speak or raise her hand, but she received the highest midterm and final grades. Summers volunteered to serve as her thesis adviser, on how economic inequality contributes to spousal abuse, and he promoted a group called Women in Economics and Government that she co-founded. Nonetheless, Sandberg claims that she was not a feminist. The goal of the group, she says, was just “to get more women to major in government and economics.” Her management skills were impressive. “When most students start to organize things, things fall between the cracks,” Summers says. “When Sheryl hosted an economics-association reception, every nametag was right, the food was right, the schedule was right.”</p> <p>Sandberg graduated first in the economics department. At her Phi Beta Kappa induction, there were separate ceremonies for men and women. At hers, a woman gave a speech called “Feeling Like a Fraud.” During the talk, Sandberg looked around the room and saw people nodding. “I thought it was the best speech I’d ever heard,” she recalls. “I felt like that my whole life.” At every stage of her time in school, Sandberg thought, I really fooled them. There was “zero chance,” she concluded, that the men in the other room felt the same.</p> <p>Sandberg says she eventually realized that women, unlike men, encountered tradeoffs between success and likability. The women had internalized self-doubt as a form of self-defense: people don’t like women who boast about their achievements. The solution, she began to think, lay with the women. She blamed them more for their insecurities than she blamed men for their insensitivity or their sexism.</p> <p>In January of 1991, Summers became the chief economist at the World Bank, and that spring he recruited Sandberg as a research assistant. At the time, the World Bank was deciding whether to bail out Russia. Someone asked, Summers recalls, whether a bailout in 1917 could have saved the country from seventy years of Communism. He posed the question to Sandberg. “What most students would have done,” he says, “is gone off to the library, skimmed some books on Russian history, and said they weren’t sure it was possible. What Sheryl did was call Richard Pipes,” who was a leading historian of the Russian Revolution and a professor at Harvard. “She engaged him for one hour and took detailed notes.” The next day, she reported back to Summers.</p> <p>Sandberg worked for Summers for about two years. She then attended Harvard Business School, took a job at McKinsey &#038; Company, and was briefly married to a Washington businessman named Brian Kraff. In 1995, Summers became the Deputy Treasury Secretary under Robert Rubin, in the Clinton Administration, and Summers asked Sandberg to come to Washington to be his chief of staff. “Sheryl always believed that if there were thirty things on her to-do list at the beginning of the day, there would be thirty check marks at the end of the day,” Summers says. “If I was making a mistake, she told me. She was totally loyal, but totally in my face.”</p> <p>At the Treasury Department, Summers’s office had a large conference table, with a seating area behind it. “The more senior officials, usually men, would sit at the table,” Marne Levine, who worked with Sandberg, says. “The more junior, several of whom were women, would sit in the seating area. Sheryl was always at the table,” beckoning all the junior staffers to move, exclaiming, “We’ll make room.” When Summers travelled by limousine or airplane, Sandberg gave up her seat next to him to make sure that other officials and staffers got time with the boss. “A key part of what Sheryl does in her life is helping people advance, to be seen and to be heard,” David Fischer, who was her deputy at Treasury, and has worked for her at Google and now at Facebook, says.</p> <p>When Summers advanced to Treasury Secretary, in 1999, Sandberg became, at twenty-nine, his chief of staff. After the Democrats lost the 2000 election, she decided to move to Silicon Valley to join the technology boom. Google pursued her, and she thought the company was alluring. Like government, to her it “had a higher mission, which is to make the world’s information freely available.” She knew, though, that Google didn’t have a business plan. It was a private company, barely three years old, with no steady revenue stream. Eric Schmidt called her every week. “Don’t be an idiot,” he said. “This is a rocket ship. Get on it.”</p><a name="/3" class="tny-page"></a> <p>Sandberg joined the company in late 2001. Her title was business-unit general manager, even though there was no business unit. At the time, Google had four people working on AdWords, a program for selling the small text ads that appear next to related search results. Sandberg volunteered to oversee sales and operations for the project. Before long, AdWords was making money. Soon, Sandberg was working on AdSense, which placed advertisements on external Web sites, with Google taking a slice of the revenues. In 2002, when AOL made Google its search engine, in return for which Google agreed to pay at least a hundred and fifty million dollars annually, Sandberg helped oversee the arrangement. Given that Google had only ten million dollars in the bank, the company was taking a huge risk. Marissa Mayer, who was the first female engineer to be hired by the company, says, “She got the AOL deal running. She was tough and she was fearless.”</p> <p>Sandberg says that she had an “Aha!” moment in 2005, when Pattie Sellers, an editor at large at <em>Fortune, </em>invited her to the magazine’s Most Powerful Women Summit, an annual gathering of several hundred women. Sandberg attended, but she thought the title was embarrassing, and refused to list it on the Web-based calendar that she shared with her colleagues. She says that Sellers later chided her for being timid. Sellers recalls, “I told her that most of the women on the Most Powerful Women list—Carly Fiorina, Meg Whitman, Oprah, and many others—had a hangup about the word when we started ranking them in 1998, but they’ve come around, and she should, too. What’s wrong with owning your power?”</p> <p>Sandberg fell in love with Dave Goldberg, her longtime best friend, and the two were married in 2004. Their first child was born in 2005. She struggled with her own work-life balance, and developed a sense that too many women at Google and elsewhere were dropping out of the workforce after becoming mothers, in part because they had not pushed to get a job they loved before they began having children. In her six years at Google, she had hired scores of male and female executives, but, she says, “the men were getting ahead. The men were banging down the door for new assignments, promotions, the next thing to do, the next thing that stretches them. And the women—not all, most—you talked them into it. ‘Don’t you want to do this?’ ”</p> <p class="descender">Among the hottest new companies— Facebook, Twitter, Zynga, Groupon, Foursquare—none, as Kara Swisher reported in the blog All Things Digital, has a female director on its board. PayPal has no women on its five-member board; Apple has one of seven; Amazon one of eight; Google two of nine. When I asked Mark Zuckerberg why his five-member board has no women, his voice, which is normally loud, lowered to a whisper: “We have a very small board.” He went on, “I’m going to find people who are helpful, and I don’t particularly care what gender they are or what company they are. I’m not filling the board with check boxes.” (He recently added a sixth member: another man.) The venture-capital firms that support new companies have even sharper imbalances; Sequoia Partners lists eighteen partners on its Web site, none of them women.</p> <p>One reason there are few female executives in Silicon Valley is that few women become engineers. In the United States, less than twenty per cent of engineering and computer-science majors are women. Girls are said to think that software and video games and computer programming are for guys. “Growing up,” Mark Zuckerberg’s older sister Randi told me, “my brother got video games and I got dolls.” For girls, there is a stigma attached to engineering, Marissa Mayer, who is now a vice-president at Google, says. “They don’t want to become the stereotype of all-night coders, hackers with pasty skin.” Michelle Hutton, who is the president of the international Computer Science Teachers Association, says, “Computer science is seen as a very masculine thing”—just “as girls don’t want to be garbage collectors because that’s seen as a boys’ thing.”</p> <p>Hollywood also deserves some of the blame. Several female computer-science majors at Stanford pointed to the depiction of women in films like “The Social Network,” where the boys code and the girls dance around in their underwear. Sandberg says that the impact of popular culture struck her when her son was playing a Star Wars game. “When I grow up, I want to live in space and be a Star Wars person as a job,” he told his mother.</p> <p>“I’d like to come, too,” she responded, “because I always want to live near you.”</p> <p>“You can’t come,” he said. “I’ve already invited my sister, and there’s only one girl in space.”</p> <p>At first, Sandberg laughed. And then it dawned on her that “there is only one woman in these movies.”</p> <p>There are also, of course, still remnants of “Mad Men”-era sexism. Dina Kaplan, the co-founder of Blip.tv, says that when she met with angel investors to raise funds she dressed nicely, and in a meeting with a potential funder he told her, “Here’s what we do, Dina. We’re going to spend half the meeting with you pitching me, and half the meeting with me hitting on you!”</p> <p>“I felt nauseous,” she says. “I tried to laugh it off. I asked, ‘Of all the things you’re working on, what most excites you?’ He said, ‘Seeing you naked tonight.’ ”</p> <p>In subsequent meetings with potential investors, Kaplan dressed sedately and wore glasses. Partly in response to that incident, in recent years she has regularly co-hosted breakfasts for female entrepreneurs in New York.</p> <p>Sandberg and many other women in Silicon Valley think the problems women encounter are usually more subtle than blatant sexism. “I think it is largely innocent,” says Rachel Sklar, a New York writer and entrepreneur who has actively protested against digital conferences that invite too few women to speak. Sklar co-founded a women’s organization called Change the Ratio, and she tries to make sure there are more women onstage. “You can’t know about what you don’t see,” she says.</p><a name="/4" class="tny-page"></a> <p>Some suggest that women are also to blame. Michael Arrington, the editor of TechCrunch and the organizer of the TechCrunch Disrupt conferences, defended venture capitalists and Silicon Valley males in a blog post last summer. “The problem is that not enough women want to become entrepreneurs,” he wrote. Referring to Sklar, and her campaign, Arrington added, “Yeah ok, whatever, Rachel. Every damn time we have a conference we fret over how we can find women to fill speaking slots. We ask our friends and contacts for suggestions. We beg women to come and speak. . . . And you know what? A lot of the time they say no. Because they are literally hounded to speak at every single tech event in the world because they are all trying so hard to find qualified women to speak at their conference.”</p> <p class="descender">Last December, Sandberg spoke at the <small>TED</small>Women conference. Her black hair framed her angular face and reached her shoulders. She looked a bit like the actress Patricia Neal when she was young. Sandberg began by celebrating the progress women have made: “For any of us in this room today, let’s start out by admitting we’re lucky. We don’t live in the world our mothers lived in, our grandmothers lived in, where career choices for women were so limited.” More women than men graduate from college and graduate school, and receive doctoral degrees. Yet, she went on, “women are not making it to the top. A hundred and ninety heads of state; nine are women. Of all the people in parliament in the world, thirteen per cent are women. In the corporate sector, women at the top—C-level jobs, board seats—tops out at fifteen, sixteen per cent.”</p> <p>To solve this problem, she proposed doing three things. First, she said, women need to “sit at the table.” She said that fifty-seven per cent of men entering the workforce negotiate their salaries, but that only seven per cent of women do likewise. Second, at home, “make sure your partner is a real partner.” On average, she said, women do two-thirds of the housework and three-fourths of the child care. And, finally, “don’t leave before you leave.” When a woman starts thinking of having children, “she doesn’t raise her hand anymore. . . . She starts leaning back.” In other words, if women don’t get the job they want before they take a break to have children, they often don’t come back.</p> <p>Before speaking at<small> TED</small>, Sandberg sent a draft of her speech to Gloria Steinem, who is a friend. Steinem described it to me as “terrific,” a “summary of what we both want—a world where half of homes are run by men, especially raising children, and half our institutions are run by women, especially armies.”</p> <p>By June, Sandberg’s<small> TED</small> talk had been viewed more than six hundred and fifty thousand times. Patricia Mitchell, the president and C.E.O. of the Paley Center for Media, who organized<small> TED</small>Women, is someone whom Sandberg describes as a mentor. She recalls a women’s conference that she recently attended in Ghana, where, “almost to a person, the women had seen Sheryl’s talk.” To Mitchell, Sandberg’s talk has had such broad appeal because she wasn’t complaining; she was saying, “Let’s look inside.”</p> <p>Some critics, however, note that Sandberg is not exactly a typical working mother. She has a nanny at home and a staff at work. Google made her very rich; Facebook may make her a billionaire. If she and her husband are travelling or are stuck at their desks, there is someone else to feed their kids and read to them. A more sweeping critique is that it’s not enough for women to look inside. Marie Wilson, the founder of the White House Project, which promotes women for leadership positions, attended Sandberg’s<small> TED</small> speech and knows and admires her. But, Wilson says, “underneath Sheryl’s assessment is the belief that this is a meritocracy. It’s not.” Courage and confidence alone will not compensate when male leaders don’t give women opportunities. She adds, “Women are not dropping out to have a child. They’re dropping out because they have no opportunity.” And she doesn’t agree that new attitudes can close the gender gap. Wilson points to Norway, which requires that all public companies have at least forty per cent of each gender on their boards.</p> <p>Sylvia Ann Hewlett, who directs the Gender and Policy program at Columbia, read Sandberg’s speech and took exception. “I think Sandberg totally underestimates the challenge that women face,” she says. Hewlett agrees with Sandberg that women must be more assertive, but she believes Sandberg simply doesn’t understand that there is a “last glass ceiling,” created not by male sexists but by “the lack of sponsorship,” senior executives who persistently advocate for someone to move up. A third of upper-middle managers are now women—“the marzipan layer”—she notes. This number has increased in recent years, but the women aren’t rising to the top. She believes that Sandberg is insufficiently aware of this problem because she has benefitted from sponsors: “Sandberg, to her great credit, had Larry Summers. She has had sponsors in her life who were very powerful, who went to bat for her. That’s very rare for a woman.”</p> <p>Hewlett’s research shows that two-thirds of senior male executives are fearful of sponsoring a junior female executive, and half of these women are fearful of accepting such sponsorship. In a <em>Harvard Business Review</em> research paper published last year, Hewlett and a co-author explain why:</p> <blockquote><p>Sponsorship, which often involves an older, married male spending one-on-one time, often off site and after hours, with a younger, unmarried female, can look like an affair; and the greater the power disparity between the male and the female, the more intense the speculation becomes that the relationship is more than professional. If the woman is subsequently promoted, her achievement will be undermined by office gossip that she earned it illicitly. If some critics say that Sandberg believes too strongly in the power of women asserting themselves, there are friends who ask whether she herself may not always be aggressive enough. Mitchell, for example, wonders why she hasn’t insisted on becoming a member of Facebook’s all-male board. When I asked about this topic, Sandberg said, “Our board is tiny. It’s not an issue for my life.” When told of Sandberg’s answer, Mitchell affectionately said, “I’m going to have to sit with her and revisit this.” </p> </blockquote><a name="/5" class="tny-page"></a> <p>One day this spring, I spoke with Sandberg about these issues. She had rushed to the office from her son’s school wearing sweatpants, a zippered sweatshirt, and white sneakers, with her hair jammed into a ponytail. She sat under a framed photograph of her holding her baby and pulled out a Baggie containing sugar-snap peas, which she began munching as we talked. She said, “The No. 1 impediment to women succeeding in the workforce is now in the home. . . . Most people assume that women are responsible for households and child care. Most couples operate that way—not all. That fundamental assumption holds women back.” The second impediment is guilt, she said. “I feel guilty working because of my kids. I do. I feel guilty. In my<small> TED</small> talk, I’m talking to myself, too. I’m not just talking to other people. I have faced every one of those things myself.” Later, I asked her directly about Hewlett’s critique, and she simply said, “I feel really grateful to the people who encouraged me and helped me develop. Nobody can succeed on their own.”</p> <p class="descender">Soon after Sandberg joined Facebook, in March of 2008, Lori Goler, a Harvard Business School graduate who had worked at eBay, called. The two knew and thought well of each other. Goler asked what problems she could solve; Sandberg hired her as the head of recruiting.</p> <p>Within five months, Sandberg asked Goler to oversee human resources at Facebook. Goler wavered, saying that she didn’t think she was qualified. “No man would ever turn down more responsibility,” Sandberg admonished her. Goler then said yes.</p> <p>“When Sheryl joined, we were missing the layer right below the senior-executive team,” Randi Zuckerberg said. She joined the company six years ago and is now its marketing manager. With Goler’s help, this layer now includes many women.</p> <p>Early this spring, Sandberg gathered twelve female Facebook executives in a bare, white-walled conference room to review the agenda for the company’s Women’s Leadership Day, which was scheduled for the following week. Each of them was expected to lead sessions encouraging all the female executives there to step up “into leadership” roles. “What I believe, and that doesn’t mean everyone believes it, is that there are still institutional problems and we need more flexibility in all of this stuff,” Sandberg told them. “But much too much of the conversation is on blaming others, and not enough is on taking responsibility ourselves.”</p> <p>Yes, she continued, we could swap anecdotes about sexist acts. But doing so diverts women from self-improvement. She opposes all forms of affirmative action for women. “If you don’t believe there is a glass ceiling, there is no need,” she told me. She doesn’t even like voluntary efforts to keep positions open for qualified women. There’s a cost, she explained, in lost time, and a cost for women, because “people will think she’s not the best person and that job was held open for a woman.”</p> <p>Earlier, Sandberg had described a talk that she gave at the Harvard Business School, after which all the women asked personal questions, such as how to find a mentor, and the men asked business questions, like how Facebook would deal with Google’s growing share of the cell-phone market. Telling this story, Sandberg was critical of what she considered to be “girl questions.” Now Priti Youssef Choksi, Facebook’s director of business development, asked whether it was “a girl question” to pose concerns about, say, maternity leave.</p> <p>Sandberg and the female executives in the room said that they thought it risked being a “girl question” if it was asked in a “whiny” way. Choksi pressed the point, describing a female employee who had recently talked to her about taking a short maternity leave because she feared that she would lose her job if she stayed out longer. When Sandberg came to the company, she changed the policies to allow men and women four months, but this employee wanted to take only one. “As much a girl question as that might be,” Choksi said, “the logistics of being away for X amount of time is something women are afraid of, and I’d rather tackle it head on.”</p><a name="/6" class="tny-page"></a> <p>“I agree,” Sandberg said, retreating from the much sterner position she had taken moments ago.</p> <p>“It’s an incredibly personal decision how much time to take off, and I don’t think we should be prescribing one way or the other,” Cipora Herman, the vice-president of finance, said. No one disagreed. Sandberg then said that the goal of Women’s Leadership Day “is to share and to get people to talk.” And doing that, naturally, means allowing some things that might, at first, sound like “girl questions.”</p> <p>Many of the women in the room were among the rotating cast of two hundred whom Sandberg invites to her home each month for a buffet dinner and to listen to and question guests, who have included Steinem, the playwright Eve Ensler, Microsoft C.E.O. Steve Ballmer, the educator Geoffrey Canada, and Mayor Michael Bloomberg.</p> <p>Pat Mitchell, who has spoken at one of the dinners, praised the group, but says that it’s composed of an educated élite that is unaware of the struggles women elsewhere face: “They had their heads down and had no idea what it is like for other women outside their world.” Nevertheless, Mitchell extolls the dinners and their networking value. Women need the equivalent of “the old-boys network,” and in her view “Sheryl is putting together a new-girls network inside Silicon Valley.”</p> <p>The women in the network seem to agree with Sandberg that sexism in America is mainly a problem that women can fix by being more assertive. Mayer, for example, notes that women have more opportunities in Silicon Valley because there’s no entrenched hierarchy there. Speaking of Silicon Valley, Goler says, sexism is not “a defining characteristic of the workplace today.” She also believes that to raise the issue is debilitating: “For me, that conversation is a complete waste of time. If I spend one hour talking about how I’m excluded, that’s an hour I am not spending solving Facebook’s problems.” Facebook’s director of platform and marketing, Katie Mitic, says that today there is no “glass ceiling but a sunroof.”</p> <p>Choksi thinks that being a woman actually is “a huge advantage.” She goes on, “My former boss used to call me ‘the velvet hammer.’ What I do is negotiate for a living. I negotiate for everything, whether it’s mangoes in Mumbai or a deal. I love it.” Because there are few women in business development, as she looks across the table at the men on the other side, she says, “I feel like I disarm them a lot.” When I asked Kara Swisher if she’s treated differently by men, she smiled and responded, “They’re scared of me.”</p> <p class="descender">Deborah Gruenfeld, a professor of Leadership and Organizational Behavior, and a co-director of the Executive Program for Women Leaders at Stanford, is acutely aware of the challenges confronting female executives. Women who take leadership roles, research has shown, are “violating the feminine stereotype of being ‘nurturing’ and ‘supportive’ and ‘helping other people succeed.’ ” This leads to a tradeoff. “Women who are perceived as highly competent are evaluated as less warm and less nice.” Data, in other words, back up what Sandberg first began thinking about at her Harvard graduation ceremony.</p> <p>Sandberg seems to transcend these tradeoffs, an ability that Gruenfeld attributes to her modesty and honesty. She neither flaunts nor hides her ambition, and she talks about her guilt at not being home more; she takes command in meetings, yet she’s comfortable describing Mark Zuckerberg as “my boss,” and as “the Steve Jobs of his generation.” She is emblematic, Gruenfeld thinks, of a post-feminist woman who believes that “when you blame someone else for keeping you back, you are accepting your powerlessness.”</p> <p>“She could go be the C.E.O. of any company that she wanted to,” Mark Zuckerberg says. “But I think the fact that she really wants to get her hands dirty and work, and doesn’t need to be the front person all the time, is the amazing thing about her. It’s that low-ego element, where you can help the people around you and not need to be the face of all the stuff.” Sandberg serves on President Obama’s advisory council on jobs, as well as on the boards of Disney and Starbucks. Howard Schultz, the C.E.O. of Starbucks, says, “Most people you meet who are highly qualified and accomplished tend to want to tell you all the things they’ve done and how smart they are. Or they want to impress you. Sheryl is not like that at all.”</p> <p>That “low-ego element” can be seen as falsely ingratiating, though, as when Sandberg sweetly insists that she has not coaxed Google executives to join Facebook, but it is also what makes her so persuasive. David Fischer, Facebook’s vice-president of advertising and global operations, recounts a performance review of a female executive that he and Sandberg conducted. Fischer says that he told the executive numerous times that she wasn’t assertive enough, but he felt that she wasn’t hearing him. “Sheryl jumped in after I finished and said, ‘I don’t know what you’re feeling, but I can imagine what it might be. Let me tell you about when I was younger.’ ” She recounted her own insecurities, and, he says, “I just watched this woman go from sitting there listening to me but just hearing a bunch of business-type words. . . . It just opened up the whole conversation.” Sandberg is quick to share with associates the pact she has made with her husband: if one of them is travelling, the other will be home for dinner each night with their six-year-old son and three-year-old daughter; weekends are exclusively family time. “We have a fifty-fifty marriage,” Sandberg says.</p> <p>Molly Graham, who worked with Sandberg at Google and followed her to Facebook, where she now helps produce mobile Facebook products, says, “With Sheryl, everything is personal. There isn’t a separation with this thing we do at work and everything else.” Elliot Schrage, Facebook’s vice-president of global communications and public policy, and a close confidant who came over from Google, says, “The people who are her friends at work are her friends outside work.”</p><a name="/7" class="tny-page"></a> <p>Conventional wisdom holds that getting so close to employees can compromise objectivity and the ability to make tough management decisions. “I dramatically disagree with that,” Sandberg says. “I believe in bringing your whole self to work. We are who we are. When you try to have this division between your personal self and your professional self, what you really are is stiff. . . . That doesn’t mean people have to tell me everything about their personal lives. But I’m pretty sharing of mine.” Being open with your employees, she believes, means that nothing is a surprise to them—even if you fire them.</p> <p class="descender">People often wonder if Facebook will go public soon. It’s projected that it will generate pre-tax profits of about a billion dollars this year. An I.P.O. now, analysts say, would be worth eighty to a hundred billion dollars.</p> <p>Although there was a flurry of stories in mid-June, reporting that Sandberg had been meeting with investment bankers in preparation for taking Facebook public, two senior executives at the company flatly deny this. The speculative fever annoys Facebook’s senior executives, because they see it as a ploy by Wall Street to drum up more business. “What the banks are doing is driving up hope and hype,” one of the executives complains. “It puts pressure on other companies to go public, because a big Facebook I.P.O. eats up capital. It puts pressure on Facebook because we want to end these conversations, because it’s a distraction internally.” Sandberg does, however, acknowledge that investors and employees want to make a profit, and that an I.P.O. is inevitable. “We will go public at some point,” she says. At the end of this year, Facebook is expected to have five hundred shareholders, which will trigger S.E.C. regulations that require a company to disclose its finances to the public. It is likely that the company will go public soon after that, in the first six months of next year.</p> <p>In the meantime, Facebook is quietly trying to integrate itself into every form of media. Chris Cox, the engineer who oversees Facebook’s product development, says of television, “You go home at night and there’s nine hundred and ninety-nine channels. . . . The real problem in that world is: What should I watch?” Perhaps you could read <em>TV Guide</em>, perhaps you could type “best Thursday sitcom” into Google, or perhaps you could scan some newspaper reviews. Cox wants you to be able to see on your screen what your Facebook friends are watching. “You should turn it on and it should say, ‘Fourteen of your friends liked “Entourage” this week. Click to watch.’ ” The idea is for Facebook to “tune in to everything around you,” he said. “We call it social design.”</p> <p>To put it another way, Facebook is trying to come up with an approach to organizing the Internet that’s entirely different from what Google has done. Google’s answer to “best Thursday sitcom” has long been determined by algorithms that analyze billions of Web pages—the so-called wisdom of crowds. Facebook will try to guide you through the preferences of your friends.</p> <p>In late June, Google launched a rival social network called Google+. This surely doesn’t please Facebook, and the rising tension is apparent in discussions with executives there. They disparage Google’s failed attempts to enter social networking so far, and they do not hide their annoyance at Google’s use of some of Facebook’s data in its search results. (There is some irony in hearing ex-Googlers, who once cheered that company’s quest to make all the world’s information available, complain about their former employer’s efforts to make Facebook’s information available.) Facebook’s executives are also worried about Google’s market power. With Google’s Android now the world’s foremost operating system for mobile phones, could Google one day demand that phone manufacturers remove Facebook’s app?</p> <p>What Facebook’s executives didn’t discuss at meetings I attended this spring was the contract they had recently signed with Burson-Marsteller, a top international public-relations agency, to quietly promote stories of Google’s alleged perfidies to reporters. When a blogger, in May, blew the whistle on Facebook’s sly campaign, the company issued an embarrassed disclaimer: “No ‘smear’ campaign was authorized or intended.” Burson-Marsteller offered a lame mea culpa, denouncing its own employees and saying that the secretive contract with Facebook “should have been declined.” Sandberg admits, “We made a mistake.”</p> <p>The animosity between the two companies is mutual. Google is clearly miffed that Facebook has become the new tech darling and a magnet for young engineers. It’s also infuriated by the number of employees who have been lured away by Facebook: Sandberg, Schrage, Fischer, Choksi, and many others. Although both companies deny keeping a scorecard, an analysis on LinkedIn indicates that there are approximately four times as many Googlers now at Facebook as there are former Facebook employees now at Google.</p> <p>“Sheryl is persona non grata at Google,” an executive there says, adding, “She steals executives.” It’s one thing to recruit scarce engineers, a senior Google official says. But Sandberg “used Google as a fertile ground to snap up anybody she possibly could. She claimed that they were people who came to her. It went both ways.” Another Google official thinks she did not play fair in hiring engineers, because she took “advantage of inside information” about how Google operates. For example, he says, at Google it takes approximately three weeks from the time a candidate is put forward until the candidate is approved by a committee of senior executives and is then confirmed or rejected by Larry Page, the company’s co-founder. To jump ahead, he says Sandberg imposed a two-week hiring cycle at Facebook. Sandberg denies this, and says that two weeks is “too slow.” In any case, she adds, Facebook’s recruiting timetable isn’t aimed at Google, or any other company; the idea is just to do things quickly.</p><a name="/8" class="tny-page"></a> <p>Facebook’s most complicated problem is privacy. No other company collects so much personal information—from who your friends are to where you work and the kinds of photographs you take. Advertisers want this information, but users don’t necessarily want them to have it. Sandberg insists that Facebook “gives no individual data to advertisers,” saying, “We lead in privacy. The core of our product is that you share what you want.” But, at a Q. &#038; A. session that Sandberg conducted in April with employees at Facebook’s New York offices, on Madison Avenue, she deferred to Schrage, who acknowledged that there is tension “between giving people control over their identity online and helping them share information and express opinions.” That conflict plays out every time Facebook angers some of its users by altering its privacy settings, as it often does—almost always to make more information public. In June, Facebook was criticized for using facial-recognition software, which meant that people could be automatically identified in photographs. A familiar cycle followed: users complained, Facebook apologized, and the program was modified but not eliminated.</p> <p>Privacy questions are also at the center of another vexing issue for Facebook: the way children use the site. “I genuinely believe Sheryl Sandberg is an intelligent, thoughtful person and a good mom,” says James P. Steyer, a Stanford professor and the C.E.O. and founder of Common Sense Media, a national organization devoted to protecting children from the sometimes unhealthy impact of media. “But the Facebook platform is enabling a variety of different forms of social interaction that can have enormous consequences for the social, emotional, and cognitive development of kids.”</p> <p>Technically, you’re not supposed to join Facebook unless you’re thirteen, but it’s easy to input a fake age, and Steyer says that seven and a half million “emotionally underdeveloped” preteens are on the site. They then share all forms of information, some of which may later tarnish their reputations. “To talk about this goes against Facebook’s business model,” he says. Sandberg counters that Facebook works with child-safety groups, and that “research shows that Facebook can promote social development—users feel more social connection, stronger friendships, and greater community engagement.”</p> <p>Another of Sandberg’s challenges is how to enter China, where the government has a particular interest in knowing who your friends are and what they say. “If you want to be connected to the whole world, you can’t be without connecting China,” Sandberg says. Both Sandberg and Zuckerberg extoll a recent article in <em>Foreign Affairs</em> by Clay Shirky, in which he argued that social media creates “a public sphere” that can help authoritarian countries transition to democracy. One Facebook executive said he knows that dissidents who go on the site might be identified by the government and punished. But as long as dissidents aren’t misled by Facebook and know that imprisonment is a risk—and he believes they do—it’s a choice they should be allowed to make. “Thomas Paine knew what he was doing,” he says. Not to engage China, another senior executive says, is to duplicate the U.S. embargo of Cuba, which “didn’t work.”</p> <p>Questions about Facebook’s future inevitably raise questions about Sandberg’s. Surely she is on track to one day become a C.E.O., if that’s what she wants. Some people speak of a potential career in politics. Asked what she can imagine doing next, she responds, “I’m actually quite happy with Mark and the company. I always tell people if you try to connect the dots of your career, if you mess it up you’re going to wind up on a very limited path. If I decided what I was going to do in college—when there was no Internet, no Google, no Facebook . . . I don’t want to make that mistake. The reason I don’t have a plan is because if I have a plan I’m limited to today’s options.”</p> <p class="descender">In May, Sandberg was most concerned with the futures of the graduating class at Barnard College. She had agreed to be the commencement speaker, following Hillary Clinton in 2009, and Meryl Streep in 2010. The seniors who made up this audience for her post-feminist message were very different from the professional women who heard her <small>TED</small> speech. “This probably meant more to me than any speech I’ve ever given, because it’s the beginning of their lives,” Sandberg told me on graduation day. For four years, these women were cosseted at Barnard. “Now they are going to start making choices. What I want to do is tell them to lean in.” She would have to do so with a voice turned husky by laryngitis. Owing to rain, the ceremony was moved from the grass at Grant’s Tomb, perched above the Hudson River, to a cramped gymnasium at Columbia.</p> <p>As “Pomp and Circumstance” played, the seniors, in their powder-blue gowns and square caps, took seats in rows of folding chairs facing an elevated platform where Sandberg; Debora Spar, the president of Barnard; and other luminaries sat. Sandberg smiled and cheered when Lara Avsar, the president of the Student Government Association, said that what defines Barnard is that “as Barnard women, we will never quit,” and then described how Barnard had changed her from a girl from Alabama who once imagined she’d now be hunting for a husband and impatient to have his children to a woman who doesn’t “have to apologize for speaking my mind.”</p><a name="/9" class="tny-page"></a> <p>After hugging Spar, Sandberg approached the lectern. A colorful crimson sash was wrapped around the neck of her dark gown. Her speech, delivered without notes but with the assistance of a professional coach who worked with Sandberg on honing her delivery, made familiar points about inadequate female representation in leadership positions, about the importance of a life partner to share the responsibilities of the home, about “leaning in” and “do not leave before you leave.” Remember this, she said, “You are awesome.”</p> <p>She described a poster on the wall at Facebook: “What would you do if you weren’t afraid?” She said that it echoed something the writer Anna Quindlen once said, which was that “she majored in unafraid” at Barnard. Sandberg went on, “Don’t let your fears overwhelm your desire. Let the barriers you face—and there will be barriers—be external, not internal. Fortune does favor the bold. I promise that you will never know what you’re capable of unless you try. You’re going to walk off this stage today and you’re going to start your adult life. Start out by aiming high. . . . Go home tonight and ask yourselves, What would I do if I weren’t afraid? And then go do it! Congratulations.”</p> <p>The graduates and their families responded with a rousing and prolonged ovation. “I want to be as awesome as she said,” Dina Georgas exclaimed. Liza Eliano said, “I like the image of leaning in.” During the next half hour, the students lined up to the right of the stage as their names were called. Although they had just cheered a feminist speaker and acted “unafraid” of the adult world they were about to enter, they would not be handed their diplomas this day. When Barnard was established, in the late nineteenth century, Columbia’s male trustees insisted that the women receive Columbia diplomas. So they would attend a second graduation at Columbia the next day to receive their degrees. Without diplomas to awkwardly set aside, many seniors skipped the handshake and chose to embrace President Spar, and then Sandberg.</p> <p>“It was really striking to me how they connected to her on a personal level,” Spar said afterward. “They could really see themselves in her, rather than what you usually see at commencements, which is twenty-two-year-olds looking up to sixty-two-year-olds but not making any connection.” These young women are tired of hearing about “balance and juggling and finding passion,” which often means thinking about balancing home and career. “This generation, like every generation does, they want to do something different from what their parents did. Sheryl’s message is very powerful. It’s a simple one,” which she defined as: “Don’t worry so much about balance. Work hard, stick with what you like, and don’t let go.”</p> <p>Of all the seniors who paused onstage, the one Sandberg recalled most vividly was the graduate who said, “You’re the baddest bitch.” Sandberg added, “I hope she meant it as a compliment. She gave me a big hug.” <span class="dingbat">♦</span></p> 						<!-- TODO: Add LinkedIn and Pinterest Support [#98] -->
+
+
+
+<nav class="social-buttons">
+	<ul>
+    <li class="fb-btn"><div class="fb-share-button" data-href="http://www.newyorker.com/magazine/2011/07/11/a-womans-place-3" data-type="button"></div></li>    <li class="twitter-btn"><a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-url="http://www.newyorker.com/magazine/2011/07/11/a-womans-place-3" data-text="A Woman’s Place" data-via="newyorker" data-dnt="true"></a></li>    <li class="gplus-btn"><div class="g-plusone" data-annotation="none" data-size="medium" data-href="http://www.newyorker.com/magazine/2011/07/11/a-womans-place-3"></div></li>    	<li class="share-email"><a href="mailto:?subject=From%20newyorker.com: A%20Woman%E2%80%99s%20Place&body=In 2007, the founder of Facebook, Mark Zuckerberg, knew that he needed help. His social-network site was growing fast, but, at the age of twenty-three, he felt ill-equipped to run it. That December, he went to a Christmas party at the home of Dan Rosensweig, a Silicon Valley...%0A%0AContinue reading at http://www.newyorker.com/magazine/2011/07/11/a-womans-place-3" title="Email"><img src="/wp-content/assets/dist/img/icon/email.png"/></a></li>	<li class="share-print"><a href="javascript:window.print(); return false;"><img src="/wp-content/assets/dist/img/icon/printer.png"/></a></li>	</ul>
+</nav>
+					</div>
+						<section class="article-contributors">
+						
+<section class="author-details" itemscope itemtype="http://schema.org/Person">
+		<article>
+						<figure>
+			  <a rel="me" itemprop="url" class="author-thumb" href="http://www.newyorker.com/contributors/ken-auletta" title="Ken Auletta"><img width="320" height="320" src="http://www.newyorker.com/wp-content/uploads/2014/07/auletta.png" class="attachment-medium wp-post-image" alt="ken auletta" itemprop="thumbnail" /></a>
+			</figure>
+						<div class="author-masthead">	
+				<p>Ken Auletta began contributing to <em>The New Yorker</em> in 1977 and has written the Annals of Communications column since 1993. </p>
+			</div>
+			<ul class="author-links">
+					<li>
+						<a class="light-button" href="http://www.newyorker.com/contributors/ken-auletta" title="Ken Auletta">Bio</a>
+					</li>
+					<li>
+						<a class="light-button" href="http://www.newyorker.com/contributors/ken-auletta/all" title="Ken Auletta">All work</a>
+					</li>
+										<li class="twitter">
+						<a rel="me" itemprop="url" href="https://twitter.com/kenauletta"><i></i></a>
+					</li>
+																			</ul>
+		</article>
+</section>
+<div class="author-ampersand">&amp;</div>
+						</section>
+												<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+							<meta itemprop="name" content="The New Yorker">
+						</span>
+					</div>
+					<aside class="container-rail">
+
+    <section id="newsletter-signup">
+    <h5 class="popping">Sign up to get the best of The New Yorker delivered to your inbox every day</h5>
+    	<div class="newsletterContainer">
+	      <form action="http://www.newyorker.com/wp-admin/admin-ajax.php" method="post" name="newsletter-form" id="newsletter-form" novalidate="novalidate">
+	      <input type="hidden" name="action" value="newsletter_subscribe">
+	      <input type="hidden" name="formName" value="newsletter-form">
+	      <input type="hidden" name="url" value="http://www.newyorker.com"><input type="hidden" name="source_code" value="footer-unit">    <fieldset>
+	          <legend><h5>Sign up for newsletters</h5></legend>
+	          <label for="newsletter-email" class="replace">E-mail address</label>
+	          <input name="email" id="newsletter-email" type="email" placeholder="E-mail address" required="" class="">
+	          <button type="submit" name="submit-newsletter" id="submit-newsletter-content">Sign up</button>
+	      </fieldset>
+	      <div class="form_response"></div>        
+	          <ul>
+	              <li>
+
+	                  <fieldset class="row newsletter checkbox">
+	                      <input type="checkbox" id="newsletterId_217" name="newsletterId[]" value="217""">
+	                      <label for="newsletterId_217">
+	                      </label>
+	                  </fieldset>
+	              </li>
+	              <li>
+	                  <fieldset class="row newsletter checkbox">
+	                      <input type="checkbox" id="newsletterId_442" name="newsletterId[]" value="442">
+	                      <label for="newsletterId_442">
+	                      </label>
+	                  </fieldset>
+	              </li>
+	              <li>
+	                  <fieldset class="row newsletter checkbox">
+	                      <input type="checkbox" id="newsletterId_5122" name="newsletterId[]" value="5122" checked="checked">
+	                      <label for="newsletterId_5122">
+	                  </fieldset>
+	              <li>
+	                  <fieldset class="row newsletter checkbox">
+	                      <input type="checkbox" id="newsletterId_5129" name="newsletterId[]" value="5129">
+	                      <label for="newsletterId_5129">
+	                      </label>
+	                  </fieldset>
+	              </li>
+	          </ul>
+	      </form>
+	    <span id="newsletter-message"></span>
+      </div>
+  </section>
+  <div class="recirculation">
+    
+      <div id="related-stories-polar"></div>  <!-- TODO add optional sponsor -->
+  
+<div id="most-popular" class="module most-popular">
+  <h5 class="small">Most Popular</h5>
+  <ol>
+    <li>
+      <p><a href="//www.newyorker.com/tech/elements/jennifer-lawrence-leak?src=mp">The Jennifer Lawrence Leak: Who Is at Risk Now?</a></p>
+      <h3>By Jay Caspian Kang</h3>
+</li>
+    <li>
+      <p><a href="//www.newyorker.com/humor/borowitz-report/furious-obama-says-calls-putin-going-straight-voicemail?src=mp">Furious Obama Says Calls to Putin Going Straight to Voice Mail</a></p>
+      <h3>By Andy Borowitz</h3>
+</li>
+    <li>
+      <p><a href="//www.newyorker.com/magazine/2014/09/08/masked-avengers?src=mp">The Masked Avengers</a></p>
+      <h3>By David Kushner</h3>
+</li>
+    <li>
+      <p><a href="//www.newyorker.com/cartoons/daily-cartoon/daily-cartoon-tuesday-september-2nd-groot-phone-hacking?src=mp">Daily Cartoon: Tuesday, September 2nd</a></p>
+      <h3>By Benjamin Schwartz</h3>
+</li>
+    <li>
+      <p><a href="//www.newyorker.com/culture/cultural-comment/book-got-teaching-right?src=mp">The Book That Got Teaching Right</a></p>
+      <h3>By Samuel G. Freedman</h3>
+</li>
+  </ol>
+</div>
+<!-- cached -->
+<div id="most-popular-polar-text"></div><div id="most-popular-polar-logo"></div><div class="post-sponsor clearfix"></div>
+
+  <!-- End TODO of optional sponsor -->
+  </div>
+</aside>
+
+		</article>
+		<section class="module">
+	<div id="you-might-like" class="big-titled-curation" style="display: none;">
+		<h5 class="popping">You Might Like</h5>
+		<div id="yml-list" class="stories"></div>
+	</div>
+</section>
+	</div>
+	<section id="promotions" class="container">
+	<ul>
+		<li>
+			<h5><a href="/jigsaw">Jigsaw<span>&nbsp;</span>Puzzle</a></h5>
+			<figure>
+				<a href="/jigsaw"><img src="/wp-content/assets/img/promotions/jigsaw.png" alt="Jigsaw Puzzle"/></a>
+			</figure>
+		</li>
+		<li id="links-strongbox">
+			<h5><a href="https://projects.newyorker.com/strongbox/">Strongbox<span>&nbsp;</span>Submissions</a></h5>
+			<figure>
+				<a href="https://projects.newyorker.com/strongbox/"><img src="/wp-content/assets/img/promotions/strongbox.png" alt="Strongbox" /></a>
+			</figure>
+		</li>
+		<li>
+			<h5><a href="https://itunes.apple.com/us/app/goings-on-the-new-yorker/id452137683?mt=8" taregt="_blank">Goings On<span>&nbsp;</span>App</a></h5>
+			<figure>
+				<a href="https://itunes.apple.com/us/app/goings-on-the-new-yorker/id452137683?mt=8" target="_blank"><img src="/wp-content/assets/img/promotions/tny-goat.jpg" alt="Goings On App" /></a>
+			</figure>
+		</li>
+		<li>
+			<h5><a href="/about/us">About<span>&nbsp;</span>Us</a></h5>
+			<figure>
+				<a href="/about/us"><img src="/wp-content/assets/img/promotions/tnr-digital.png" alt="About Us" /></a>
+			</figure>
+		</li>
+		<li>
+			<h5><a href="http://contest.newyorker.com/">Caption<span>&nbsp;</span>Contest</a></h5>
+			<figure>
+				<a href="http://contest.newyorker.com/"><img src="/wp-content/assets/img/promotions/caption-contest.png" alt="Caption Contest" /></a>
+			</figure>
+		</li>
+		<li class="festival">
+			<h5><a href="/festival/">The New Yorker<span>&nbsp;</span>Festival</a></h5>
+			<figure>
+				<a href="/festival/"><img src="/wp-content/assets/img/promotions/tny-FestIcon.jpg" alt="The New Yorker Festival" /></a>
+			</figure>
+		</li>
+	</ul>
+</section>
+
+<div class="entry-unrelated">
+	<div id="modal-strongbox">
+		<a href="#" id="links-strongbox-close" title="Close">&#10005;</a>
+		<div id="sb-header" role="banner">
+	
+			<h1 class="sb-main">
+				<span>The New Yorker</span> Strongbox
+				<svg width="135" height="135" xmlns="http://www.w3.org/2000/svg">
+					<defs><linearGradient spreadMethod="pad" y2="0.07813" x2="0.88281" y1="0.91797" x1="0.07422" id="svg_14"><stop offset="0" stop-color="#000000"/><stop offset="1" stop-color="#ffffff"/></linearGradient></defs>
+					<g>
+					<path d="m6.74918,27.25192l61.0069,-21.50198l60.75703,21.50198l-0.25,81.50894l-60.75703,20.502l-61.2569,-21.502l0.5,-80.50894z" stroke-width="8" stroke="#ffffff" fill="#000000"/>
+					<path d="m68.00609,49.00389l56.506,-19.50197l0,76.25794l-57.006,19.25301l0.5,-76.00897z" stroke-width="0" stroke="#000000" fill="url(#svg_14)"/>
+					<ellipse ry="4.875" rx="4.876" cy="95.634" cx="23.376" stroke-width="0" stroke="#000000" fill="#f70707"/>
+					</g>
+				</svg>
+			</h1><br/>
+	
+			<div class="sb-contain">
+				<p>Strongbox is a new way for you to share information, messages, and files with our writers and editors and is designed to provide you with a greater degree of anonymity and security than afforded by conventional e-mail.</p>
+				<p>To help protect your anonymity, Strongbox is only accessible using the Tor network (<strong>https://www.torproject.org</strong>). When using Strongbox, <a href="http://www.newyorker.com" title="The New Yorker"><em>The New Yorker</em></a> will not record your I.P. address or information about your browser, computer, or operating system, nor will we embed third-party content or deliver cookies to your browser.</p>
+				<p>You can read our full privacy promise <a href="#strongbox-privacy-promise" alt="privacy promise">here</a>.</p>
+				<p><em>The New Yorker</em> Strongbox is powered by <a href="https://pressfreedomfoundation.org/securedrop" title="SecureDrop" id="sb-securedrop-logo">SecureDrop</a>.</p>
+			</div>
+		</div>
+		<div id="sb-main" role="main">
+			<div id="sb-points">
+				<div class="sb-contain">
+					<h2>To get to Strongbox and begin using it to contact writers and editors at <em>The New Yorker</em>, just follow <strong>these&nbsp;two&nbsp;steps</strong>:</h2>
+					<ol>
+						<li><i>1</i>Download and install software to access the Tor Project: <strong>https://www.torproject.org</strong>. This should only take a few minutes. </li>
+						<li><i>2</i>Once you have access to the Tor network, go to Strongbox at <strong>http://strngbxhwyuu37a3.onion</strong>, where you will find further instructions on how to submit files and messages to <em>The New Yorker</em>.</li>
+					</ol>
+					<p class="sb-instructions">You will be assigned a randomly generated and unique code name as part of the process. If a writer or editor at <a href="http://www.newyorker.com" title="The New Yorker"><em>The New Yorker</em></a> wants to contact you about the information you have submitted, he or she will leave a message for you in Strongbox. These messages are the only way we will be able to reach you, and this message can only be accessed using your code name.</p>
+				</div>
+			</div>
+			<div id="sb-privacy">
+				<div class="sb-contain">
+					<h3 id="strongbox-privacy-promise">Our privacy promise</h3>
+					<p><a name="strongbox-privacy-promise" href="http://www.newyorker.com" title="The New Yorker"><em>The New Yorker's</em></a> Strongbox is designed to let you communicate with our writers and editors with greater anonymity and security than afforded by conventional e-mail.</p>
+					<p>When you visit or use our public Strongbox server at <i>http://strngbxhwyuu37a3.onion</i>, <a href="http://www.newyorker.com" title="The New Yorker"><em>The New Yorker</em></a> and our parent company, Cond&#233; Nast, will not record your I.P. address or information about your browser, computer, or operating system, nor will we embed third-party content or deliver cookies to your browser.</p>
+					<p>Strongbox servers are under the physical control of <a href="http://www.newyorker.com" title="The New Yorker"><em>The New Yorker</em></a> and Cond&#233; Nast.</p>
+					<p>Strongbox is designed to be accessed only through a &ldquo;hidden service&rdquo; on the Tor anonymity network, which is set up to conceal both your online and physical location from us and to offer full end-to-end encryption for your communications with us. This provides a higher level of security and anonymity in your communication with us than afforded by standard e-mail or unencrypted Web forms. Strongbox does not provide perfect security. Among other risks, if you share your unique code name, or if your computer is compromised, any activities, including communications through Strongbox, should be considered compromised as well.</p>
+					<p>The system is provided on an &ldquo;as is&rdquo; basis, with no warranties or representations, and any use of it is at the user's own risk.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<aside id="footer-ad">
+			<!-- Need to have mobile ad sizes reevaluated -->
+		  <div class="advertisement"><div id="footerMobile320x51_frame" class="displayAd displayAd320x51Js" data-cb-ad-id="footerMobile320x51_frame"></div><script type="text/javascript">if ( typeof CN !== "undefined" ) {
+if ( CN.isMobile && CN.dart ) {
+ CN.dart.call( "footerMobile", { sz: ( "320x51" ), kws: [ "bottom" ], collapse: true } );
+} 
+}</script></div>		  <div class="advertisement"><div id="footer728x90_frame" class="displayAd displayAd728x90Js" data-cb-ad-id="footer728x90_frame"></div><script type="text/javascript">if ( typeof CN !== "undefined" ) {
+if ( ! CN.isMobile && CN.dart ) {
+ CN.dart.call( "footer", { sz: "728x90", kws: [ "bottom" ], collapse: true } );
+} 
+}</script></div>		</aside>
+
+		<div id="digital-editions"><div id="AMS_NYR_GLOBAL_FOOTER" class="ecom-placement"><a href="http://www.newyorker.com/go/failsafe" data-mobile="http://www.newyorker.com/go/mobilefailsafe" target="_blank"><img class="ecom-responsive" data-src-desktop="/wp-content/assets/dist/img/cn-ecom/failsafe/NYR_Footer_Desktop_1020x180.jpg" data-src-tablet="/wp-content/assets/dist/img/cn-ecom/failsafe/NYR_Footer_TabletRedesign_728x128.jpg" data-src-mobile="/wp-content/assets/dist/img/cn-ecom/failsafe/NYR_Mobile_300x50.NavyTote.jpg" alt="Subscribe to The New Yorker" /></a>            <script type="text/javascript">
+            //<!--
+                if ( ( typeof pageAds != 'undefined') && ( CN.url.params( 'nojoy' ) != 1 ) ) {
+                                    (function(){
+                    if ( CN.checkDeviceView('desktop') ) {
+if ( typeof pageAds.AMS_NYR_GLOBAL_FOOTER != 'undefined' ) {
+  jQuery( "#AMS_NYR_GLOBAL_FOOTER" ).html( pageAds.AMS_NYR_GLOBAL_FOOTER.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+  jQuery( "#AMS_NYR_GLOBAL_FOOTER" ).css( { visibility: 'visible' } );
+} else { CN.debug.info( "AMS_NYR_GLOBAL_FOOTER not in pageAds."); }
+}
+if ( CN.checkDeviceView('tablet') ) {
+if ( typeof pageAds.AMS_NYR_GLOBAL_FOOTER != 'undefined' ) {
+  jQuery( "#AMS_NYR_GLOBAL_FOOTER" ).html( pageAds.AMS_NYR_GLOBAL_FOOTER.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+  jQuery( "#AMS_NYR_GLOBAL_FOOTER" ).css( { visibility: 'visible' } );
+} else { CN.debug.info( "AMS_NYR_GLOBAL_FOOTER not in pageAds."); }
+}
+if ( CN.checkDeviceView('mobile') ) {
+if ( typeof pageAds.AMS_NYR_GLOBAL_FOOTER != 'undefined' ) {
+  jQuery( "#AMS_NYR_GLOBAL_FOOTER" ).html( pageAds.AMS_NYR_GLOBAL_FOOTER.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+  jQuery( "#AMS_NYR_GLOBAL_FOOTER" ).css( { visibility: 'visible' } );
+} else { CN.debug.info( "AMS_NYR_GLOBAL_FOOTER not in pageAds."); }
+}
+                    })();
+                                }
+            //-->
+            </script>
+            </div></div>
+		<footer>
+			<nav id="tny-footer">
+			  			  <ul>
+			    			    <li><a href="" title=""></a></li>
+			    				<li><a href="/about/us/?src=tny-footer" title="About Us">About Us</a></li>
+				<li><a href="/about/faq/?src=tny-footer" title="Frequently Asked Questions">FAQ</a></li>
+				<li><a href="http://w1.buysub.com/servlet/CSGateway?cds_mag_code=NYR" title="Customer Care">Customer Care</a></li>
+				<li><a href="http://www.condenaststore.com/-se/cartoonbank.htm?utm_medium=referral&amp;utm_source=NewYorker&amp;utm_content=tny-footer&amp;AID=1247905545" title="">Cartoon Bank</a></li>
+				<li><a href="http://www.newyorkeronthetown.com/?src=tny-footer" title="">On The Town</a></li>
+				<li><a href="/about/feeds/?src=tny-footer" title="">RSS</a></li>
+				<li><a href="/about/contact/?src=tny-footer" title="">Contact Us</a></li>
+			  </ul>
+			  			  <ul>
+		    	<li><a href="http://www.condenaststore.com/-se/newyorkerstore.htm?utm_medium=referral&amp;utm_source=NewYorker&amp;utm_content=tny-footer&amp;AID=1247905545" title="">The New Yorker Store</a></li>
+			    <li><a href="http://www.condenast.com/careers?src=tny-footer" title="">Careers</a></li>
+			    <li><a href="http://www.condenast.com/reprints-permissions?src=tny-footer" title="">Reprints/Permissions</a></li>
+			    <li><a href="/about/press/?src=tny-footer" title="Press Center">Press</a></li>
+			    <li><a href="http://www.condenast.com/brands/new-yorker/media-kit/?src=tny-footer" title="">The New Yorker Media Kit</a></li>
+			  </ul>
+			</nav>
+			<div id="conde-footer">
+  <div class="global-footer-logo">
+    <a href="http://www.condenast.com?src=tny-footer" title="Cond&eacute; Nast Digital">Cond&eacute; Nast Digital</a>
+  </div>
+  <div class="global-footer-subscriptions">
+      <form action="/" name="sub_dropmenus" id="sub_dropmenus">
+        <select onchange="(this.options[this.selectedIndex].value) ? window.open(this.options[this.selectedIndex].value) : null" name="sub_list" id="sub_list" size="1">
+            <option selected="selected" value="">Subscribe to a magazine</option>
+            <option value="">
+            </option><option value="http://www.magazinestoresubscriptions.com?src=univdropdown">View All Titles</option>
+            <option value="">- - - - - - - - - - - - - -</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_Allure?src=tny-footer">Allure</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_ArchitecturalDigest?src=tny-footer">Architectural Digest</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_BonAppetite?src=tny-footer">Bon App&eacute;tit</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_Brides?src=tny-footer">Brides</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_CondeNastTraveler?src=tny-footer">Cond&eacute; Nast Traveler</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_Details?src=tny-footer">Details</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_Glamour?src=tny-footer">Glamour</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_GolfDigest?src=tny-footer">Golf Digest</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_GolfWorld?src=tny-footer">Golf World</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_GQ?src=tny-footer">GQ</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_Lucky?src=tny-footer">Lucky</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_Self?src=tny-footer">Self</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_TeenVogue?src=tny-footer">Teen Vogue</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_NewYorker?src=tny-footer">The New Yorker</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_VanityFair?src=tny-footer">Vanity Fair</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_Vogue?src=tny-footer">Vogue</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_W?src=tny-footer">W</option>
+            <option value="https://www.magazinestoresubscriptions.com/webapp/wcs/stores/servlet/Subscriptions_Wired?src=tny-footer">Wired</option>
+          </select>
+      </form>
+  </div>
+  <div class="global-footer-sister-sites">
+      <form action="/" name="mag_dropmenus" id="mag_dropmenus">
+          <select onchange="(this.options[this.selectedIndex].value) ? window.open(this.options[this.selectedIndex].value) : null" name="mag_list" id="mag_list">
+            <option selected="selected" value="">Other Cond&eacute; Nast sites</option>
+            <option value="">- - - - - - - - - - - - - -</option>
+            <option value="http://www.allure.com?src=tny-footer">Allure</option>
+            <option value="http://www.architecturaldigest.com?src=tny-footer">Architectural Digest</option>
+            <option value="http://www.arstechnica.com?src=tny-footer">Ars Technica</option>
+            <option value="http://www.bonappetit.com?src=tny-footer">Bon App&eacute;tit</option>
+            <option value="http://www.brides.com?src=tny-footer">Brides.com</option>
+            <option value="http://www.concierge.com/cntraveler?src=tny-footer">Cond&eacute; Nast Traveler</option>
+            <option value="http://www.concierge.com?src=tny-footer">Concierge</option>
+            <option value="http://www.details.com?src=tny-footer">Details</option>
+            <option value="http://www.epicurious.com?src=tny-footer">Epicurious</option>
+            <option value="http://www.glamour.com?src=tny-footer">Glamour</option>
+            <option value="http://www.golfdigest.com?src=tny-footer">Golf Digest</option>
+            <option value="http://www.golfworld.com?src=tny-footer">Golf World</option>
+            <option value="http://www.gq.com?src=tny-footer">GQ</option>
+            <option value="http://www.hotelchatter.com?src=tny-footer">Hotel Chatter</option>
+            <option value="http://www.jaunted.com?src=tny-footer">Jaunted</option>
+            <option value="http://www.luckymag.com?src=tny-footer">Lucky</option>
+            <option value="http://www.nutritiondata.com?src=tny-footer">NutritionData</option>
+            <option value="http://www.reddit.com?src=tny-footer">Reddit</option>
+            <option value="http://thescene.com?src=tny-footer">The Scene</option>
+            <option value="http://www.self.com?src=tny-footer">Self</option>
+            <option value="http://www.style.com?src=tny-footer">Style</option>
+            <option value="http://www.teenvogue.com?src=tny-footer">Teen Vogue</option>
+            <option value="http://www.vanityfair.com?src=tny-footer">Vanity Fair</option>
+            <option value="http://www.vegaschatter.com?src=tny-footer">Vegas Chatter</option>
+            <option value="http://www.vogue.com?src=tny-footer">Vogue</option>
+            <option value="http://www.wmagazine.com?src=tny-footer">W</option>
+            <option value="http://www.wired.com?src=tny-footer">Wired</option>
+          </select>
+      </form>
+  </div>
+  <div id="copy">
+  	<p><small>Use of this site constitutes acceptance of our <a href="http://www.condenast.com/privacy-policy">User Agreement</a> (effective January 1, 2014) and <a href="http://www.condenast.com/privacy-policy#privacypolicy">Privacy Policy</a> (effective January 1, 2014). <a href="http://www.condenast.com/privacy-policy#privacypolicy-california">Your California Privacy Rights</a> The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Cond&eacute; Nast. <a href="http://www.condenast.com/privacy-policy#privacypolicy-optout">Ad Choices&nbsp;<img width="10" height="10" src="/wp-content/assets/dist/img/icon/ad_choices_arrow.png" alt="Ad Choices"></a></small></p>
+  </div>
+</div>
+		</footer>
+	</div> <!-- end .content-wrapper -->
+</div> <!-- end .page-container -->
+            <script type="text/javascript">
+            //<!--
+                CN.config.set({
+                    title        : document.title,
+                                    facebook     : {pageid: "9258148868"},
+                                    isiFrame     : true
+                });
+            //-->
+            </script>
+            
+<!-- START Parse.ly Include: Standard -->
+<div id="parsely-root" style="display: none">
+  <div id="parsely-cfg" data-parsely-site="newyorker.com"></div>
+</div>
+<script>
+(function(s, p, d) {
+  var h=d.location.protocol, i=p+"-"+s,
+      e=d.getElementById(i), r=d.getElementById(p+"-root"),
+      u=h==="https:"?"d1z2jf7jlzjs58.cloudfront.net"
+      :"static."+p+".com";
+  if (e) return;
+  e = d.createElement(s); e.id = i; e.async = true;
+  e.src = h+"//"+u+"/p.js"; r.appendChild(e);
+})("script", "parsely", document);
+</script>
+<!-- END Parse.ly Include: Standard -->
+            <script type="text/javascript" class="omniture_block">
+            //<!--
+                CN.stats.omniture.init();
+                CN.stats.omniture.setStatus( CN.site.httpStatusCode );
+
+            var mobile_view = jQuery.devices.getDeviceView();
+CN.stats.omniture.setMobileView( mobile_view );
+
+                if ( CN.cookie.get('amg_user_partner') != '' ) {
+                    CN.stats.omniture.setCustomProp( "52", CN.cookie.get('amg_user_partner') );
+                }
+
+                CN.stats.omniture.setContentType( "Article" );
+
+                if ( CN.stats.omniture.setReferrer !== undefined && document.referrer.match( CN.site.tld ) ) {
+                    var referrer = document.referrer;
+                    referrer=referrer.split("?")[0];
+                    CN.stats.omniture.setReferrer( referrer );
+                }
+
+                if ( CN.stats.omniture.setKeywords !== undefined ) {
+                    CN.stats.omniture.setKeywords( "adele-and-joel-sandberg-tag|bret-taylor-tag|chris-cox-tag|dan-rosensweig-tag|dave-goldberg-tag|david-fischer-tag|donald-graham-tag|eric-schmidt-tag|facebook-tag|female-executives-tag|fleat-street-cafe-tag|google-tag|harvard-university-tag|lawrence-summers-tag|marissa-mayer-tag|mark-zuckerberg-tag|marne-levine-tag|mike-schroepfer-tag|patricia-sellers-tag|richard-pipes-tag|sheryl-sandberg-tag|silicon-valley-tag|social-networking-sites-tag-2|south-florida-conference-on-soviet-jewry-tag|surveymonkey-tag|treasury-department-tag|women-in-economics-and-government-tag|world-bank-tag|article|annals-of-communications" );
+                }
+
+            CN.stats.omniture.setAuthorName( "dphiffer" );
+CN.stats.omniture.setContentId( "1487111" );
+if ( CN.url.params('event') == 'loginsuccess' ) {
+ CN.stats.omniture.trackAction( 'login', document, { events: 'event21' } );
+}
+if(CN.isMobile){ CN.stats.omniture.setCustomProp('51', 'mobile') };
+CN.stats.omniture.setCustomProp('62', '2011-07-04 00:00:00');
+CN.stats.omniture.setCustomProp('61', '27759h|1156d');
+(function(){ var page_count = (document.querySelectorAll(".tny-page").length + 1); CN.stats.omniture.setCustomProp( "60", page_count ); })();
+(function($){var currentDate,currentMonth,visitedCount,storedVisitedArticles,visitedArticles=[],uniquePathName,isCurrentNew,lastVisitedMonth,$mainEl;currentDate=new Date;currentMonth=currentDate.getMonth();lastVisitedMonth=localStorage.getItem("lastVisitMonth")||-1;if(currentMonth==lastVisitedMonth){visitedCount=localStorage.getItem("visitedCount")||0;storedVisitedArticles=localStorage.getItem("visitedArticles");if(storedVisitedArticles!==null){storedVisitedArticles=storedVisitedArticles.split(",")}visitedArticles=visitedArticles.concat(storedVisitedArticles)}else{visitedCount=0}uniquePathName=location.pathname;isCurrentNew=$.inArray(uniquePathName,visitedArticles)==-1;$mainEl=$("#main");if($mainEl.hasClass("single-article")||$mainEl.hasClass("single-blog")||$mainEl.hasClass("single-post")){if(isCurrentNew){visitedCount=++visitedCount;visitedArticles.push(uniquePathName)}}localStorage.setItem("visitedCount",visitedCount);localStorage.setItem("visitedArticles",visitedArticles);localStorage.setItem("lastVisitMonth",currentMonth);CN.stats.omniture.setCustomProp("44",visitedCount)})(jQuery);
+CN.stats.omniture.setCustomProp('8', '');
+CN.stats.omniture.setCustomProp('9', '');
+CN.stats.omniture.setCustomProp('55', 'Ken Auletta');
+CN.stats.omniture.setCustomProp('6', 'channel_none');
+CN.stats.omniture.setCustomProp('7', 'channel_none/rubric-Annals of Communications');
+var page_count = document.getElementsByClassName("tny-page").length + 1; if(page_count == 1) { CN.stats.omniture.setPaginationValue( "page_single" );} else { CN.stats.omniture.setPaginationValue( "page_1" ); }
+                // Run page tracking (also calls .init() again )
+                if ( CN.preventAutoTrack != true ) {
+                    CN.stats.omniture.doPageTracking();
+                }
+            //-->
+            </script>
+            <noscript>
+                <a href="http://www.omniture.com" title="Web Analytics">
+                    <img src="http://condenast.112.2o7.net/b/ss/conde-newyorker/1/H.15.1--NS/0" height="1" width="1" border="0" alt="" />
+                </a>
+            </noscript>
+                    <script type="text/javascript">
+        //<!--
+            var _gaq = _gaq || [];
+            var _ga_end = (new Date()).getTime();
+            var _ga_total = parseInt(_ga_end - _ga_start);
+            var _ga_sample_percent = 50;
+        _gaq.push(['a._setAccount', 'UA-8293713-14']);
+_gaq.push(['a._trackPageview']);
+if (0 < _ga_total && _ga_total < 1000*60*60) {
+_gaq.push(['a._trackTiming', 'Page', 'Load Time', _ga_total, 'Page Load Time', 100]);
+}
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        //-->
+        </script>
+        <div id="fancyModal" class="fancy modal" aria-hidden="true"></div>
+	<div id="CMU_RIGHTRAIL_CONTAINER">
+  <div id="AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A" class="ecom-placement"><a href="http://www.newyorker.com/go/failsafe" target="_blank"><img src="/wp-content/assets/dist/img/cn-ecom/failsafe/NYR_Search_Tablet_300x250.jpg" alt="Subscribe to The New Yorker" /></a>            <script type="text/javascript">
+            //<!--
+                if ( ( typeof pageAds != 'undefined') && ( CN.url.params( 'nojoy' ) != 1 ) ) {
+                                    (function(){
+                    if ( CN.checkDeviceView('desktop') ) {
+if ( typeof pageAds.AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A != 'undefined' ) {
+  jQuery( "#AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A" ).html( pageAds.AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+  jQuery( "#AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A" ).css( { visibility: 'visible' } );
+} else { CN.debug.info( "AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A not in pageAds."); }
+}
+if ( CN.checkDeviceView('tablet') ) {
+if ( typeof pageAds.AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A != 'undefined' ) {
+  jQuery( "#AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A" ).html( pageAds.AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+  jQuery( "#AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A" ).css( { visibility: 'visible' } );
+} else { CN.debug.info( "AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A not in pageAds."); }
+}
+if ( CN.checkDeviceView('mobile') ) {
+if ( typeof pageAds.AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A != 'undefined' ) {
+  jQuery( "#AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A" ).html( pageAds.AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A.replace( /document.write\(.*\)/gi, "/* filtered by amg-magnet:document.write(...) */" ) );
+  jQuery( "#AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A" ).css( { visibility: 'visible' } );
+} else { CN.debug.info( "AMS_NYR_ARTICLE_BLOG_RIGHTRAIL_A not in pageAds."); }
+}
+                    })();
+                                }
+            //-->
+            </script>
+            </div></div>	
+<script>
+window.jQuery || document.write('<script src="/wp-content/assets/dist/js/vendors/jquery/jquery.min.js"><\/script>');
+_satellite.pageBottom();
+</script>
+
+
+    <script src="/wp-content/assets/dist/js/core-510.min.js"></script> 
+
+ <script>!function(d,s,id){ var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><script>(function() { var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;po.src = "//apis.google.com/js/plusone.js";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);})();</script>
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","licenseKey":"2907deeb56","applicationID":"4337305","transactionName":"YlIEZhNSXxEAABYNW1sYJ1EVWl4MThALClNZUktTE0dYAQ0G","queueTime":0,"applicationTime":1322,"ttGuid":"","agentToken":"","atts":"ThUHEFtITB8=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-411.min.js"}</script></body>
+</html>

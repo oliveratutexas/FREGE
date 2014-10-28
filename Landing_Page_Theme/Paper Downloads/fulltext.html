@@ -1,0 +1,1164 @@
+<!doctype html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="newie no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+<title>What Should We Teach New Software Developers? Why? | January 2010 | Communications of the ACM</title>
+
+<meta name="title" content="What Should We Teach New Software Developers? Why?" />
+	<meta name="author" content="Bjarne Stroustrup" />
+	<meta name="date" content="2010-01-01" />
+	<meta name="year" content="2010" />
+	<meta name="subjects" content="computers and society,education" />
+	<meta name="sections" content="Technology Reports" />
+
+
+<link type="application/rss+xml" title="Communications of the ACM: Current Issue [RSS 2.0]" href="/magazine.rss" rel="alternate" />
+<link rel="canonical" href="http://cacm.acm.org/magazines/2010/1/55760-what-should-we-teach-new-software-developers-why/fulltext"/>
+
+<script src="/javascripts/modernizr.js"></script>
+
+<script src="/javascripts/roundies.js"></script>
+<script>DD_roundies.addRule('.rounded', '5px 5px 0 0');</script> 
+
+<!-- CSS:implied media="all" -->
+<link href="/stylesheets/jplayer.pink.flag.css" rel="stylesheet" />
+<link href="/stylesheets/tipsy.css" rel="stylesheet" />
+<link href="/stylesheets/colorbox.css" rel="stylesheet" />
+
+
+  <link href="/stylesheets/all.css" rel="stylesheet" />
+
+
+<link href="/stylesheets/print.css" media="print" rel="stylesheet" />
+<link href="/stylesheets/handheld.css?v=1" media="handheld" rel="stylesheet"><!-- For the less-enabled mobile browsers like Opera Mini -->
+<!--[if IE]><link href="/stylesheets/all-ie.css" media="all" rel="stylesheet" /><![endif]--> 
+<!--[if lte IE 6]><link href="/stylesheets/all-ie6.css" media="all" rel="stylesheet" /><![endif]-->
+
+
+  
+</head> 
+
+<body id="body-main" itemscope itemtype="http://schema.org/Article"> 
+
+
+    <div class="JumpLink" id="PageTop"></div>
+    <div id="container"> 
+        <div id="layout"> 
+            <header class="topHeader">
+            	<a href="/" title="ACM" id="topLogo">ACM</a>
+
+<div id="instName"><img src="/images/icons/acm_header.png" height="40" width="40" class="logo-mini" /></div>
+
+
+
+  <a href="/login" title="Login" id="topSignIn">Sign In</a>
+
+
+<div id="topForm">
+   <form action="/search" method="get">
+    <div class="portaInput">
+      <label for="searchInput" id="labelSearchInput" class="inField">Search</label>
+      <input type="text" id="searchInput" name="q" />
+    </div>
+    <button name="search submit" type="submit" id="searchSubmit">Go</button>
+  </form>
+</div><!-- end topForm -->
+
+<div id="topBar">
+	<ul>
+	  <li><a href="http://www.acm.org/" title="ACM.org">ACM.org</a></li>
+	  <li><a href="https://campus.acm.org/public/qj/brandingqj/cacm.cfm" target="_blank" title="Join ACM">Join ACM</a></li>
+	  <li><a href="/about-communications" title="About Communications" >About Communications</a></li>
+	  <li><a href="/acm-resources" title="ACM Resources">ACM Resources</a></li>
+	  <li class="last-child"><a href="/alerts-and-feeds" title="Alerts &#38; Feeds" >Alerts &#38; Feeds</a></li>
+	</ul>
+</div>
+
+
+            	<hgroup> 
+    <h1><a href="/" title="Communications of the ACM">Communications of the ACM</a></h1> 
+</hgroup> 
+
+				<nav> 
+    <ul> 
+        <li class="first-child"><a href="/" class="menuText itemHome">Home</a></li> 
+        <li> 
+      <div class="portaDropdown">
+        
+          <a class="withMenu menuText itemCurrent" href="/magazines/2014/9">Current Issue</a>
+        <div class="menuLinks currenIssueDropdown">
+          <a class="menuCover" href="/magazines/2014/9">
+                <img src="http://portalparts.acm.org/2670000/2663191/cover/cover_full.jpg" width="145" height="192" alt="Latest issue" />
+          </a>
+          <span class="dropDownIssueTitle">Current Issue: September 2014</span> 
+          
+            <a href="/magazines/2014/9/177944-moving-portraits">Moving Portraits</a>
+              
+            <a href="/magazines/2014/9/177941-the-new-digital-medicine">The New Digital Medicine</a>
+              
+            <a href="/magazines/2014/9/177937-would-turing-have-passed-the-turing-test">Would Turing Have Passed the Turing Test?</a>
+              
+          <a class="lastLink" href="/magazines/2014/9">VIEW TABLE OF CONTENTS</a>
+        </div> 
+        
+      </div> 
+    </li> 
+        <li> 
+      <div class="portaDropdown"> 
+        <a href="/news" class="withMenu menuText itemNews">News</a> 
+        <div class="menuLinks newsDropdown"> 
+<a href="/news" class="lastLink">Latest News</a> 
+          <a href="/news/archive" class="lastLink">News Archive</a> 
+        </div> 
+      </div> 
+    </li> 
+        <li> 
+      <div class="portaDropdown"> 
+        <a href="/blogs/about-the-blogs" class="withMenu menuText itemBlogs">Blogs</a> 
+        <div class="menuLinks blogsDropdown"> 
+          <a href="/blogs/about-the-blogs">About the Blogs</a> 
+          <a href="/blogs/blog-cacm">BLOG@CACM</a> 
+          <a href="/blogs/blogroll">Blogroll</a> 
+          <a href="/blogs/archive" class="lastLink">Blogs Archive</a> 
+        </div> 
+      </div> 
+    </li> 
+        <li> 
+      <div class="portaDropdown"> 
+        <a href="/opinion" class="withMenu menuText itemOpinion">Opinion</a> 
+        <div class="menuLinks opinionDropdown"> 
+          <a href="/opinion/articles">Articles</a> 
+          <a href="/opinion/interviews">Interviews</a> 
+          <a href="/opinion/archive" class="lastLink">Opinion Archive</a> 
+        </div> 
+      </div> 
+    </li> 
+        
+<li>
+  <div class="portaDropdown"> 
+    <a href="/research" class="withMenu menuText itemResearch">Research</a>
+    <div class="menuLinks researchDropdown"> 
+      <a href="/research">Latest Research</a> 
+      <a href="/research/archive" class="lastLink">Research Archive</a>
+    </div> 
+  </div>
+</li> 
+<li>
+  <div class="portaDropdown"> 
+    <a href="/practice" class="withMenu menuText itemPractice">Practice</a>
+    <div class="menuLinks practiceDropdown"> 
+      <a href="/practice">Latest Practice</a> 
+      <a href="/practice/archive" class="lastLink">Practice Archive</a> 
+    </div> 
+  </div>
+</li> 
+        <li>
+          <div id="careersNav" class="portaDropdown"> 
+        <a href="/careers" class="withMenu menuText itemOpinion">Careers</a> 
+        <div class="menuLinks opinionDropdown"> 
+          <ul>
+            <li><a href="http://www.jobtarget.com/c/search_results.cfm?site_id=1603" target="_blank">Search for Jobs</a></li>
+            <li><a href="http://jobs.acm.org/c/resumes/edit/start.cfm?site_id=1603&#38;CFID=129690044&#38;CFTOKEN=6e9afae5ae07e049-31BE767A-C7A1-1115-D55612055C71971C" target="_blank">Post a Resume</a></li>
+            <li><a href="http://jobs.acm.org/c/agents/index.cfm?site_id=1603  " target="_blank">Create a Job Alert</a></li>
+            <li><a href="http://jobs.acm.org/c/search_results.cfm?site_id=1603" target="_blank">View Featured Jobs</a></li>
+            <li><a href="http://jobs.acm.org/employer/login/?goto=%2Fr%2Fjobs%2Fpost%2Fpost.cfm%3Fsite_id%3D1603&CFID=129690044" target="_blank">Post A Job</a></li>
+            <li><a href="http://www.jobtarget.com/r/candidates/index.cfm?site_id=1603" target="_blank">View Resumes</a></li>
+            <li><a href="http://acm-media.org/" target="_blank">Advertise with Us</a></li>
+            <li class="lastLink"><a href="mailto:careerinfo@cacm.acm.org">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+        </li>
+    <li>
+      <div class="portaDropdown">
+        <a href="/magazines" class="withMenu menuText itemPrevious on">Magazine Archive</a> 
+        <div class="menuLinks previousDropdown"> 
+          <span class="previousIssueTitle">The magazine archive includes every article published in <i>Communications of the ACM</i> for over the past 50 years.</span> 
+          
+            
+              <div class="issue">
+                <a href="/magazines/2014/9">
+                 September 2014 (Vol. 57, No. 9)
+                </a>
+              </div>
+            
+              <div class="issue">
+                <a href="/magazines/2014/8">
+                 August 2014 (Vol. 57, No. 8)
+                </a>
+              </div>
+            
+              <div class="issue">
+                <a href="/magazines/2014/7">
+                 July 2014 (Vol. 57, No. 7)
+                </a>
+              </div>
+            
+           
+          <a href="/magazines" class="lastLink">VIEW MORE ISSUES</a> 
+        </div> 
+      </div> 
+    </li> 
+    </ul> 
+</nav>	
+			</header> 
+            <section>
+              <div class="breadcrum">
+  <a href="/">Home</a><span>/</span><a href="/magazines">Magazine Archive</a><span>/</span><a href='/magazines/2010/1'>January 2010 (Vol. 53, No. 1)</a><span>/</span><a href="/magazines/2010/1/55760-what-should-we-teach-new-software-developers-why">What Should We Teach New Software Developers? Why?</a><span>/</span>Full Text	
+</div>
+
+
+<div class="col0 floatLeft firstCol"> 
+	<span class="label">Viewpoints</span> 
+	<h1>What Should We Teach New Software Developers? Why?</h1>
+  
+</div> 
+<hr class="dotted" /> 
+
+
+<div id="articleFullText" class="col1 floatLeft firstCol"> 
+
+	<span class="byline">
+	
+	  By Bjarne Stroustrup
+      <br />
+	
+	
+	
+		
+		  Communications of the ACM,
+    
+		
+			Vol. 53 No. 1, Pages 40-42<br />
+            10.1145/1629175.1629192<br />
+         
+	
+    
+     	<a href="#comments">Comments (13)</a>
+     
+</span>
+	
+	<!-- googleoff:all -->
+
+<div class="fav_bar"> 
+  <span>View as:</span> 
+  <a href="#" onclick="javascript:window.print();" class="fav_print" title="Print">Print</a> 
+  
+
+    
+      <a href="http://portal.acm.org/citation.cfm?id=1629175.1629192&amp;coll=portal&amp;dl=ACM" class="fav_acm_digital" target="_blank" title="View in ACM Digital Library">ACM Digital Library</a>
+    
+
+    
+      
+        <a href="/magazines/2010/1/55760-what-should-we-teach-new-software-developers-why/pdf" class="fav_pdf" rel="nofollow" target="_blank" title="View as PDF">Full Text (PDF)</a>
+      
+    
+
+    
+      <a href="http://dl.acm.org/ft_gateway.cfm?id=1629192&amp;ftid=693557&amp;dwn=1" class="fav_de" target="_blank" title="View in Digital Edition">In the Digital Edition</a>
+    
+
+  
+
+  <span>Share:</span> 
+
+  
+  <a href="javascript:void(0);" class="fav_email" title="Send by email" id="sendByEmail">Send by email</a> 
+  
+
+  <a href="javascript:void(0);" class="fav_reddit" onClick="addthis_sendto('reddit');" title="Share on reddit">Share on reddit</a> 
+  <a href="javascript:void(0);" class="fav_su" onClick="addthis_sendto('stumbleupon');" title="Share on StumbleUpon">Share on StumbleUpon</a> 
+  <div id="plus-one"><g:plusone href="http://cacm.acm.org/magazines/2010/1/55760-what-should-we-teach-new-software-developers-why/fulltext"size="small" annotation="none"></g:plusone></div>
+  <a href="javascript:void(0);" class="fav_twitter" onClick="addthis_sendto('twitter');" title="Share on Twitter">Share on Tweeter</a> 
+  <a href="javascript:void(0);" class="fav_facebook" onClick="addthis_sendto('facebook');" title="Share on Facebook">Share on Facebook</a> 
+
+  <div class="addthis_toolbox "> 
+  <a href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=xa-4dcbeff2515fc93c" class="addthis_button_compact fav_more no_border">Share</a> 
+  </div> 
+
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4dcbeff2515fc93c"></script> 
+</div>
+	
+<!-- googleon:all -->
+<div class="clearer"></div> 
+		
+
+  
+    <div class="imageWithCaptionLeft" id="asset-2011">
+
+  
+  <figure>
+    <img src="/system/assets/0000/2011/121609_CACMpg40_What_Should_We.large.jpg?1341312410&1261072945" alt="whiteboard eraser" title="whiteboard eraser" /> 
+
+
+    
+
+    
+  </figure>
+
+</div> 
+
+  
+
+  
+
+    
+
+    <!-- BEGIN BODY-1 -->
+
+<a name="body-1"></a>
+
+
+
+<p>Computer science must be at the center of software systems
+development. If it is not, we must rely on individual experience
+and rules of thumb, ending up with less capable, less reliable
+systems, developed and maintained at unnecessarily high cost. We
+need changes in education to allow for improvements of industrial
+practice.</p>
+
+<!-- END BODY-1 -->
+
+<p class="totop"><a href="#PageTop">Back to Top</a></p>
+
+<!-- BEGIN BODY-2 -->
+
+<a name="body-2"></a>
+<h3>The Problem</h3>
+
+
+
+<p>In many places, there is a disconnect between computer science
+education and what industry needs. Consider the following
+exchange:</p>
+
+<p>Famous CS professor (proudly): "<i>We don't teach programming;
+we teach computer science</i>."</p>
+
+<p>Industrial manager: "<i>They can't program their way out of a
+paper bag</i>."</p>
+
+<p>In many cases, they are both right, and not just at a
+superficial level. It is not the job of academia just to teach
+run-of-the-mill programmers and the needs of industry are not
+just for "well-rounded high-level thinkers" and "scientists."</p>
+
+<p>Another CS professor: "<i>I never code</i>."</p>
+
+<p>Another industrial manager: "<i>We don't hire CS graduates;
+it's easier to teach a physicist to program than to teach a CS
+graduate physics</i>."</p>
+
+<p>Both have a point, but in an ideal world, both would be
+fundamentally misguided. The professor is wrong in that you can't
+teach what you don't practice (and in many cases, never have
+practiced) and therefore don't understand, whereas the industrial
+manager is right only when the requirements for software quality
+are set so absurdly low that physicists (and others untrained in
+CS) can cope. Obviously, I'm not referring to physicists who have
+devoted significant effort to also master computer
+science&#151;such combinations of skills are among my
+ideals.</p>
+
+<p>CS professor (about a student): "<i>He accepted a job in
+industry</i>."</p>
+
+<p>Another CS professor: "<i>Sad; he showed so much
+promise</i>."</p>
+
+<p>This disconnect is at the root of many problems and
+complicates attempts to remedy them.</p>
+
+<p>Industry wants computer science graduates to build software
+(at least initially in their careers). That software is often
+part of a long-lived code base and used for embedded or
+distributed systems with high reliability requirements. However,
+many graduates have essentially no education or training in
+software development outside their hobbyist activities. In
+particular, most see programming as a minimal effort to complete
+homework and rarely take a broader view that includes systematic
+testing, maintenance, documentation, and the use of their code by
+others. Also, many students fail to connect what they learn in
+one class to what they learn in another. Thus, we often see
+students with high grades in algorithms, data structures, and
+software engineering who nevertheless hack solutions in an
+operating systems class with total disregard for data structures,
+algorithms, and the structure of the software. The result is a
+poorly performing unmaintainable mess.</p>
+
+<p>For many, "programming" has become a strange combination of
+unprincipled hacking and invoking other people's libraries (with
+only the vaguest idea of what's going on). The notions of
+"maintenance" and "code quality" are typically forgotten or
+poorly understood. In industry, complaints about the difficulty
+of finding graduates who understand "systems" and "can architect
+software" are common and reflect reality.</p>
+
+<!-- END BODY-2 -->
+
+<p class="totop"><a href="#PageTop">Back to Top</a></p>
+
+<!-- BEGIN BODY-3 -->
+
+<a name="body-3"></a>
+<h3>But my Computer Hasn't Crashed Lately</h3>
+
+
+
+<p>Complaining about software is a popular pastime, but much
+software has become better over the last decade, exactly as it
+improved in previous decades. Unfortunately, the improvements
+have come at tremendous cost in terms of human effort and
+computer resources. Basically, we have learned how to build
+reasonably reliable systems out of unreliable parts by adding
+endless layers of runtime checks and massive testing. The
+structure of the code itself has sometimes changed, but not
+always for the better. Often, the many layers of software and the
+intricate dependencies common in designs prevent an
+individual&#151;however competent&#151;from fully understanding
+a system. This bodes ill for the future: we do not understand and
+cannot even measure critical aspects of our systems.</p>
+
+<p>There are of course system builders who have resisted the
+pressures to build bloated, ill-understood systems. We can thank
+them when our computerized planes don't crash, our phones work,
+and our mail arrives on time. They deserve praise for their
+efforts to make software development a mature and trustworthy set
+of principles, tools, and techniques. Unfortunately, they are a
+minority and bloatware dominates most people's impression and
+thinking.</p>
+
+<p>Similarly, there are educators who have fought the separation
+of theory and industrial practice. They too deserve praise and
+active support. In fact, every educational institution I know of
+has programs aimed at providing practical experience and some
+professors have devoted their lives to making successes of
+particular programs. However, looking at the larger picture, I'm
+unimpressed&#151;a couple of projects or internships are a good
+start, but not a substitute for a comprehensive approach to a
+balanced curriculum. Preferring the labels "software engineering"
+or "IT" over "CS" may indicate differences in perspective, but
+problems have a nasty way of reemerging in slightly different
+guises after a move to a new setting.</p>
+
+<p>My characterizations of "industry" and "academia" border on
+caricature, but I'm confident that anyone with a bit of
+experience will recognize parts of reality reflected in them. My
+perspective is that of an industrial researcher and manager (24
+years at AT&amp;T Bell Labs, seven of those as department head)
+who has now spent six years in academia (in a CS department of an
+engineering school). I travel a lot, having serious discussions
+with technical and managerial people from several dozen (mostly
+U.S.) companies every year. I see the mismatch between what
+universities produce and what industry needs as a threat to both
+the viability of CS and to the computing industry.</p>
+
+<hr align="center" width="50%" />
+
+<blockquote>
+
+<p align="center"><i>Many organizations that rely critically on
+computing have become dangerously low on technical
+skills.</i></p>
+
+</blockquote>
+
+<hr align="center" width="50%" />
+
+<!-- END BODY-3 -->
+
+<p class="totop"><a href="#PageTop">Back to Top</a></p>
+
+<!-- BEGIN BODY-4 -->
+
+<a name="body-4"></a>
+<h3>The Academia/Industry Gap</h3>
+
+
+
+<p>So what can we do? Industry would prefer to hire "developers"
+fully trained in the latest tools and techniques whereas
+academia's greatest ambition is to produce more and better
+professors. To make progress, these ideals must become better
+aligned. Graduates going to industry must have a good grasp of
+software development and industry must develop much better
+mechanisms for absorbing new ideas, tools, and techniques.
+Inserting a good developer into a culture designed to prevent
+semi-skilled programmers from doing harm is pointless because the
+new developer will be constrained from doing anything
+significantly new and better.</p>
+
+<p>Let me point to the issue of scale. Many industrial systems
+consist of millions of lines of code, whereas a student can
+graduate with honors from top CS programs without ever writing a
+program larger than 1,000 lines. All major industrial projects
+involve several people whereas many CS programs value individual
+work to the point of discouraging teamwork. Realizing this, many
+organizations focus on simplifying tools, techniques, languages,
+and operating procedures to minimize the reliance on developer
+skills. This is wasteful of human talent and effort because it
+reduces everybody to the lowest common denominator.</p>
+
+<p>Industry wants to rely on tried-and-true tools and techniques,
+but is also addicted to dreams of "silver bullets,"
+"transformative breakthroughs," "killer apps," and so forth. They
+want to be able to operate with minimally skilled and
+interchangeable developers guided by a few "visionaries" too
+grand to be bothered by details of code quality. This leads to
+immense conservatism in the choice of basic tools (such as
+programming languages and operating systems) and a desire for
+monocultures (to minimize training and deployment costs). In
+turn, this leads to the development of huge proprietary and
+mutually incompatible infrastructures: Something beyond the basic
+tools is needed to enable developers to produce applications and
+platform purveyors want something to lock in developers despite
+the commonality of basic tools. Reward systems favor both
+grandiose corporate schemes and short-term results. The resulting
+costs are staggering, as are the failure rates for new
+projects.</p>
+
+<p>Faced with that industrial reality&#151;and other similar
+deterrents&#151;academia turns in on itself, doing what it does
+best: carefully studying phenomena that can be dealt with in
+isolation by a small group of like-minded people, building solid
+theoretical foundations, and crafting perfect designs and
+techniques for idealized problems. Proprietary tools for dealing
+with huge code bases written in archaic styles don't fit this
+model. Like industry, academia develops reward structures to
+match. This all fits perfectly with a steady improvement of
+smokestack courses in well-delineated academic subjects. Thus,
+academic successes fit industrial needs like a square peg in a
+round hole and industry has to carry training costs as well as
+development costs for specialized infrastructures.</p>
+
+<p>Someone always suggests "if industry just paid developers a
+decent salary, there would be no problem." That might help, but
+paying more for the same kind of work is not going to help much;
+for a viable alternative, industry needs better developers. The
+idea of software development as an assembly line manned by
+semi-skilled interchangeable workers is fundamentally flawed and
+wasteful. It pushes the most competent people out of the field
+and discourages students from entering it. To break this vicious
+circle, academia must produce more graduates with relevant skills
+and industry must adopt tools, techniques, and processes to
+utilize those skills.</p>
+
+<!-- END BODY-4 -->
+
+<p class="totop"><a href="#PageTop">Back to Top</a></p>
+
+<!-- BEGIN BODY-5 -->
+
+<a name="body-5"></a>
+<h3>Dreams of Professionalism</h3>
+
+
+
+<p>"Computer science" is a horrible and misleading term. CS is
+not primarily about computers and it is not primarily a science.
+Rather it is about uses of computers and about ways of working
+and thinking that involves computation ("algorithmic and
+quantitative thinking"). It combines aspects of science, math,
+and engineering, often using computers. For almost all people in
+CS, it is an applied field&#151;"pure CS," isolated from
+application, is typically sterile.</p>
+
+<p>What distinguishes a CS person building an application from a
+professional in some other field (such as medicine or physics)
+building one? The answer must "be mastery of the core of CS."
+What should that "core" be? It would contain much of the
+established CS curriculum&#151;algorithms, data structures,
+machine architecture, programming (principled), some math
+(primarily to teach proof-based and quantitative reasoning), and
+systems (such as operating systems and databases). To integrate
+that knowledge and to get an idea of how to handle larger
+problems, every student must complete several group projects (you
+could call that basic software engineering). It is essential that
+there is a balance between the theoretical and the
+practical&#151;CS is not just principles and theorems, and it is
+not just hacking code.</p>
+
+<p>This core is obviously far more "computer-oriented" than the
+computing field as a whole. Therefore, nobody should be called a
+computer scientist without adding a specialization within CS (for
+example, graphics, networking, software architecture,
+human-machine interactions, security). However that's still not
+enough. The practice of computer science is inherently applied
+and interdisciplinary, so every CS professional should have the
+equivalent to a minor in some other field (for example, physics,
+medical engineering, history, accountancy, French
+literature).</p>
+
+<p>Experienced educators will observe: "But this is impossible!
+Hardly any students could master all that in four years." Those
+educators are right: something has to give. My suggestion is that
+the first degree qualifying to practice as a computers scientist
+should be a master's&#151;and a master's designed as a
+whole&#151;not as a bachelor's degree with an appended final
+year or two. People who plan to do research will as usual aim for
+a Ph.D.</p>
+
+<p>Many professors will object: "I don't have the time to
+program!" However, I think that professors who teach students who
+want to become software professionals will have to make time and
+their institutions must find ways to reward them for programming.
+The ultimate goal of CS is to help produce better systems. Would
+you trust someone who had not seen a patient for years to teach
+surgery? What would you think of a piano teacher who never
+touched the keyboard? A CS education must bring a student beyond
+the necessary book learning to a mastery of its application in
+complete systems and an appreciation of aesthetics in code.</p>
+
+<p>I use the word "professional." That's a word with many
+meanings and implications. In fields like medicine and
+engineering, it implies licensing. Licensing is a very tricky and
+emotional topic. However, our civilization depends on software.
+Is it reasonable that essentially anyone can modify a critical
+body of code based on personal taste and corporate policies? If
+so, will it still be reasonable in 50 years? Is it reasonable
+that pieces of software on which millions of people depend come
+without warranties? The real problem is that professionalism
+enforced through licensing depends on having a large shared body
+of knowledge, tools, and techniques. A licensed engineer can
+certify that a building has been constructed using accepted
+techniques and materials. In the absence of a widely accepted
+outline of CS competence (as I suggested earlier), I don't know
+how to do that for a software application. Today, I wouldn't even
+know how to select a group of people to design a licensing test
+(or realistically a set of tests for various subspecialties, like
+the medical boards).</p>
+
+<p>What can industry do to close the gap? It is much more
+difficult to characterize "industry" and "industrial needs" than
+to talk about academia. After all, academia has a fairly standard
+structure and fairly standard approaches to achieving its goals.
+Industry is far more diverse: large or small, commercial or
+non-profit, sophisticated or average in their approach to system
+building, and so forth. Consequently, I can't even begin to
+prescribe remedies. However, I have one observation that related
+directly to the academia/industry gap: Many organizations that
+rely critically on computing have become dangerously low on
+technical skills:</p>
+
+<p>Industrial manager: "<i>The in-sourcing of technical expertise
+is critical for survival</i>."</p>
+
+<p>No organization can remain successful without an institutional
+memory and an infrastructure to recruit and develop new talent.
+Increasing collaboration with academics interested in software
+development might be productive for both parties. Collaborative
+research and an emphasis on lifelong learning that goes beyond
+mere training courses could play major roles in this.</p>
+
+<!-- END BODY-5 -->
+
+<p class="totop"><a href="#PageTop">Back to Top</a></p>
+
+<!-- BEGIN BODY-6 -->
+
+<a name="body-6"></a>
+<h3>Conclusion</h3>
+
+
+
+<p>We must do better. Until we do, our infrastructure will
+continue to creak, bloat, and soak up resources. Eventually, some
+part will break in some unpredictable and disastrous way (think
+of Internet routing, online banking, electronic voting, and
+control of the electric power grid). In particular, we must
+shrink the academia/industry gap by making changes on both sides.
+My suggestion is to define a structure of CS education based on a
+core plus specializations and application areas, aiming
+eventually at licensing of software artifacts and at least some
+of the CS professionals who produce them. This might go
+hand-in-hand with an emphasis on lifelong industry/academia
+involvement for technical experts.</p>
+
+<!-- END BODY-6 -->
+
+<p class="totop"><a href="#PageTop">Back to Top</a></p>
+
+<!-- BEGIN AUTHORINFO -->
+<div id="article-authorinfo">
+
+
+<a name="authorinfo"></a>
+<h3 class="known-headings">Author</h3>
+
+
+
+<p><b>Bjarne Stroustrup</b> (<a href="http://delivery.acm.org/10.1145/1630000/1629192/mailto:bs@cs.tamu.edu">bs@cs.tamu.edu</a>) is the College
+of Engineering Chair in Computer Science Professor at Texas
+A&amp;M University in College Station, TX.</p>
+
+
+</div>
+<!-- END AUTHORINFO -->
+
+<p class="totop"><a href="#PageTop">Back to Top</a></p>
+
+<!-- BEGIN FOOTNOTES -->
+<div id="article-footnotes">
+
+
+<a name="footnotes"></a>
+<h3 class="known-headings">Footnotes</h3>
+
+
+
+<p>DOI: http://doi.acm.org/10.1145/1629175.1629192</p>
+
+
+</div>
+<!-- END FOOTNOTES -->
+
+<!-- BEGIN PERMISSION -->
+<div id="article-permission">
+
+
+<hr class="Separator" />
+<a name="permission"></a>
+
+
+
+<p>Copyright held by author.</p>
+
+
+</div>
+<!-- END PERMISSION -->
+
+<!-- BEGIN FOOTER -->
+
+<p>The Digital Library is published by the Association
+for Computing Machinery. Copyright&nbsp;&copy;&nbsp;2010
+ACM, Inc.</p>
+
+<!-- END FOOTER -->
+
+
+
+	
+	
+	<div class="clearer"></div>
+	<hr class="thick" /> 
+
+  
+    
+      <a name="comments"></a>
+
+
+
+  <h2>Comments</h2>
+  
+    <hr class="solid" />
+    <h5>Charles Betz</h5>
+    
+    <span class="byline">December 22, 2009 07:11</span>
+    <p><p>Excellent article. </p>
+
+<p>Re: &quot;The idea of software development as an assembly line manned by semi-skilled interchangeable workers is fundamentally flawed and wasteful.&quot; This has been a common theme in much SDLC-related commentary. Some argue that *no* metaphor is applicable. I have more recently begun to ask whether product development is actually the appropriate metaphor. Product development and portfolio management in industry is costly, iterative, and risky process, subject to many of the same issues as software. Yet I have seen little if any exploration of potential parallels. </p>
+
+<p>Charles T. Betz
+<br />Enterprise Architect
+<br />Wells Fargo Bank, N.A.</p></p>
+  
+    <hr class="solid" />
+    <h5>Ingo Lutkebohle</h5>
+    
+    <span class="byline">January 06, 2010 11:54</span>
+    <p><p>As an academic once tasked with overhauling the software engineering undergrad course, I can wholeheartedly underwrite this article. One sentence, in particular, stood out for me: &quot;Proprietary tools for dealing with huge code bases written in archaic styles don't fit this model.&quot;</p>
+
+<p>I believe that /the/ core issue is that academic computer science has a hard time working in a meaningful way on &quot;huge code bases&quot;. Yet, as Mr. Stroustrup often mentions and I wholeheartdely agree with, scale is precisely the distinctive difference.</p>
+
+<p>However, it seems that it is not entirely clear how to achieve this. My suggestion would be that we should create a meaningful incentive system for academic research. That is, some way that allows research to do its job and measure its applicability to the real world issues. I bet many academics would love to do this, instead of work on purely theoretical issues.</p>
+
+<p>My suggestion how to gou about this would be to create accepted tools for dealing with large-scale code bases. Tools to measure, quantify, summarize, correlate, generalize, and more abstract analysis on top of those. Some tools in this direction are already available. We also need tools to /modify/, or maybe &quot;refactor&quot; such code-bases and make comparisons, so that the effect of different engineering approaches can be verified. Also, some early tools in this direction exist.</p>
+
+<p>Such tools would enable researchers to work on large-scale issues, as is needed.</p>
+
+<p>Last, not least and probably not easiest, collaboration with experts on the &quot;soft&quot; issues could enable psychologically-grounded metrics for, just as one example, API usability and complexity, so that again, the effect of different choices can be measured.</p></p>
+  
+    <hr class="solid" />
+    <h5>Robert Szymczak</h5>
+    
+    <span class="byline">January 19, 2010 03:00</span>
+    <p><p>&gt;&gt;For many, &quot;programming&quot; has become a strange combination of unprincipled hacking and invoking other people's libraries (with only the vaguest idea of what's going on).&lt;&lt;</p>
+
+<p>This is an excellent observation, and unfortunately, very true... </p></p>
+  
+    <hr class="solid" />
+    <h5>Lawrence Bernstein</h5>
+    
+    <span class="byline">February 03, 2010 09:40</span>
+    <p><p>Bjarne makes an insightful and provocative plea for a more professional software industry. People that will write programs need to be taught by people who are skilled in detailed design, data structure, code design and all the other computer science skills. There is no excuse for Computer Science Professors not writing some code or at least being able to critically read code. The computer science education by Bjarne teaches the student to write professional programs.  Fred Brooks teaches that we need another order of magnitude effort to take the program and produce a programming system product from it.  This additional effort is learned in software engineering programs. </p>
+
+<p>Must a software engineer be a professional programmer?  i think not, but they must be taught the essentials of program design. I think that software engineers must be able to solve system problems for software intensive systems. Alternatively, these people could be called systems engineers well educated in software technologies and processes. </p>
+
+<p>We need people educated in software who can solve real problems.  No single standard educational course of study focuses soley on this need.  </p></p>
+  
+    <hr class="solid" />
+    <h5>Kiran Achyutuni</h5>
+    
+    <span class="byline">March 04, 2010 12:51</span>
+    <p><p>Excellent and thought provoking article. Here is a suggestion for improving the quality of CS graduates: What if the entire University were to run on the software produced by the University CS students? </p>
+
+<p>Granted, this is not possible on day one, but if the University were to adopt this policy, over time, CS students would have hands on experience with real-life code bases and will learn all parts of software design and development. They will learn how to fix bugs, test, refactor code, appreciate the importance of good software coding practices. They will also learn how to add new features by interacting with customers. Professors can take actual code snippets and teach students with it. Best of all, students can see the results of their efforts before they graduate.</p>
+
+<p>I bet if the University is bold enough to adopt this policy, I can guarantee that the students of this university will be highly valued by industry. This is a win-win for all: Students, Professors, University, and the Industry.</p>
+
+<p>Some of the great companies have such an internal policy - all systems sold by the company must be used internally for the same purpose. Companies like Oracle, Microsoft, Amazon.com do this everyday. The University can do the same and should do this if it is serious about the quality of the CS graduates it produces.</p>
+
+<p>Kiran Achyutuni, 
+<br />Founder, www.mashedge.com
+<br /> </p>
+
+<p></p></p>
+  
+    <hr class="solid" />
+    <h5>The account that made this comment no longer exists.</h5>
+    
+    <span class="byline">April 06, 2010 11:40</span>
+    <p><p>Interesting discussion. CS is about complexity theory, computability, algorithms, data structures, automata theory, quantum computation science, formal languages and much more. There's a whole theoretical background that is unique to CS.</p>
+
+<p>Definitely, there should be separated majors, such as Software Engineering or Data and Information Management, in order to avoid misconceptions and to address industry's specific needs.</p>
+
+<p>In short, CS is a basic science in wich we can learn about modelling the complex processes that occur in Nature by using abstract mathematical tools. The models we construct in CS (basically, algorithms) have to (i) be given formal descriptions and proofs; (ii) have its fundamental properties investigated (complexity bounds, completeness, etc.); and much more.</p>
+
+<p>In short, CS is a basic science and other sciences can benefit from it as well by using its outocomes. An example of this is Artificial Intelligence. Although it first got inspiration from early mathematical models of the brain (neuroscience), it became clear thereafter that the 'algorithimic' way of modelling natural processess would be fundamental to AI. Today, AI is commonly regarded as a standard discipline in CS, though still multidisciplinary. </p>
+
+<p>So, why not segregate the lots of teaching contents flooding CS students minds into separate majors?</p>
+
+<p>Furthermore, let's not forget the revealing quote of a prominient computer scientist:</p>
+
+<p>&quot;Computer Science is no more about computers than Astronomy is about telescopes&quot; Edsger Dijkstra</p>
+
+<p>That summarizes well what CS is definitely not about.</p>
+
+<p>I believe that multidisciplinarity should be raise from a well planned reform in the graduate educational system, instead of requiring that a CS major covers every single topic from software engenieering to computation theory. Both are, separetedly, deep and complex enough disciplines to be studied in their own terms.</p>
+
+<p>Carlos R. B. Azevedo
+<br />MSc Candidate in CS
+<br />Center for Informatics (CIn)
+<br />Federal University of Pernambuco
+<br />Recife, Brazil</p>
+
+<p>twitter.com/crbazevedo
+</p></p>
+  
+    <hr class="solid" />
+    <h5>Anonymous</h5>
+    
+    <span class="byline">March 11, 2011 04:38</span>
+    <p><p>This article is a true an eye-opener for both the academia and the industry. 
+<br />I am glad to see that a professional researcher from an reputed IT company is now teaching (the author of this article) at a university. It is 
+<br />an noble gesture and gives a hope that a saviour of the IT industry has emerged among us.</p>
+
+<p>This is another amazing article that should shake the mindset of 
+<br />both academia and industry. I do agree with the most of the views expressed by the author. 
+<br />Even today, I am scared while flying in these planes controlled by a computer 
+<br />that are programmed by a group of undisciplined, unlicenced, and unaccountable IT Professionals. 
+<br />It is a miracle that unitl now many of these life-critical systems are running without crashing.
+<br />I do agree with the author that a &quot;software nuclear bomb&quot; might be lurking
+<br />deep down in some untested part of the software in these critical
+<br />systems. When a part of the software code that was untested gets executed becasue of an unforeseen real-life scenarios, 
+<br />it will break havoc in human lives. </p>
+
+<p>One of the Indian Medical Practioner (Dr. Devi Shetty, Narayana Hrudayala) predicted that remotely controlled
+<br />robotic surgery is possible in the future. It give me a chill through my spine to imagine that an unsuspecting patient
+<br />had to surrender his/her 'Made-by-the-God' body to a doctor sitting on the other side of the globe controlling a robot-controlled knife
+<br />cutting a delicate structure of the patient's body. Even a small bug in the software code will prove disastrous for 
+<br />the helpless patient on the surgery table!</p>
+
+<p>We the intellectuals should predict the future problems and take the necessary precautions before it is loo late.
+<br />As being just wise people (who learn from other mistakes) or fools (who learn from their own mistakes) is not sufficient at all!</p>
+
+<p>To brigde the academia and industry, I agree with the author that professors who teach should build large systems once in 5 or 10 years
+<br />for a duration of 2 to 3 years in the industry to appreciate the reality. 
+<br />In the same way, the seasoned IT professionals should go back to academia to teach (and learn in the process) and imbibe the rigour of the programming, new tools and ideas.
+<br />I think, this cross-fertilization between academia and industry will help the both sides in the long-run.</p>
+
+<p>I agree with Kiran Achyutuni's comment that the products from the IT industry should have &quot;eat your own dog food&quot; policy by using the products themselves internally before it is sold to the external users.
+<br />The &quot;eat your own dog food&quot; policy will reinstate the much needed trust into the products sold by the IT companies. It is pity that these companies protect themselves by making the use to agree to the terms in the licencing agreement that clerverly gain the impunity.</p>
+
+<p>Saya Sreenivasulu
+<br />Reading, UK.</p></p>
+  
+    <hr class="solid" />
+    <h5>Anonymous</h5>
+    
+    <span class="byline">June 06, 2011 10:23</span>
+    <p><p>i agree with the point of cross-fertilization between academia and industry by Saya Sreenivasulu, but who will ensure the result. because in IT industry one may move slow, one may move fast , depends on their own passion , but nobody can say whose technology changes in which rate and how they learn and how they teach to next. so i can not appreciate if an academic goes to industry and make waste of others time and same to professionals. it may possible if it happens side by side. </p>
+
+<p>Partha Sarathi Paul
+<br />India
+</p></p>
+  
+    <hr class="solid" />
+    <h5>Anonymous</h5>
+    
+    <span class="byline">June 20, 2011 12:11</span>
+    <p><p>I think the core of the issue is academia itself. The institution has grown so large and so proud and so necessary because it spits out professionals that can't judge skill because they're brainwashed to believe that academia can prepare a person for professionalism.</p>
+
+<p>Mentored practice prepares a person for professionalism, and the common usage of the term pro doesn't match the field. A professional is competent in their field, but so far, all I've seen is a lack of competence.</p>
+
+<p>Academia takes us as far as it can with generic studies, and idealistic classes. As far as it can ruin minds and under appreciate mold-breakers.</p>
+
+<p>The problem is the vicious cycle of judging the abilities of a person based on their degree. Most of which industry doesn't appreciate, because as soon as you're hired they melt you down to forge their golden sheep idol of nose down, and practical lackadaisical application of proverbial duct-tape need only apply.</p>
+
+<p>The stench of the Microwave Society running timer set to fix-it-and-fix-it-now, fills the air.</p>
+
+<p>If only other fields worked the same way. Let's build a bridge and just start working. Don't bother measuring, if we miss the road, we'll just alter the road to match, even if we lose a few ramps access to the highway. Hmm it's cracked.... pour in cement call it a day.</p>
+
+<p>I feel the Jenga tower starting to shift, shall we take out more of our solid dynamic well-defined meta-code and replace it with hard coded magic numbers and flags? Just add one more flag. Make it work. Put a stamp on it so someone knows you're doing something at work.</p>
+
+<p>I appreciate your attempts to mold the academia to fit the industries needs, and to mold industry to utilize technology appropriately so that academia prepares adequately, but it's academia from whence forth industry came, and it's academia against which it holds its work-force measuring rod.</p></p>
+  
+    <hr class="solid" />
+    <h5>Anonymous</h5>
+    
+    <span class="byline">September 07, 2011 02:06</span>
+    <p><p>The problem is the vicious cycle of judging the abilities of a person based on their degree. Most of which industry doesn't appreciate, because as soon as you're hired they melt you down to forge their golden sheep idol of nose down, and practical lackadaisical application of proverbial duct-tape need only apply.</p></p>
+  
+  <hr class="thick" />
+
+
+<p class="view-all">
+
+  <a href="/magazines/2010/1/55760-what-should-we-teach-new-software-developers-why/comments">View More Comments</a>
+
+</p>
+
+      <!-- googleoff:all -->
+      <div id="comments-section">
+      <!-- googleoff:all -->
+
+<h2>Comment on this article</h2>
+
+<span class="instructional">
+  Signed comments submitted to this site are moderated and will appear if they are relevant to the topic and not abusive. Your comment will appear with your username if published. <a href='/help#Q22'>View our policy on comments</a>
+</span>  
+<div class="item" id="comment_box">
+  <form action='/magazines/2010/1/55760-what-should-we-teach-new-software-developers-why/comments' id='comment-form' method='post'>     
+    
+    <input type="hidden" id ="a-id" name="a-id" value="55760" />
+    <fieldset id="#comment">
+      <div class="LeftColumn">
+      
+    </div>
+      <textarea class="bigTextarea" cols="10" id="comment-textarea" name="comment" rows="6"></textarea>
+    
+        <p>(Please sign in or create an ACM Web Account to access this feature.)</p>
+        <p> <a href="/accounts/new" target="_blank">Create an Account</a> </p>
+      
+      <button class="normalButton" id="comment-submit-anon">Submit for review</button>
+    </fieldset>
+  </form>
+</div>
+
+<div class="hiddenDiv">
+  <div class="signUpModal" id="signup">
+    <a href="javascript:void(0);" class="closeBox"></a>
+    <h2>Log in to Submit a Signed Comment</h2>
+    <div class="firstStep">
+      <h3 class="openSignIn"><a href="javascript:void(0);">Sign In &raquo;</a></h3>
+      <div class="firstContent">
+
+        <h3>Sign In</h3>
+        <span class="instructional">
+          Signed comments submitted to this site are moderated and will appear if they are relevant to the topic and not abusive. Your comment will appear with your username if published. <a href='/help#Q22'>View our policy on comments</a>
+        </span>
+
+        <form action="https://cacm.acm.org/login" class="edit_oracle_session" id="popOverForm" method="post">
+          <input type="hidden" name="format" value="js" />
+          <input type="hidden" name="comment_text" id="comment_text_container" />
+          <div class="portaInputLightbox">
+            <label for="userNameLightbox">Username</label> <label for="userNameLightbox" class="withError" id="popSignError" style="display:none">Incorrect username or password.</label> 
+            <input id="userNameLightbox" name="current_member[user]" type="text" />
+          </div>
+          <div class="portaInputLightbox">
+            <label for="passwordLightbox">Password</label> 
+            <input id="passwordLightbox" name="current_member[passwd]" type="password" value="" />
+          </div>
+          <span class="instructional signUpInPage"><a onClick="APP.hopWallForgotPassword()";>Forgot Password?</a></span>
+          <button type="submit" class="normalButton">Sign In</button>
+        </form>
+      </div>
+    </div>
+    <div class="secondStep">
+      <h3 class="create"><a href="/accounts/new" target="_blank">Create a Web Account</a></h3>
+      <div class="thirdContent">
+        <h5>An email verification has been sent to youremail@email.com</h5>
+        <span class="instructional">ACM veri�es that you are the owner of the email address you've provided by sending you a veri�cation message. The email message will contain a link that you must click to validate this account.</span>
+        <h5 class="moreTopMargin">NEXT STEP: CHECK YOUR EMAIL</h5>
+
+        <span class="instructional">You must click the link within the message in order to complete the process of creating your account. You may click on the link embedded in the message, or copy the link and paste it into your browser. </span>
+      </div>
+    </div>
+  </div> <!-- end #signup -->
+</div> <!-- end .hitddenDiv -->
+
+
+      </div>
+    
+  	
+	
+	
+</div>
+
+<div class="col3 floatLeft lastCol">
+  
+<div class="signInWidget widget">
+  <span class="signInTitle">Sign In <span class="noTransform">for Full Access</span></span>
+
+  <form action="https://cacm.acm.org/login" method="post">
+
+    <div class="portaInputSignIn">
+
+      <label for="inputUser"  class="inField">User Name</label>
+      <input name="current_member[user]" type="text" id="inputUser" />
+    </div>
+
+
+    <div class="portaInputSignIn">
+      <label for="inputPassword"  class="inField">Password</label> 
+      <input type="password" name="current_member[passwd]" id="inputPassword" /> 
+    </div>
+    <a href="/accounts/forgot-password" class="subText">&raquo; Forgot Password?</a>
+    <a href="/accounts/new" class="subText"><strong>&raquo; Create an ACM Web Account</strong></a>
+
+    <button type="submit" class="submitSignIn">Sign In</button>
+  </form>
+</div>
+
+
+
+	
+		
+
+  <div id="article-contents-widget" class="widget contentsWidget"> 
+    <h6 class="loud">Article Contents:</h6>
+  	
+
+<li class="miniWidgetItem"><a href="#body-1">Introduction</a></li>
+<li class="miniWidgetItem"><a href="#body-2">The Problem</a></li>
+<li class="miniWidgetItem"><a href="#body-3">But my Computer Hasn't Crashed Lately</a></li>
+<li class="miniWidgetItem"><a href="#body-4">The Academia/Industry Gap</a></li>
+<li class="miniWidgetItem"><a href="#body-5">Dreams of Professionalism</a></li>
+<li class="miniWidgetItem"><a href="#body-6">Conclusion</a></li>
+<li class="miniWidgetItem"><a href="#authorinfo">Author</a></li>
+<li class="miniWidgetItem"><a href="#footnotes">Footnotes</a></li>
+
+  </div>
+
+
+	
+	
+	<div id='SideColumn'>
+  <!-- googleoff:all -->
+  
+    
+	<div id="related-news-opinion-widget" class="blueWidget widget noBottom"> 
+		<span class="widgetName">More News &amp; opinions</span> 
+		
+			<a class="singleNews firstNews" href="/news/177132-digging-through-big-data-to-find-alien-life">
+				<h5>
+					<a href="/news/177132-digging-through-big-data-to-find-alien-life">Digging Through Big Data to Find Alien Life</a>
+				</h5> 
+				<span class="dateNews">Newsweek</span> 
+			</a>
+        
+			<a class="singleNews" href="/blogs/blog-cacm/173478-exciting-follow-up-with-an-acm-w-scholarship-recipient">
+				<h5>
+					<a href="/blogs/blog-cacm/173478-exciting-follow-up-with-an-acm-w-scholarship-recipient">Exciting Follow-up With an ACM-W Scholarship Recipient</a>
+				</h5> 
+				<span class="dateNews">Valerie Barr</span> 
+			</a>
+        
+			<a class="singleNews" href="/opinion/articles/174389-goodbye-net-neutrality-hello-net-discrimination">
+				<h5>
+					<a href="/opinion/articles/174389-goodbye-net-neutrality-hello-net-discrimination">Goodbye, Net Neutrality; Hello, Net Discrimination</a>
+				</h5> 
+				<span class="dateNews">The New Yorker</span> 
+			</a>
+        
+	</div>
+
+  
+  
+    <div class="widget resourcesWidget" properties=""> 
+	<div class="widgetBigTitle"> 
+		<span class="bigTitle">ACM Resources</span> 
+	</div> 
+	
+	
+	
+		<div class="singleBest"> 
+			<h5><a href="https://pd.acm.org/ek_courses.cfm?crs=79320" target="_blank">Providing Effective Feedback (Second Edition) <span class="iconNewPage">    </span></a></h5> 
+			<span class="dateNews">Courses</span> 
+		</div> 
+	
+</div>
+  
+  <!-- googleon:all -->
+</div>
+
+</div>
+<a class=" hidden video-link" href=" "></a>
+
+            </section> 
+        
+            <footer>
+  <nav>
+    <ul>
+      <li class="first-child"><a href="/about-communications/author-center" title="For Authors">For Authors</a></li>
+      <li><a href="http://www.acm-media.org/" title="For Advertisers" target="_blank">For Advertisers <img src="/images/icons/new_page.png" alt="For Advertisers"/></a></li>
+      <li><a href="/privacy" title="Privacy Policy">Privacy Policy</a></li>
+      <li><a href="/help" title="Help">Help</a></li>
+      <li><a href="/about-communications/contact-us" title="Contact Us">Contact Us</a></li>
+      <li><a class="toggle-mobile" href="http://m.cacm.acm.org">Mobile Site</a></li>
+    </ul>
+  </nav>
+  <span id="footerText">Copyright &#169; 2014 by the ACM. All rights reserved.</span>
+</footer>
+        
+        </div><!-- /layout --> 
+    </div><!-- /container --> 
+    
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="/javascripts/lib/jquery.jplayer.js"></script>
+<!--[if lte IE 6]><script type="text/javascript" src="/javascripts/iepngfix_tilebg.js"></script><![endif]-->
+<script>!window.jQuery && document.write('<script src="/javascripts/jquery/jquery.min.js"><\/script>')</script>
+
+
+<script src="/javascripts/jquery.infieldlabel.min.js"></script>
+<script src="/javascripts/cufon.js"></script>
+<script src="/javascripts/proxima_400.font.js"></script>
+<script src="/javascripts/behaviors/jquery.tipsy.js"></script>
+<script src="/javascripts/behaviors/jquery.colorbox-min.js"></script>
+<script src="/javascripts/application.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6995646-3']);
+  _gaq.push(['_setDomainName', 'acm.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+ 
+</body>
+</html> 

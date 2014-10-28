@@ -1,0 +1,372 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<link rel=Edit-Time-Data href="./patriot_bug_files/editdata.mso">
+<title> </title>
+<style><!--
+.Normal
+	{font-size:12.0pt;
+	font-family:"Times New Roman";}
+.MsoTitle
+	{text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+-->
+</style>
+</head>
+<body lang=EN-AU link=blue vlink=purple class="Normal" bgcolor="#FFFFFF">
+<p class=MsoTitle>Verification – Software Bug Report</p>
+<h1 align="center">Patriot Missile Software Problem</h1>
+<h4 align="center">By Andrew Lum </h4>
+<p align=center style='text-align:center'> <img width=500 height=403
+src="./patriot_bug_files/image001.jpg" v:shapes="_x0000_i1027"> </p>
+<h3>Introduction</h3>
+<p style='text-align:justify'>During the Gulf War in the early 1990’s<span style='"Courier New"'>, 
+  Operation Desert Storm used </span><span style='"Courier New"'>sophisticated 
+  technology to end the war in a quick and timely manner. Part of this technology 
+  was that of the Patriot missile air defence system.<sup>1</sup></span></p>
+<p style='text-align:justify'>On the night of the 25<sup>th</sup> of February, 
+  1991, a Patriot missile system operating in Dhahran, Saudi Arabia, failed to 
+  track and intercept an incoming Scud. The Iraqi missile impacted into an army 
+  barracks, killing 28 U.S. soldiers and injuring another 98. </p>
+<p style='text-align:justify'>The cause of the missile system failing to defend 
+  against the incoming Scud was traced back to a bug in Patriot’s radar and tracking 
+  software.<sup>2</sup></p>
+<h3>Background Information</h3>
+<p style='text-align:justify'>The Patriot is a surface-to-air defence missile 
+  system manufactured by Raytheon<sup>3</sup> and used by the United States 
+  Army, originally designed to protect against Soviet cruise missiles and medium 
+  to high altitude aircraft. In order to avoid detection it was mobile and would 
+  only operate for a few hours at a time.</p>
+<p style='text-align:justify'>During Operation Desert Shield (the operation to 
+  move forces to the Gulf region), Patriot battalions were deployed in strategic 
+  locations in Saudi Arabia and Israel to defend key assets, military personnel, 
+  and citizens against Scud missiles launched by Iraqi forces.</p>
+<p style='text-align:justify'>Each battalion usually comprised of six batteries, 
+  with each battery containing a number of components including a single ground 
+  based radar unit used for surveillance target detection and tracking, an Engagement 
+  Control Station to control missile interceptors, eight missile launchers, as 
+  well as various communications and relay components.<sup>4</sup></p>
+<p style='text-align:justify'>The Patriot’s weapon control computer performs crucial 
+  system functions for tracking and intercepting targets, as well as other control 
+  tasks. The system tracked and intercepted missiles in a number of stages:</p>
+<ol start=1 type=1>
+  <li style='text-align:justify;     '>The system was instructed to search for 
+    airborne objects with Scud missile characteristics (based on information such 
+    as velocity, latitude, longitude, azimuth, and altitude) on its radar.</li>
+  <li style='text-align:justify;     '>A range gate, an electronic device in the 
+    radar, calculates an area in the air space for where the system should look 
+    next for the incoming missile. The missile is tracked by the system as it 
+    approaches.</li>
+  <li style='text-align:justify;     '>The Patriot would launch one of it’s own 
+    missiles once the incoming missile was in range.</li>
+</ol>
+<h3>The Software Bug</h3>
+<p style='text-align:justify'>The bug occurs in the calculation of the next location 
+  of the incoming target by the range gate. The prediction is calculated based 
+  on the target’s velocity and the time of the last radar detection. </p>
+<p style='text-align:justify'>Velocity is stored as a whole number and a decimal, 
+  and time is a continuous integer or whole number (i.e. the longer the system 
+  has been running, the larger the value) measured in tenths of a second.</p>
+<p style='text-align:justify'>The algorithm used to predict the next air space 
+  to scan by the radar requires that both velocity and time be expressed as real 
+  numbers. However, the Patriot’s computer only has 24 bit fixed-point registers. 
+  Because time was measured as the number of tenth-seconds, the value 1/10, which 
+  has a non-terminating binary expansion, was chopped at 24 bits after the radix 
+  point.<sup>5</sup> The error in precision grows as the time value increases, 
+  and the inaccuracy resulting from this is directly proportional to the target’s 
+  velocity. </p>
+<p style='text-align:justify'>When the Patriot system was first designed, the 
+  primary targets were Soviet aircraft and cruise missiles travelling at speeds 
+  around MACH 2, and only operating at a few hours at a time. However, in Operation 
+  Desert Storm, they were deployed as static defences (operating continuously), 
+  tracking and intercepting Scud missiles travelling at speeds of approximately 
+  MACH 5.<sup>6</sup> Consequently, the U.S. army had to learn how to adapt 
+  the Patriot for targets of much higher velocity.</p>
+<h3>Discovery of the Bug</h3>
+<p style='text-align:justify'>Ironically, Israeli forces had noticed the anomaly 
+  in the Patriot’s range gate’s predictions in early February 1991, and informed 
+  the U.S. Army of the problem. They told the Army that the Patriots suffered 
+  a 20% targeting inaccuracy after continuous operation for 8 hours. </p>
+<p style='text-align:justify'>Army officials presumed that Patriot users were 
+  not running the systems for longer than 8 hours at a time. They suggested if 
+  they would be running for continuous periods, they were rebooted regularly (which 
+  took around 1 minute and would reset the system clock to zero).</p>
+<p style='text-align:justify'>The Army however did set to work to produce a fix 
+  that would be distributed to all Patriot systems that would fix the problem.</p>
+<h3>Consequences of the Bug</h3>
+<p style='text-align:justify'>On the 25th February 1991, Iraqi forces targeting 
+  an airfield in Dhahran, Saudi Arabia launched a Scud missile. Six Patriot batteries 
+  were assigned to protect the airfields and seaports of Dhahran; in particular, 
+  Alpha battery was the one assigned the targeted airfield.<sup>7</sup></p>
+<p style='text-align:justify'>Alpha battery had been in continuous operation for 
+  over 100 consecutive hours, and the resulting inaccuracy resulting from the 
+  software bug was roughly 0.34 seconds. However, this meant that the range gate 
+  could not successfully track the incoming Scud (travelling at roughly 1.7km/sec, 
+  so the time difference resulted in the range gate scanning an area of air space 
+  more than half a kilometre away from the missile). See Appendix A and for more 
+  details.</p>
+<p style='text-align:justify'>No Patriot missiles were launched to intercept the 
+  incoming Scud, which successfully hit a warehouse being used by the U.S. Army 
+  as a barracks, killing 28 soldiers, and another 98 people were injured.</p>
+<h3>The Bug Fix and Aftermath</h3>
+<p style='text-align:justify'>When Patriot systems were brought into the Gulf 
+  conflict, the software was modified (several times) to cope with the high speed 
+  of ballistic missiles, for which the system was not originally designed.</p>
+<p style='text-align:justify'>The modification to fix this bug was to introduce 
+  call subroutine that would do a more accurate integer to real conversion of 
+  the time value. This subroutine was inserted roughly half a dozen times in various 
+  locations in the Patriot software.<sup>8</sup> </p>
+<p style='text-align:justify'>The modified software was released on 16 February 
+  1991, however did not reach Dhahran till the 26 February 1991, the day after 
+  the incident occurred. According to Army officials, the delay was caused by 
+  the time it took to arrange for transportation of the software to wartime locations.<sup>(4)</sup></p>
+<p style='text-align:justify'>Various reviews and reports on Patriot missile performance 
+  were conducted throughout the 1990’s, and the Dhahran incident shows the necessity 
+  of well-documented requirements, software testing and correctness.</p>
+<h3>Appendix A - Effect of Extended Run Time on Patriot Operation <sup>4</sup></h3>
+<pre>                                                                             </pre>
+<table border=1 cellspacing=0 cellpadding=0>
+  <tr> 
+    <td width=79 class="Normal"> 
+      <p align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Arial'>Hours</span></b></p>
+    </td>
+    <td width=84 class="Normal"> 
+      <p align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Arial'>Seconds</span></b></p>
+    </td>
+    <td width=178 class="Normal"> 
+      <p align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Arial'>Calculated Time (sec)</span></b></p>
+    </td>
+    <td width=114 class="Normal"> 
+      <p align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Arial'>Inaccuracy (sec)</span></b></p>
+    </td>
+    <td width=114 class="Normal"> 
+      <p align=center style='text-align:center'><b><span
+  style='font-size:8.0pt;font-family:Arial'>Approx. shift in Range Gate (meters)</span></b></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=79 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>0</span></p>
+    </td>
+    <td width=84 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>0</span></p>
+    </td>
+    <td width=178 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>0</span></p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>0</span></p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>0</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=79 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>1</span></p>
+    </td>
+    <td width=84 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>3600</span></p>
+    </td>
+    <td width=178 valign=top class="Normal"> 
+      <p align=right style='text-align:right'>3599.9966        </p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>.0034 </span></p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>7</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=79 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>8</span></p>
+    </td>
+    <td width=84 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>28800</span></p>
+    </td>
+    <td width=178 valign=top class="Normal"> 
+      <p align=right style='text-align:right'>8799.9725        </p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>.0025 </span></p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>55</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=79 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>20(a)</span></p>
+    </td>
+    <td width=84 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>72000</span></p>
+    </td>
+    <td width=178 valign=top class="Normal"> 
+      <p align=right style='text-align:right'>71999.9313        </p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>.0687 </span></p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>137</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=79 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>48</span></p>
+    </td>
+    <td width=84 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>172800</span></p>
+    </td>
+    <td width=178 valign=top class="Normal"> 
+      <p align=right style='text-align:right'>172799.8352        </p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>.1648</span></p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>330</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=79 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>72</span></p>
+    </td>
+    <td width=84 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>259200</span></p>
+    </td>
+    <td width=178 valign=top class="Normal"> 
+      <p align=right style='text-align:right'>259199.7528        </p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>.2472</span></p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>494</span></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width=79 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>100(b) </span></p>
+    </td>
+    <td width=84 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>360000</span></p>
+    </td>
+    <td width=178 valign=top class="Normal"> 
+      <p align=right style='text-align:right'>359999.6667        </p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>.3433</span></p>
+    </td>
+    <td width=114 valign=top class="Normal"> 
+      <p align=right style='text-align:right'><span
+  style='font-family:Courier'>687</span></p>
+    </td>
+  </tr>
+</table>
+<pre> </pre>
+<p><b>a</b>. Continuous operation exceeding about 20 hours--target outside range 
+  gate </p>
+<p><b>b</b>. Alpha Battery ran continuously for about 100 hours</p>
+<h3>Appendix B – Diagrams of Patriot Tracking System</h3>
+<p>The following figures show the variation in gate range calculations after various 
+  hours of operation.(<sup>4)</sup></p>
+<p align=center style='text-align:center'> <img width=463 height=299
+src="./patriot_bug_files/image002.gif" v:shapes="_x0000_i1028"> </p>
+<p align=center style='text-align:center'>Correctly Calculated Gate Range for 
+  Patriot system.</p>
+<p align=center style='text-align:center'> <img width=464 height=298
+src="./patriot_bug_files/image003.gif" v:shapes="_x0000_i1029"> </p>
+<p align=center style='text-align:center'>20% Shift in range gate calculation 
+  after 8 consecutive hours of operation.</p>
+<p align=center style='text-align:center'> <img width=465 height=296
+src="./patriot_bug_files/image004.gif" v:shapes="_x0000_i1030"> </p>
+<p align=center style='text-align:center'>After 20 consecutive hours of operation, 
+  the target is no longer in the range gate area.</p>
+<h3>References</h3>
+<ol start=1 type=1>
+  <li style='text-align:justify;     '>Desert Storm Homepage <a
+     href="http://www.desert-storm.com/">http://www.desert-storm.com/</a></li>
+</ol>
+<ol start=2 type=1>
+  <li style='text-align:justify;     '>Schmitt, Eric; “<i>Army is Blaming Patriot’s 
+    Computer for Failure to Stop Dhahran Scud</i>”; New York Times, 20 May 1991</li>
+</ol>
+<ol start=3 type=1>
+  <li style='text-align:justify;     '>Raytheon Company <a href="http://www.raytheon.com/">http://www.raytheon.com/</a></li>
+</ol>
+<ol start=4 type=1>
+  <li style='text-align:justify;     '> Information Management and Technology 
+    Division; “<i>Patriot Missile Defense: Software Problem Led to System Failure 
+    at Dhahran, Saudi Arabia</i>”; United States General Accounting Office, 4 
+    February 1992</li>
+</ol>
+<ol start=5 type=1>
+  <li style='text-align:justify;     '>Arnold, Douglas; “<i>Two Disasters caused 
+    by Computer Arithmetic Errors”; </i><a
+     href="http://www.math.psu.edu/dna/455.f96/disasters.html">http://www.math.psu.edu/dna/455.f96/disasters.html</a></li>
+</ol>
+<ol start=6 type=1>
+  <li style='text-align:justify;     '>Ballistic Missile Defense Organization 
+    (Patriot PAC 3 Fact Sheet) <a
+     href="http://www.acq.osd.mil/bmdo/bmdolink/html/factsheet.html">http://www.acq.osd.mil/bmdo/bmdolink/html/factsheet.html</a></li>
+</ol>
+<ol start=7 type=1>
+  <li style='text-align:justify;     '>Falatko, Frank (ed); “<i>Report Issued 
+    On Scud Missile Attack</i>”; United States Department of Defence News, 5 June 
+    1991</li>
+</ol>
+<ol start=8 type=1>
+  <li style='text-align:justify;     '>Skeel, Robert; “<i>Roundoff Error and the 
+    Patriot Missile</i>”; Society for Industrial and Applied Mathematics (SIAM) 
+    News, July 1992, Volume 25, Number 4</li>
+</ol>
+<h3>Other Sources</h3>
+<p style='text-align:justify'>The Risk Digest - Forum on Risks to the Public in 
+  Computers and Related Systems</p>
+<p style='text-align:justify'><a
+href="http://catless.ncl.ac.uk/Risks.data/search.html">http://catless.ncl.ac.uk/Risks.data/search.html</a></p>
+<p style='text-align:justify'>“<i>Raytheon's Response to WGBH FRONTLINE - Gulf 
+  War</i>“; Raytheon Company</p>
+<p style='text-align:justify'><a
+href="http://www.pbs.org/wgbh/pages/frontline/gulf/weapons/raytheontext.html">http://www.pbs.org/wgbh/pages/frontline/gulf/weapons/raytheontext.html</a></p>
+<p style='text-align:justify'>Toich, Shelly; “<i>The Patriot Missile Failure in 
+  Dhahran: Is Software to Blame? </i>”</p>
+<p style='text-align:justify'><a href="http://shelley.toich.net/projects/CS201/patriot.html">http://shelley.toich.net/projects/CS201/patriot.html</a></p>
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>James Shore: The Art of Agile Development: Pair Programming</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="http://www.jamesshore.com/simple4.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://www.jamesshore.com/print3.css" type="text/css" media="print" />
+    <style type="text/css" media="all">@import "http://www.jamesshore.com/sophisto.css";</style>
+
+    <!-- Help Firefox find the RSS feed -->
+    <link rel="alternate" type="application/rss+xml" title="James Shore" href="http://www.jamesshore.com/index.rss" />
+
+    <!-- Advertising -->
+    <meta name="keywords" content="James Shore, Jim Shore, operational excellence, software development, Agile, Scrum, Lean, Extreme Programming, XP, test-driven development, coaching, consulting, software, IT, profitability, Titanium I.T., Titanium IT, Portland, Oregon, Pacific Northwest" />
+
+    <!-- Normal junk -->
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta http-equiv="cache-control" content="max-age: 3600" />
+<!--
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="pragma" content="no-cache" />
+-->
+    <meta name="author" content="Titanium I.T." />
+    <meta name="robots" content="all" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />    
+
+		<!-- Google Analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-32448964-2', 'jamesshore.com');
+		  ga('send', 'pageview');		
+		</script>
+  </head>
+
+  <body>
+
+  
+    <table summary="">
+      <!-- BEGIN HEADER -->
+
+      <tr onclick="document.location.href='http://www.jamesshore.com/';" style="cursor:pointer">
+        <td id="header" colspan="2">
+  			<div class="centered-block">
+  				<div class="centered"><div>
+					<h1>The Art of Agile<sup><span style="font-size: 50%">SM</span></sup></h1>
+					<h1>James Shore</h1>
+				</div></div>
+				<div class="pull-right">
+					<p>"You influenced me to think in completely different ways, and to question traditional assumptions about everything I thought I knew"</p>
+					<p style="text-align: right">&mdash;Chris W., Extreme Programmer and Coach</p>
+				</div>
+			</div>
+          
+        </td>
+      </tr>
+
+      <!-- END HEADER -->
+
+
+      <tr> <!-- menu and body -->
+
+
+        <!-- BEGIN MENU -->
+
+        <td id="menu">
+          <dl>
+            <dt>Services</dt>
+            <dd><a href="http://www.jamesshore.com/Consulting/Immersion.html">Total Immersion</a></dd>
+            <dd><a href="http://www.jamesshore.com/Consulting/Consulting.html">Consulting</a></dd>
+            <dd><a href="http://www.jamesshore.com/Consulting/Mentor-Program.html">Mentor Program</a></dd>
+            <dd><a href="https://www.kickstarter.com/projects/188988365/the-agile-fluency-project">Training</a>
+						<div class="details">
+							<ul>
+								<li><a href="https://www.kickstarter.com/projects/188988365/the-agile-fluency-project">Sept 22-26: Agile Fluency&trade; Workshop (Portland, OR)</a></li>
+							</ul>
+						</div>
+<!--
+            <dd><a href="http://www.jamesshore.com/Training/">Training</a>
+						<div class="details">
+							<ul>
+								<li><a href="http://www.jamesshore.com/Calendar/2012-09-03.html">Sep 3-4: Art of Agile Planning (Brazil)</a></li>
+								<li class="outdent"><a href="http://www.jamesshore.com/Training/">more...</a></li>
+							</ul>
+						</div>
+-->
+			</dd>
+			<dd>
+				<a href="http://www.jamesshore.com/Calendar/">Public Events</a>
+<!--
+				<div class="details">
+					<ul>
+						<li class="outdent"><a href="http://www.jamesshore.com/Calendar/">more...</a></li>
+					</ul>
+				</div>
+-->
+			</dd>
+
+			<dt>About James</dt>
+            <dd><a href="http://www.jamesshore.com/Consulting/Credentials.html">Biography</a></dd>
+<!--
+            <dd><a href="http://www.jamesshore.com/Consulting/Testimonials.html">Testimonials</a></dd>
+            <dd><a href="http://www.jamesshore.com/Consulting/Case-Studies.html">Case Studies</a></dd>
+-->
+            <dd><a href="http://www.jamesshore.com/Consulting/Contact.html">Contact Me</a></dd>
+
+            <dt>Content</dt>
+            <dd><a href="http://www.jamesshore.com/Blog/">Blog</a>
+            	<div class="details">
+            		<ul>
+            			<li><a href="http://www.jamesshore.com/Blog/Inside-the-Agile-Fluency-Workshop.html">Inside the Agile Fluency Workshop</a></li>
+            			<li><a href="http://www.jamesshore.com/Blog/Announcing-the-Agile-Fluency-Project.html">Announcing the Agile Fluency Project</a></li>
+            			<li><a href="http://www.jamesshore.com/Blog/How-Does-TDD-Affect-Design.html">How Does TDD Affect Design?</a></li>
+           			<li class="outdent"><a href="http://www.jamesshore.com/Blog/">more...</a></li>
+            		</ul>
+	            </div>
+            </dd>
+            <dd><a href="http://www.jamesshore.com/Blog/Lets-Play">Let's Play TDD</a>
+            	<div class="details">
+            		<ul>
+             			<li><a href="http://www.jamesshore.com/Blog/Lets-Play/Episode-201.html">#201: From Mock-Based to State-Based</a></li>
+            			<li><a href="http://www.jamesshore.com/Blog/Lets-Play/Episode-200.html">#200: To Kill a Mock</a></li>
+             			<li><a href="http://www.jamesshore.com/Blog/Lets-Play/Episode-199.html">#199: Constructor Cleanup</a></li>
+           			<li class="outdent"><a href="http://www.jamesshore.com/Blog/Lets-Play">more...</a></li>
+            		</ul>
+	            </div>
+            </dd>
+            <dd><a href="http://www.jamesshore.com/index.abstract">Most Popular</a>
+                <div class="details">
+	           		<ul>
+	           			<li><a href="http://www.jamesshore.com/Blog/The-Decline-and-Fall-of-Agile.html">The Decline and Fall of Agile</a></li>
+	           			<li><a href="http://www.jamesshore.com/Blog/Dependency-Injection-Demystified.html">Dependency Injection Demystified</a></li>
+	           			<li><a href="http://www.jamesshore.com/Blog/Kanban-Systems.html">Kanban Systems</a></li>
+	           			<li class="outdent"><a href="http://www.jamesshore.com/index.abstract">more...</a></li>
+	           		</ul>
+	           	</div>
+            </dd>
+            <dd><a href="http://www.jamesshore.com/In-the-News/">In the News</a>
+            	<div class="details">
+	           		<ul>
+	           			<li><a href="http://www.jamesshore.com/In-the-News/2013-Conference-Videos.html">2013's Conference Videos</a></li>
+	           			<li><a href="http://www.jamesshore.com/In-the-News/Agile-Fluency-Podcast.html">Agile Fluency Podcast</a></li>
+	           			<li><a href="http://www.jamesshore.com/In-the-News/Evolutionary-Design-Illustrated-Video.html">"Evolutionary Design Illustrated" Video</a></li>
+	           			<li class="outdent"><a href="http://www.jamesshore.com/In-the-News/">more...</a></li>
+	           		</ul>
+	           	</div>
+	        </dd>
+            <dd><a href="http://www.jamesshore.com/index.rss"><img src="http://www.jamesshore.com/images/feed.png" alt=">" /> Subscribe <small>(RSS)</small></a></dd>
+            <dd><a href="http://twitter.com/jamesshore"><img src="http://www.jamesshore.com/images/twitter.png" alt=">" /> Follow Me <small>(Twitter)</small></a></dd>
+
+			<dt>The Book</dt>
+            <dd><a href="http://www.jamesshore.com/Agile-Book/"><img src="http://www.jamesshore.com/images/art-of-agile/cover-small.jpg" alt="The Art of Agile Development" /></a></dd>
+            <dd><a href="http://www.amazon.com/Art-Agile-Development-James-Shore/dp/0596527675">Buy from Amazon</a></dd>
+            <dd><a href="http://www.jamesshore.com/Agile-Book/">Bonus Content</a></dd>
+            <dd>
+            	<a href="http://www.jamesshore.com/Agile-Book/">Read Online</a>
+            	<div class="details">
+	           		<ul>
+	           			<li><a href="http://www.jamesshore.com/Agile-Book/preface.html">Preface</a></li>
+	           			<li><a href="http://www.jamesshore.com/Agile-Book/refactoring.html">Refactoring</a></li>
+	           			<li><a href="http://www.jamesshore.com/Agile-Book/release_planning.html">Release Planning</a></li>
+	           			<li class="outdent"><a href="http://www.jamesshore.com/Agile-Book/">more...</a></li>
+	           		</ul>
+	           	</div>
+            </dd>
+
+            <dt>Site</dt>
+            <dd><a href="http://www.jamesshore.com/index.index">Index</a></dd>
+            <dd><a href="http://www.google.com/search?q=site%3Ajamesshore.com">Search</a></dd>
+          </dl>
+
+        </td>
+
+        <!-- END MENU -->
+
+
+        <!-- BEGIN BODY -->
+
+        <td id="body">
+          <p class="breadcrumbs"><a href="http://www.jamesshore.com/">Home</a> &rarr; <a href="http://www.jamesshore.com/Agile-Book/">Agile-Book</a> &rarr; pair_programming</p>
+
+          <blockquote class="site-notice">
+	<div class="figure">
+		<a href="http://www.amazon.com/Art-Agile-Development-James-Shore/dp/0596527675"><img src="/images/art-of-agile/cover-small.jpg" alt="(book cover)" /></a>
+		<p><a href="http://www.amazon.com/Art-Agile-Development-James-Shore/dp/0596527675">Buy it now!</a></p>
+	</div>
+
+	<p>Welcome to the <cite>The Art of Agile Development</cite> website.  Here, you'll find a cornucopia of bonus material, such as downloadable posters, behind-the-scenes material, and new insights.</p>
+	
+	<p>For more, see the <a href="/Agile-Book/">table of contents</a>.</p>
+
+<!--
+	<table class="register">
+		<tr><th colspan="4"><em>Art of Agile</em> Training!</th></tr>
+		<tr><td>Apr 23 - 27</td><td>New York City</td><td><a href="http://artofagilenyc.com/">Register here</a></td></tr>
+	</table>
+-->
+
+	<div style="clear: both" />  <!-- keep image within div -->
+</blockquote>
+
+	
+  <div class="print" onclick="javascript:window.print()"><img src="http://www.jamesshore.com/images/print.gif" alt="" />&nbsp;Print</div>
+
+
+<h2><a href='http://www.jamesshore.com/Agile-Book/pair_programming.html'>The Art of Agile Development: Pair Programming</a></h2>
+
+<p class="byline">by James Shore</p>
+<p class="date">26 Feb, 2010</p>
+
+
+<div class="story">
+  
+<ul class="book_nav">
+	<li>Next: <a href="http://www.jamesshore.com/Agile-Book/energized_work.html">Energized Work</a></li>
+	<li>Previous: <a href="http://www.jamesshore.com/Agile-Book/thinking_intro.html">Chapter 5: Thinking</a></li>
+	<li>Up: <a href="http://www.jamesshore.com/Agile-Book/thinking_intro.html">Chapter 5: Thinking</a></li>
+</ul>
+
+<h3>in 99 words</h3>
+
+<blockquote class="ninetynine_words">
+
+<p>It's more fun than it sounds: two programmers at one computer.  One drives; the other navigates.  Switching roles fluidly, they constantly communicate.  Together, they accomplish better work more quickly than either could alone.</p>
+
+<p>The driver types.  She focuses on <em>tactics</em>--writing clean code that compiles and runs.  The navigator focuses on <em>strategy</em>--how the code fits into the overall design, which tests will drive the code forward, and which refactorings will improve the entire codebase.</p>
+
+<p>Pairs self-organize by selecting partners who can best help with the current task.  They switch every few hours to share perspectives and knowledge.</p>
+
+</blockquote>
+
+<h3>as haiku</h3>
+
+<blockquote class="haiku">
+
+<p>Summer bakes the earth
+<br />Heads together, we ponder
+<br />Aha!  An insight.</p>
+
+</blockquote>
+
+<h3>Behind the Scenes</h3>
+
+<p><a href="http://www.jamesshore.com/Blog/Iterative-Writing.html">Iterative Writing</a></p>
+
+<h3>Poster</h3>
+
+<a href="http://www.jamesshore.com/downloads/art-of-agile/pairing-tips.pdf"><img class="framed" width="200" src="http://www.jamesshore.com/images/art-of-agile/pairing-tips-thumb.jpg" alt="'Pairing Tips' poster" /></a><p>
+
+<h3>Full Text</h3>
+
+<p>The following text is excerpted from <cite>The Art of Agile Development</cite> by James Shore and Shane Warden, published by O'Reilly. Copyright &copy 2008 the authors. All rights reserved.</p>
+
+<h2>Pair Programming</h2>
+
+<p class="goal">We help each other succeed.</p>
+
+<dl class="audience"><dt>Audience</dt><dd>Programmers</dd><dd>Whole Team</dd></dl>
+
+<p>Do you want somebody to watch over your shoulder all day?  Do you want to waste half of your time sitting in sullen silence watching somebody else code?</p>
+
+<p>Of course not.  Nobody does&mdash;especially not people who pair program.</p>
+
+<p>Pair programming is one of the first things people notice about XP.  Two people work at the same keyboard?  It's weird.  It's also extremely powerful and, once you get used to it, tons of fun.  Most programmers I know who tried pairing for a month find that they prefer it to programming alone.</p>
+
+<h3>Why Pair?</h3>
+
+<p>This chapter is called <em>Thinking</em>, yet I included pair programming as the first practice.  That's because pair programming is all about increasing your brainpower.</p>
+
+<p>When you pair, one person codes&mdash;the <em>driver</em>.  The other person is the <em>navigator</em>, whose job is to think.  As navigator, sometimes you think about what the driver is typing.  (Don't rush to point out missing semicolons, though.  That's annoying.)  Sometimes you think about what tasks to work on next and sometimes you think about how your work best fits into the overall design.</p>
+
+<p>This arrangement leaves the driver free to work on the tactical challenges of creating rigorous, syntactically correct code without worrying about the big picture, and it gives the navigator the opportunity to consider strategic issues without being distracted by the details of coding.  Together, the driver and navigator create higher-quality work more quickly than either could produce on their own.<sup>1</sup></p>
+
+<p class="aside"><sup>1</sup>One study found that pairing takes about 15% more effort than one individual working alone, but produces results more quickly and with 15% fewer defects [Cockburn &amp; Williams].  Every team is different, so take these results with a grain of salt.</p>
+
+<p>Pairing also reinforces good programming habits.  XP's reliance on continuous testing and design refinement takes a lot of self-discipline.  When pairing, you'll have positive peer pressure to perform these difficult but crucial tasks.  You'll spread coding knowledge and tips throughout the team.</p>
+
+<p>You'll also spend more time in <em>flow</em>&mdash;that highly-productive state in which you're totally focused on the code.  It's a different kind of flow than normal because you're working with a partner, but it's far more resilient to interruptions.  To start with, you'll discover that your office mates are far less likely to interrupt you when you're working with someone.  When they do, one person will handle the interruption while the other continues his train of thought.  Further, you'll find yourself paying more attention to the conversation with your programming partner than surrounding noise; it fades into the background.</p>
+
+<p>If that isn't enough, pairing really is a lot of fun.  The added brainpower will help you get past roadblocks more easily.  For the most part, you'll be collaborating with smart, like-minded people.  Plus, if your wrists get sore from typing, you can hand off the keyboard to your partner and continue to be productive.</p>
+
+<h3>How to Pair</h3>
+
+<p>I recommend pair programming on all production code.  Many teams who pair frequently, but not exclusively, discover that they find more defects in solo code.  A good rule of thumb is to pair on anything that you need to maintain, which includes tests and the build script.</p>
+
+<p>When you start working on a task, ask another programmer to work with you.  If another programmer asks for help, make yourself available.  Never assign partners: pairs are fluid, forming naturally and shifting throughout the day.  Over time, pair with everyone on the team.  This will help improve team cohesion and it will spread design skills and knowledge throughout the team.</p>
+
+<blockquote class="coach">Get a fresh perspective by switching partners.</blockquote>
+
+<p>When you need a fresh perspective, switch partners.  I usually switch when I'm feeling frustrated or stuck.  Have one person stay on the task to help bring the new partner up to speed.  Often, even explaining the problem to someone new will help you resolve it.</p>
+
+<p>It's a good idea to switch partners several times per day even if you don't feel stuck.  This will help keep everyone informed and moving quickly.  I switch whenever I finish a task.  If I'm working on a big task, I switch within four hours.</p>
+
+<p>When you sit down to pair together, make sure that you're physically comfortable.  Position your chairs side by side, allowing for each others' need for personal space, and make sure the monitor is clearly visible.  When you're driving, place the keyboard directly in front of you.  Keep an eye out for this one&mdash;for some reason, people pairing tend to contort themselves to reach the keyboard and mouse rather than moving them closer.</p>
+
+<dl class="practice"><dt>Ally</dt><dd><a href="http://www.jamesshore.com/Agile-Book/test_driven_development.html">Test-Driven Development</a></dd></dl><p>Paired programmers produce code through conversation.  As you drive or navigate, think out loud.  Take small, frequent design steps&mdash;test-driven development works best&mdash;and talk about your assumptions, short-term goals, general direction, and any relevant history of the feature or project.  If you're confused about something, ask questions.  The discussion may enlighten your partner as much as it does you.</p>
+
+<blockquote class="notetip">
+ 
+ <p>When a pair <em>goes dark</em>&mdash;talks less, lowers their voices, or doesn't switch off with other pairs&mdash;it's often a sign of technical difficulty.</p>
+ 
+</blockquote>
+
+<dl class="practice"><dt>Ally</dt><dd><a href="http://www.jamesshore.com/Agile-Book/energized_work.html">Energized Work</a></dd></dl><p>Expect to feel tired at the end of the day.  Pairs typically feel that they have worked harder and accomplished more than when working alone. Practice energized work to maintain your ability to pair every day.</p>
+
+<h3>Driving and Navigating</h3>
+
+<blockquote class="coach">Pairing will feel natural in time.</blockquote>
+
+<p>When you start pairing, expect to feel clumsy and fumble-fingered as you drive. You may feel that your navigator sees ideas and problems much more quickly than you do.  She does&mdash;navigators have more time to think than drivers do.  The situation will reverse when you navigate.  Pairing will feel natural in time.</p>
+
+<p>When navigating, expect to feel like you want to step in and take the keyboard away from your partner.  Relax; your driver will often communicate an idea with both words and code.  He'll make typos and little mistakes&mdash;give him time to correct them himself.  Use your extra brainpower to think about the greater picture.  What other tests do you need to write?  How does this code fit into the rest of the system?  Is there duplication you need to remove?  Can the code be more clear?  Can the overall design be better?</p>
+
+<p>As navigator, help your driver be more productive.  Think about what's going to happen next and be prepared with suggestions.  When I'm navigating, I like to keep an index card in front of me.  Rather than interrupting the driver when I think of an issue, I write my ideas on the index card and wait for a break in the action to bring them up.  At the end of the pairing session, I tear up the card and throw it away.</p>
+
+<dl class="practice"><dt>Ally</dt><dd><a href="http://www.jamesshore.com/Agile-Book/spike_solutions.html">Spike Solutions</a></dd></dl><p>Similarly, when a question arises, take a moment to look up the answer while the driver continues to work.  Some teams keep spare laptops on hand for this purpose.  If you need more than a few minutes, research the solution together.  Sometimes the best way to do so is to split up, pursue parallel lines of inquiry, and frequently come back together to share what you have learned.  Spike solutions are a particularly powerful approach.</p>
+
+<p>As you pair, switch roles frequently&mdash;at least every half hour, and possibly every few minutes.  If you're navigating and find yourself telling the driver which keys to press, ask for the keyboard.  If you're driving and need a break, pass the keyboard off to your navigator.</p>
+
+<blockquote class="sidebar"><h3>Pairing Tips</h3>
+ 
+ <ul>
+  <li><p>Pair on everything you'll need to maintain.</p></li>
+  <li><p>Allow pairs to form fluidly rather than assigning partners.</p></li>
+  <li><p>Switch partners when you need a fresh perspective.</p></li>
+  <li><p>Avoid pairing with the same person for more than a day at a time.</p></li>
+  <li><p>Sit comfortably, side-by-side.</p></li>
+  <li><p>Produce code through conversation.  Collaborate, don't critique.</p></li>
+  <li><p>Switch driver and navigator roles frequently.</p></li>
+</ul>
+ 
+</blockquote>
+
+<h3>Pairing Stations</h3>
+
+<p>To enjoy pair programming, good pairing stations are essential.  You need plenty of room for both people to sit side by side.  Typical cubicles, with a workstation located in a corner, won't work.  They're uncomfortable and require one person to sit behind another, adding psychological as well as physical barriers to peer collaboration.</p>
+
+<p>You don't need fancy furniture to make a good pairing station; the best ones I've seen are just simple folding tables found at any good office supply store.  They should be six feet long, so that two people can sit comfortably side-by-side, and at least four feet deep.  Each table needs a high-powered development workstation.  I like to plug in two keyboards and mice so each person can have a set.</p>
+
+<p>Splurge on large monitors so that both people can see clearly.  Some teams mirror the display onto two monitors, which makes things a little easier to see, but you may find yourself pointing to the wrong monitor.  Others prefer to spread one desktop across two monitors.</p>
+
+<blockquote class="notetip">
+ 
+ <p>For ideas about where to put the pairing stations, see "<a href="http://www.jamesshore.com/Agile-Book/sit_together.html">Sit Together</a>" in Chapter 6.</p>
+ 
+</blockquote>
+
+<h3>Challenges</h3>
+
+<p>Pairing can be uncomfortable at first, as it may require you to collaborate more than you're used to.  These feelings are natural and typically go away after a month or two, but you have to face some challenges.</p>
+
+<h4>Comfort</h4>
+
+<p>It bears repeating: pairing is no fun if you're uncomfortable.  When you sit down to pair, adjust your position and equipment so you can sit comfortably.  Clear debris off the desk and make sure there's room for your legs, feet, and knees.</p>
+
+<p>Some people (like me) need a lot of personal space.  Others like to get up close and personal.  When you start to pair, discuss your personal space needs and ask about your partner's.</p>
+
+<p>Similarly, while it goes without saying that personal hygiene is critical, remember that strong flavors such as coffee, garlic, onions, and spicy foods can lead to foul breath.  Decide as a team, <em>before</em> any issues come up, how to notify people of challenging personal habits respectfully.</p>
+
+<h4>Mismatched Skills</h4>
+
+<p>Pairing is a collaboration between peers, but sometimes a senior developer will pair with a junior developer.  Rather than treating these occasions as student/teacher situations, restore the peer balance by creating opportunities for both participants to learn.  For example, if you know you'll be pairing with a junior developer, you could ask him to research a topic that no one else knows, such as the inner workings of a library that the team depends on.  Give everyone a chance to be an expert.</p>
+
+<h4>Communication Style</h4>
+
+<dl class="practice"><dt>Ally</dt><dd><a href="http://www.jamesshore.com/Agile-Book/test_driven_development.html">Test-Driven Development</a></dd></dl><p>New drivers sometimes have difficulty involving their partners; they can take over the keyboard and shut down communication.  To practice communicating and switching roles while pairing, consider <em>ping-pong pairing</em>.  In this exercise, one person writes a test.  The other person makes it pass and writes a new test.  Then the first person makes it pass and repeats the process by writing another test.</p>
+
+<p>The flip side of too little communication is too much communication&mdash;or rather, too much blunt communication.  Frank criticism of code and design is valuable, but it may be difficult to appreciate at first.  Different people have different thresholds, so pay attention to how your partner receives your comments.  Try transforming declarations (such as "This method is too long") into questions or suggestions ("Could we make this method shorter?" or "Should we extract this code block into a new method?").  Adopt an attitude of collaborative problem solving.</p>
+
+<h4>Tools and Keybindings</h4>
+
+<dl class="practice"><dt>Ally</dt><dd><a href="http://www.jamesshore.com/Agile-Book/coding_standards.html">Coding Standards</a></dd></dl><p>Even if you don't fall victim to the endless <code>vi</code> versus <code>emacs</code> editor war, you may find your coworkers' tool preferences annoying.  Try to standardize on a particular toolset.  Some teams even create a standard image and check it into version control.  When you discuss coding standards, discuss these issues as well.</p>
+
+<h3>Questions</h3>
+
+<h4 class="faq">Isn't it wasteful to have two people do the work of one?</h4>
+
+<p>In pair programming, two people aren't really doing the work of one.  Although only one keyboard is in use, there's more to programming than that.  As Ward Cunningham said, "If you don't think carefully, you might think that programming is just typing statements in a programming language."<sup>2</sup>  In pair programming, one person is programming and the other is thinking ahead, anticipating problems, and strategizing.</p>
+
+<p class="aside"><sup>2</sup>http://en.wikiquote.org/wiki/Ward_Cunningham, accessed 12 December 2006.</p>
+
+<p>If you're looking for hard data, [Williams] has a chapter on pairing research.  Keep in mind that the number of variables in software development make it notoriously difficult to conduct large-scale controlled studies.  Sometimes the best way to know whether something will work for your team is just to try it.</p>
+
+<h4 class="faq">How can I convince my team or organization to try pair programming?</h4>
+
+<p>Ask permission to try it as an experiment.  Set aside a month in which everyone pairs on all production code.  Be sure to keep going for the entire month, as pair programming may be difficult and uncomfortable for the first few weeks.</p>
+
+<p>Don't just ask permission of management; be sure your fellow team members are interested in trying pairing as well.  The only programmers I know who tried pairing for a month and didn't like it are the ones who were forced to do it against their will.</p>
+
+<h4 class="faq">Do we really have to pair program all the time?</h4>
+
+<p>This is a decision that your whole team should make together.  Before you decide, try pairing on all production code (everything you need to maintain) for a month.  You may enjoy it more than you expect.</p>
+
+<p>Regardless of your rule, you will still produce code that you don't need to maintain.  (Spike solutions are one example.)  These may benefit from individual study.</p>
+
+<blockquote class="coach">If you're bored while pairing, consider how you can make your design less repetitive.</blockquote>
+
+<dl class="practice"><dt>Ally</dt><dd><a href="http://www.jamesshore.com/Agile-Book/simple_design.html">Simple Design</a></dd></dl><p>Some production tasks are so repetitive that they don't require the extra brainpower a pair provides.  Before abandoning pairing, however, consider why your design requires so much repetition.  It could be an indication of a design flaw.  Use the navigator's extra time to think about design improvements and consider discussing it with your whole team.</p>
+
+<h4 class="faq">How can I concentrate with someone talking to me?</h4>
+
+<p>When you navigate, you shouldn't have too much trouble staying several steps ahead of your driver.  If you do, ask your driver to think out loud so you can understand her thought process.</p>
+
+<p>As driver, though, you may sometimes find that you're having trouble concentrating.  Let your navigator know&mdash;she may have a suggestion that will help you get through the roadblock.  At other times, you may just need a few moments of silence to think through the problem.</p>
+
+<blockquote class="coach">If you have trouble concentrating, try taking smaller steps.</blockquote>
+
+<dl class="practice"><dt>Ally</dt><dd><a href="http://www.jamesshore.com/Agile-Book/test_driven_development.html">Test-Driven Development</a></dd></dl><p>If you find yourself in this situation a lot, you may be taking steps that are too large.  Use test-driven development and take very small steps.  Rely on your navigator to keep track of what you still need to do (tell her if you have an idea; she'll write it down) and focus only on the few lines of code needed to make the next test pass.</p>
+
+<dl class="practice"><dt>Ally</dt><dd><a href="http://www.jamesshore.com/Agile-Book/spike_solutions.html">Spike Solutions</a></dd></dl><p>If you are working with a technology you don't completely understand, consider taking a few minutes to work on a spike solution.  You and your partner can work on this together or separately.</p>
+
+<h4 class="faq">What if we have an odd number of programmers?</h4>
+
+<dl class="practice"><dt>Ally</dt><dd><a href="http://www.jamesshore.com/Agile-Book/exploratory_testing.html">Exploratory Testing</a></dd></dl><p>A programmer flying solo can do productive tasks that don't involve production code.  She can research new technologies, or learn more about a technology the team is using.  She can pair with a customer or tester to review recent changes, polish the application, or do exploratory testing.  She could be the team's batman (see "<a href="http://www.jamesshore.com/Agile-Book/iteration_planning.html">Iteration Planning</a>" in Chapter 8).</p>
+
+<p>Alternatively, a solo programmer may wish to spend some time reviewing the overall design&mdash;either to improve his own understanding, or to come up with ideas for improving problem areas.  If a large refactoring is partially complete, the team may wish to authorize a conscientious programmer to finish those refactorings.</p>
+
+<p>If your team is on the smaller side, you may run out of useful solo tasks.  In this case, consider relaxing the "no production code" rule or bringing in another programmer.</p>
+
+<h4 class="faq">There are only two (or three) of us.  Should we still pair all the time?</h4>
+
+<p>Even a saint will get on your nerves if you have to pair with him day-in, day-out.  Use your own judgment about when to pair and when you need time to yourself.  If you feel fine but your pair is getting cranky, don't escalate; just say <em>you're</em> tired and need a break.</p>
+
+<p>I pair-programmed with the same person for three months straight during a two-person project.  I think it helped that we had a large office and a big desk: it gave us room to move around.  We also kept a mini-fridge stocked with goodies.</p>
+
+<p>Even with these comforts, I had my cranky moments. Perhaps the most important factor was that my partner was a very laid-back, easy-going person who put up with my occasional bad mood.</p>
+
+<h4 class="faq">We get engrossed in our work and forget to switch pairs.  How can we encourage more frequent pair switching?</h4>
+
+<p>One approach is to remember that you can switch when you feel stuck or frustrated.  In fact, this is a perfect time to switch partners and get a fresh perspective.</p>
+
+<p>Some teams use kitchen timers to switch partners at strictly defined intervals.  [Belshee] reports interesting results from switching every ninety minutes.  While this could be a great way to get in the habit of switching pairs, make sure everybody is willing to try it.</p>
+
+<h4 class="faq">How can we pair remotely?</h4>
+
+<p>You can use a phone headset and a desktop sharing tool such as VNC or NetMeeting to pair remotely.  I have heard of teams who use individual workstations with shared <code>screen</code> sessions and VoIP applications.</p>
+
+<p>When I tried this, I found it to be a poor substitute for pairing in person.  XP teams usually sit together, so remote pairing isn't often necessary.</p>
+
+<h3>Results</h3>
+
+<p>When you pair program well, you find yourself focusing intently on the code and your work with your partner.  You experience fewer interruptions and distractions.  When interrupted, one person deals with the problem while the other continues thinking.  Afterward, you slide back into the flow of work immediately.  At the end of the day, you feel tired yet satisfied.  You enjoy the intense focus and the camraderie of working with your teammates.</p>
+
+<p>The team as a whole enjoys higher quality code.  Technical debt decreases.  Knowledge travels quickly through the team, raising everyone's level of competence and helping to integrate new team members quickly.</p>
+
+<h3>Contraindications</h3>
+
+<p>Pairing requires a comfortable work environment (see "<a href="http://www.jamesshore.com/Agile-Book/sit_together.html">Sit Together</a>" in Chapter 6 for design options).  Most offices and cubicles just aren't set up that way.  If your workspace doesn't allow programmers to sit side-by-side comfortably, either change the workspace or don't pair program.</p>
+
+<p>Similarly, if your team doesn't sit together, pairing may not work for you.  Although you can pair remotely, it's not as good as in-person.</p>
+
+<p>Programmer resistance may be another reason to avoid pairing.  Pairing is a big change to programmers' work styles and you may encounter resistance.  I usually work around this by asking people to try it for a month or two before making a final decision.  If they still resist, you're probably better off avoiding pairing rather than forcing anyone to pair against their will.</p>
+
+<h3>Alternatives</h3>
+
+<p>Pairing is a very powerful tool.  It reduces defects, improves design quality, shares knowledge amongst team members, supports self-discipline, and reduces distractions; all without sacrificing productivity.  If you cannot pair program, you need alternatives.</p>
+
+<p>Formal code inspections can reduce defects, improve quality, and support self-discipline.  However, my experience is that programmers have trouble including inspections in their schedules, even when they're in favor of them.  Pairing is easier to do consistently, and it provides feedback much more quickly than scheduled inspections.  If you're going to use inspections in place of pairing, add some sort of support mechanism to help them take place.</p>
+
+<p>Inspections alone are unlikely to share knowledge as thoroughly as collective code ownership requires.  If you cannot pair program, consider avoiding collective ownership, at least at first.</p>
+
+<p>If you'd still like to have collective code ownership, you need an alternative mechanism for sharing knowledge about the state of the codebase.  I've formed regular study groups  in which programmers meet daily for a timeboxed half-hour to review and discuss the design.</p>
+
+<dl class="practice"><dt>Ally</dt><dd><a href="http://www.jamesshore.com/Agile-Book/energized_work.html">Energized Work</a></dd></dl><p>I'm not aware of any other tool that helps reduce distractions as well as pair programming does.  However, I find that I succumb to more frequent distractions when I'm tired.  In the absence of pairing, put more emphasis on energized work.</p>
+
+<h3>Further Reading</h3>
+
+<p><cite>Pair Programming Illuminated</cite> [Williams] discusses pair programming in depth.</p>
+
+<p>"The Costs and Benefits of Pair Programming" [Cockburn &amp; Williams] reports on Laurie Williams' initial study of pair programming.</p>
+
+<p>"Promiscuous Pairing and Beginner's Mind: Embrace Inexperience" [Belshee] is an intriguing look at the benefits of switching pairs at strict intervals.</p>
+
+<p>"Adventures in Promiscuous Pairing: Seeking Beginner's Mind" [Lacey] explores the costs and challenges of promiscuous pairing.  It's a must-read if you plan to try Belshee's approach.</p>
+
+<p><cite>Peer Reviews in Software: A Practical Guide</cite> [Wiegers] discusses formal inspections and peer reviews.</p>
+
+
+<ul class="book_nav">
+	<li>Next: <a href="http://www.jamesshore.com/Agile-Book/energized_work.html">Energized Work</a></li>
+	<li>Previous: <a href="http://www.jamesshore.com/Agile-Book/thinking_intro.html">Chapter 5: Thinking</a></li>
+	<li>Up: <a href="http://www.jamesshore.com/Agile-Book/thinking_intro.html">Chapter 5: Thinking</a></li>
+</ul>
+
+
+  <div style="clear: both"></div>   <!-- make sure figures, etc., don't dangle down -->
+
+  
+</div>
+
+<!-- JS-Kit Comments discontinued
+
+	<a name="comments"></a>
+
+-->
+
+<!-- JS-Kit Ratings discontinued
+
+	<div class="ratings">	
+		<div class="js-kit-rating" style="float: left; clear: left" title="The Art of Agile Development: Pair Programming" path="/Agile-Book/pair_programming.html" permalink="http://www.jamesshore.com/Agile-Book/pair_programming.html">
+			<div style="margin: 0.25em 1.75em 1em 0.25em">
+				<img src="/images/js-kit/gray.png" alt="" /><img src="/images/js-kit/gray.png" alt="" /><img src="/images/js-kit/gray.png" alt="" /><img src="/images/js-kit/gray.png" alt="" /><img src="/images/js-kit/gray.png" alt="" />
+				<br /><p style="font-size: 80%; text-align: center">Loading...</p>
+			</div>
+		</div>
+	</div>
+
+-->
+
+<p class="permlink">
+	<a href='http://www.jamesshore.com'>Home</a> &rarr; <a href="http://www.jamesshore.com/Agile-Book/" >Agile-Book</a> |
+<!-- JS-Kit Comments discontinued -->
+<a href="http://www.jamesshore.com/Agile-Book/pair_programming.html">Permanent Link</a>
+<!-- JS-Kit Comments discontinued
+	
+	<a href="http://www.jamesshore.com/Agile-Book/pair_programming.html#comments">Comments (<span class="js-kit-comments-count" path="/Agile-Book/pair_programming.html"><img src="/images/spinner.gif" alt="..." /></span>)</a>
+-->
+</p>
+
+<div style="clear: both"></div>   <!-- start next section below rating -->
+<!-- JS-Kit Comments discontinued
+
+	<div class="comments">
+		<div class="js-kit-comments" path="/Agile-Book/pair_programming.html" permalink="http://www.jamesshore.com/Agile-Book/pair_programming.html">
+			<p style="font-variant: small-caps">Loading comments...</p>
+			<p><img src="/images/spinner.gif" alt="" /></p>
+		</div>
+	</div>
+
+-->
+          <div id="footer">
+            
+
+			  <p class="promo">I work with people who want to be great. People who are willing to take risks, rock the boat, and change their environment to maximize their productivity, throughput, and value. If that's you&mdash;particularly if you're in a product-focused, entrepreneurial environment&mdash;<a href="http://www.jamesshore.com/Consulting/Services.html">I want to hear from you</a>. We can do great things together.</p>
+			  
+              <p class="mini-bio"><em>James Shore</em> is a thought leader in the Agile software development community. He helps development teams worldwide achieve high throughput, market focus, shrinking costs, and joyful work. James is the co-author of <cite>The Art of Agile Development</cite> (O'Reilly, 2007). You can find more of his writing on his <em>Art of Agile</em> blog at http://jamesshore.com.</p>
+            
+
+            <div class="copyright">
+           	  <p><span style="white-space: nowrap">&copy; 2002-2014, James Shore</span> | <span style="white-space: nowrap">Phone: 503-267-5490</span> | <span style="white-space: nowrap">Email: <a href="mailto:jshore@jamesshore.com">jshore@jamesshore.com</a></span></p>
+            </div>
+          </div>
+        </td>
+
+        <!-- END BODY -->
+
+
+      </tr>  <!-- end body and menu -->
+
+    </table>
+    
+    
+    <!-- Mint: Analytics -->
+    <script src="http://www.jamesshore.com/mint/?js" type="text/javascript"></script>
+    
+  </body>
+</html>
