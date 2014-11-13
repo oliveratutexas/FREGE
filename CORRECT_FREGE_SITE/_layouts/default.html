@@ -1,16 +1,14 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Default Page</title>
+	<title>{{page.title}}</title>
 	{% include header.html %}
 </head>
 <body>
 	{% include navbar.html %}
-	{}
 	<div>
-		<p>
-			Here's some example text. Hello there.
-		</p>
+	{{ content }}
 	</div>
 	{% include footer.html %}
 
