@@ -193,3 +193,44 @@ footer {
 p.copyright {
     margin: 15px 0 0;
 }
+
+.bodyframe {
+    margin-top: 20px;
+    background-color: #D3D3D3;
+}
+
+.titlerow{
+    font-style:bold;
+    font-family:"Lato";
+    font-weight:600;
+}
+
+/* FREGE'S Goal Format*/
+h1 {
+    margin-top: 0px;
+
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 25px;
+    font-family:"Lato";
+    text-align:justify;
+}
+.textrow{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.titletext {
+    font-size: x-large;
+    font-weight: 400;
+}
+
+.paragraph {
+    /* text-indent: 50px; */
+}
+
+.bulletsquare {
+    list-style: square;
+}
