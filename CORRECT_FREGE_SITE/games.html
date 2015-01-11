@@ -1,0 +1,34 @@
+----
+
+layout: default
+
+----
+<!-- Eventually we want to make this work for every category, but, let's just make the games transparent,
+for now -->
+
+{{ for thing in site.data.thing}}
+<div class="">
+    <a href="sitepath/{{ }}">
+        {{thing.name}}
+    </a>
+</div>
+{{endfor}}
+
+<!-- Needs...
+
+    A title of some sort
+    A list of games that are available
+    A list of the categories of games
+
+    So, now....I just need the users to...make two repositories....
+            one for the modifications that they make to 
+
+    They just have to go into the Games.yaml folder and modify that with their game description....I can just add a script to find
+    their descriptions and concatenate them. That is
+
+        for each stuff in repo:
+            concatenate stuff.description onto games.yaml
+            move stuff into x.
+
+
+-->

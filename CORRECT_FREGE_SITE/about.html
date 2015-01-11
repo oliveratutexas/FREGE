@@ -1,120 +1,103 @@
 ---
 layout: default
 ---
+<!-- Title Name -->
+<title>FREGE's Goal</title>
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<!-- Bootstrap Core CSS -->
-        <link href="{{ "css/bootstrap.min.css" | prepend:site.url }}" rel="stylesheet">
+<body>
 
-    	<!-- Custom CSS -->
-    	<!-- <link href="css/landing-page.css" rel="stylesheet"> -->
-        <link href="{{ "font-awesome-4.1.0/css/font-awesome.min.css" | prepend:site.url }}" rel="stylesheet" type="text/css">
-    	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<div class="titlecontainer">
+    <div class="titlerow">
+        <h1>
+            <center>FREGE's Goal</center>
+        </h1>
+    </div>
+</div>
 
-    	<!-- Custom CSS for about -->
-        <link href="about.css" rel="stylesheet" type="text/css">
-
-    	<!-- Title Name -->
-    	<title>FREGE's Goal</title>
-	</head>
-
-	<body class="bodyframe">
-		<div class="titlecontainer">
-			<div class="titlerow">
-					<h1>
-						<center>FREGE's Goal</center>
-					</h1>
-			</div>
-		</div>
-
-		<!-- Tab the whole paragraph -->
-		<!--div class="col-lg-3 col-lg-offset-1" -->
-		<div class="container">
-			<div class="titletext col-lg-10 col-lg-offset-1">
-				Rationale
-			</div>
-			<div class="textrow">
-				<div class="col-lg-10 col-lg-offset-1">
-					<p class="paragraph">
-							Clear thinking is required for success in all human endeavors. "Clear" is not equivalent to "formal" and none of us writes out a formal logic proof every time we need to answer an important question.  But formal logic is an important pedagogical tool in much the same way that other "exercises" are:
-					</p>
-					<ul class="bulletsquare">
-						<li>Piano students practice scales.</li>
-						<li>Athletes do pushups.</li>
-						<li>Thinkers (of all stripes) write small proofs in formal logic so that they understand the difference between sound and unsound reasoning.</li>
-					</ul>
-					<p class="paragraph">
-							But formal logic is more than an exercise for students. It's also a powerful practical tool in its own right.
-					</p>
-					<p class="paragraph">For example:</p>
-					<ul class="bulletsquare">
-						<li>Mathematicians write formal proofs, both as a way to derive insight and as a way to certify truth.</li>
-						<li>Computer scientists write formal specifications for programs and applications.  Then they reason with those specifications to construct working systems.</li>
-						<li>Computer engineers use logic as the basis for the design of computer circuits.</li>
-					</ul>
-					<p class="paragraph">
-							Yet, despite its importance, logic shows up barely (if at all) in most pre-college curricula today.  At one time, most high school geometry classes had a large proof-based component.  But that is no longer true.
-					</p>
-					<p class="paragraph">
-							So students come to college with almost no exposure to this fundamental tool.  Our goal is to create an online learning environment that fixes that problem.
-					</p>
-				</div>
-				<div class="titletext col-lg-10 col-lg-offset-1">
-						Specific Goals
-				</div>
-				<div class="textrow">
-				<div class="col-lg-10 col-lg-offset-1">
-					<p class="paragraph">
-							There exist hundreds (or maybe thousands) of books on logic and discrete mathematics.  There are also already some online logic classes.  But we haven't found any of them that meet all of our goals.  In particular:
-					</p>
-					<ul class="bulletsquare">
-						<li>We want a focus on the practical use of logic as a reasoning tool.</li>
-						<li>We want to help students from all disciplines become better thinkers.</li>
-						<li>We want to grab the attention of students in disciplines in which formal logic plays a particularly key role.In particular, we want to exploit concrete examples from computing and mathematics.</li>
-						<li>We want to target computer science and engineering students in a special way.  Formal reasoning will be critical in everything that they will do.  But they don't always appreciate that.  Many think that they just need to learn to code.</li>
-						<li>We want to rope them in with useful techniques that bridge a perceived abstract/concrete chasm.  But, at the same time, we need to structure the course so that those excursions are not off-putting to noncomputing students.</li>
-					</ul>
-					<p class="paragraph">
-							So we want a course that is laced with diverse examples, including:
-					</p>
-					<ul class="bulletsquare">
-						<li>The standard fare of logic courses: everyday reasoning.  These examples will speak to technical and nontechnical students alike.  For example, they're good preparation for the law school entrance exam.</li>
-						<li>Mathematical examples that are not so trivial as to lead students to say, "So now I can prove the obvious," nor yet so advanced as to be inaccessible to novice mathematics students.</li>
-						<li>Computer science examples that draw in and motivate not just CS students but many others who have grown up in the digital age.</li>
-					</ul>
-					<p class="paragraph">
-							We also want a (smaller) follow-on course that builds on the logic one.  Nontechnical students will likely choose to skip this second course.  But for technical students, this course on Sets, Relations and Functions will:
-					</p>
-					<ul class="bulletsquare">
-						<li>Introduce those important ideas.</li>
-						<li>Provide additional practice at proving things once there are interesting structures to prove things about.</li>
-					</ul>
-					<p class="paragraph">
-							While, in principle, students could take an unrelated course that covers this material, in practice notation can be a huge hurdle.  Our second course will use all the same notational and proof conventions as does the reasoning course.  That will let students procrastinate, until they have a bit more mathematical sophistication, jumping into new notational worlds.
-					</p>
-					<p class="paragraph">
-						There's no single "best" entry point into this large web of material. So our goal is to build a system that can be used in many ways, including as:
-					</p>
-					<ul class="bulletsquare">
-						<li>A prematriculation resource: We envision making it available to students in the summer before they arrive at UT. Our very specific goal here is to make students better prepared to succeed in their first semester at UT.</li>
-						<li>A flipped class resource: We are designing it so that it could be the basis for an efficiently-run organized UT class that covers this material.</li>
-						<li>A just in time learning resource: We see it as something students can use when they recognize the need to fill in gaps as they pursue their UT coursework.</li>
-						<li>(Possibly) the basis for a dual enrollment course that could give potential UT students access to the material while they are still in high school.</li>
-					</ul>
-					<p class="bulletsquare">
-						To make all of those uses possible, we need to offer substantial flexibility in how and when students can use our materials.  So we rejected the idea of a synchronized course (such as a MOOC).
-					</p>
-					<p class="bulletsquare">Instead, our goal is to build what we're thinking of as an online textbook. It has:</p>
-					<ul class="bulletsquare">
-						<li>"Picturated" text. Formal logic is, at its core, a symbolic process. So text is more appropriate here than it is for many other kinds of things. But we can't ignore the importance of visual learning. Fortunately, the online environment makes it possible to include pictures and graphics much more easily and cheaply than could be done in the offline world.</li>
-						<li>Video, when video is the most effective medium. In particular, videos are great for how- to lessons such as, "How to Discover a Proof".</li>
-						<li>Interaction almost all the time. No dozing allowed. Unlike traditional books, and unlike even many video based online classes, we carve up knowledge into very tiny morsels. After each morsel, students must think, interact, explore and practice.</li>
-						<li>Flexibility. The material is structured so that it is easy for students to run quickly through any material that they've seen before. Then they can focus their time on material that is new or difficult for them.</li>
-					</ul>
-				</div>
-			</div>
-	</body>
-
-</html>
+<!-- Tab the whole paragraph -->
+<!--div class="col-lg-3 col-lg-offset-1" -->
+<div class="container">
+    <div class="titletext col-lg-10 col-lg-offset-1">
+        Rationale
+    </div>
+    <div class="textrow">
+        <div class="col-lg-10 col-lg-offset-1">
+            <p class="paragraph">
+            Clear thinking is required for success in all human endeavors. "Clear" is not equivalent to "formal" and none of us writes out a formal logic proof every time we need to answer an important question.  But formal logic is an important pedagogical tool in much the same way that other "exercises" are:
+            </p>
+            <ul class="bulletsquare">
+                <li>Piano students practice scales.</li>
+                <li>Athletes do pushups.</li>
+                <li>Thinkers (of all stripes) write small proofs in formal logic so that they understand the difference between sound and unsound reasoning.</li>
+            </ul>
+            <p class="paragraph">
+            But formal logic is more than an exercise for students. It's also a powerful practical tool in its own right.
+            </p>
+            <p class="paragraph">For example:</p>
+            <ul class="bulletsquare">
+                <li>Mathematicians write formal proofs, both as a way to derive insight and as a way to certify truth.</li>
+                <li>Computer scientists write formal specifications for programs and applications.  Then they reason with those specifications to construct working systems.</li>
+                <li>Computer engineers use logic as the basis for the design of computer circuits.</li>
+            </ul>
+            <p class="paragraph">
+            Yet, despite its importance, logic shows up barely (if at all) in most pre-college curricula today.  At one time, most high school geometry classes had a large proof-based component.  But that is no longer true.
+            </p>
+            <p class="paragraph">
+            So students come to college with almost no exposure to this fundamental tool.  Our goal is to create an online learning environment that fixes that problem.
+            </p>
+        </div>
+        <div class="titletext col-lg-10 col-lg-offset-1">
+            Specific Goals
+        </div>
+        <div class="textrow">
+            <div class="col-lg-10 col-lg-offset-1">
+                <p class="paragraph">
+                There exist hundreds (or maybe thousands) of books on logic and discrete mathematics.  There are also already some online logic classes.  But we haven't found any of them that meet all of our goals.  In particular:
+                </p>
+                <ul class="bulletsquare">
+                    <li>We want a focus on the practical use of logic as a reasoning tool.</li>
+                    <li>We want to help students from all disciplines become better thinkers.</li>
+                    <li>We want to grab the attention of students in disciplines in which formal logic plays a particularly key role.In particular, we want to exploit concrete examples from computing and mathematics.</li>
+                    <li>We want to target computer science and engineering students in a special way.  Formal reasoning will be critical in everything that they will do.  But they don't always appreciate that.  Many think that they just need to learn to code.</li>
+                    <li>We want to rope them in with useful techniques that bridge a perceived abstract/concrete chasm.  But, at the same time, we need to structure the course so that those excursions are not off-putting to noncomputing students.</li>
+                </ul>
+                <p class="paragraph">
+                So we want a course that is laced with diverse examples, including:
+                </p>
+                <ul class="bulletsquare">
+                    <li>The standard fare of logic courses: everyday reasoning.  These examples will speak to technical and nontechnical students alike.  For example, they're good preparation for the law school entrance exam.</li>
+                    <li>Mathematical examples that are not so trivial as to lead students to say, "So now I can prove the obvious," nor yet so advanced as to be inaccessible to novice mathematics students.</li>
+                    <li>Computer science examples that draw in and motivate not just CS students but many others who have grown up in the digital age.</li>
+                </ul>
+                <p class="paragraph">
+                We also want a (smaller) follow-on course that builds on the logic one.  Nontechnical students will likely choose to skip this second course.  But for technical students, this course on Sets, Relations and Functions will:
+                </p>
+                <ul class="bulletsquare">
+                    <li>Introduce those important ideas.</li>
+                    <li>Provide additional practice at proving things once there are interesting structures to prove things about.</li>
+                </ul>
+                <p class="paragraph">
+                While, in principle, students could take an unrelated course that covers this material, in practice notation can be a huge hurdle.  Our second course will use all the same notational and proof conventions as does the reasoning course.  That will let students procrastinate, until they have a bit more mathematical sophistication, jumping into new notational worlds.
+                </p>
+                <p class="paragraph">
+                There's no single "best" entry point into this large web of material. So our goal is to build a system that can be used in many ways, including as:
+                </p>
+                <ul class="bulletsquare">
+                    <li>A prematriculation resource: We envision making it available to students in the summer before they arrive at UT. Our very specific goal here is to make students better prepared to succeed in their first semester at UT.</li>
+                    <li>A flipped class resource: We are designing it so that it could be the basis for an efficiently-run organized UT class that covers this material.</li>
+                    <li>A just in time learning resource: We see it as something students can use when they recognize the need to fill in gaps as they pursue their UT coursework.</li>
+                    <li>(Possibly) the basis for a dual enrollment course that could give potential UT students access to the material while they are still in high school.</li>
+                </ul>
+                <p class="bulletsquare">
+                To make all of those uses possible, we need to offer substantial flexibility in how and when students can use our materials.  So we rejected the idea of a synchronized course (such as a MOOC).
+                </p>
+                <p class="bulletsquare">Instead, our goal is to build what we're thinking of as an online textbook. It has:</p>
+                <ul class="bulletsquare">
+                    <li>"Picturated" text. Formal logic is, at its core, a symbolic process. So text is more appropriate here than it is for many other kinds of things. But we can't ignore the importance of visual learning. Fortunately, the online environment makes it possible to include pictures and graphics much more easily and cheaply than could be done in the offline world.</li>
+                    <li>Video, when video is the most effective medium. In particular, videos are great for how- to lessons such as, "How to Discover a Proof".</li>
+                    <li>Interaction almost all the time. No dozing allowed. Unlike traditional books, and unlike even many video based online classes, we carve up knowledge into very tiny morsels. After each morsel, students must think, interact, explore and practice.</li>
+                    <li>Flexibility. The material is structured so that it is easy for students to run quickly through any material that they've seen before. Then they can focus their time on material that is new or difficult for them.</li>
+                </ul>
+            </div>
+        </div>
+        </body>
